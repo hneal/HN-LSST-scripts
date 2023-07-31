@@ -1,0 +1,1 @@
+[homer@lsst-it01 ~]$ sed 's/,/\n/g' vacChansList.txt | xargs -n 1 ~/chanLims.sh

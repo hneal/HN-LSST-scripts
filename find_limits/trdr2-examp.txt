@@ -1,0 +1,1 @@
+[homer@lsst-it01 ~]$ ~/yupy ~/stutils/trender.py --text --start "Sun Jun 18 00:00:00 PDT 2023" --duration 86400 -- "vacuum/Cryo/TurboPumpTemp" | awk 'BEGIN{mn=999.;mx=0.0} /\//{mx=($2>mx?$2:mx); mn=($2<mn?$2:mn)} END{print mn,mx}'
