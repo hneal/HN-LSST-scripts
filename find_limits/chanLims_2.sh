@@ -8,7 +8,7 @@ start="Jun 23 00:00:00 PDT 2023"
 dur="2d"
 #echo $chan
 
-~/yupy ~/stutils/trender.py --stats --start "$start" --duration $dur  -- $chan | awk '!/#/{print $(NF-1),$5,$6,$3,-1,$1,$4}'
+python ~/mutils/trendutils/trender.py --stats --start "$start" --duration $dur  -- $chan | awk '!/#/{print $(NF-1),$5,$6,$2,-1,$1,$4}'
 
 
 

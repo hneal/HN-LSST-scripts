@@ -16,12 +16,24 @@ fp=open(sys.argv[1])
 # loop over reduced trender output file to produce limit props
 for ln in fp:
     fld = ln.split()
-    print("# ---")
-    print(fld[0]+"/limitLo = "+str(np.format_float_positional(float(fld[1])-2.0*float(fld[6]), precision=4, unique=False, fractional=False, trim='k')))
-    print(fld[0]+"/limitHi = "+str(np.format_float_positional(float(fld[2])+2.0*float(fld[6]), precision=4, unique=False, fractional=False, trim='k')))
-    print(fld[0]+"/warnLo = "+str(np.format_float_positional(float(fld[1])-float(fld[6]), precision=4, unique=False, fractional=False, trim='k')))
-    print(fld[0]+"/warnHi = "+str(np.format_float_positional(float(fld[2])+float(fld[6]), precision=4, unique=False, fractional=False, trim='k')))
+    print("\n# --- "+fld[0]+" ---")
+    stddev = fld[6]
+    if (float(fld[1])!=float(fld[2])) :
+        stddev = fld[6]
+    else :
+        if (float(fld[1])!=0) :
+            stddev = 0.1*float(fld[1])
+        else :
+            stddev = 0.1
 
+#    print(fld[0]+"/limitHi = "+str(np.format_float_positional(float(fld[2])+2.0*float(stddev), precision=4, unique=False, fractional=False, trim='k')))
+#    print(fld[0]+"/warnHi = "+str(np.format_float_positional(float(fld[2])+float(stddev), precision=4, unique=False, fractional=False, trim='k')))
+#    print(fld[0]+"/warnLo = "+str(np.format_float_positional(float(fld[1])-float(stddev), precision=4, unique=False, fractional=False, trim='k')))
+#    print(fld[0]+"/limitLo = "+str(np.format_float_positional(float(fld[1])-2.0*float(stddev), precision=4, unique=False, fractional=False, trim='k')))
 
+    print(fld[0]+"/limitHi = {:>8.6g} ".format(float(fld[2])+2.0*float(stddev)))
+    print(fld[0]+"/warnHi = {:>8.6g} ".format(float(fld[2])+float(stddev)))
+    print(fld[0]+"/warnLo = {:>8.6g} ".format(float(fld[2])-float(stddev)))
+    print(fld[0]+"/limitLo = {:>8.6g} ".format(float(fld[2])-2.0*float(stddev)))
  
 
