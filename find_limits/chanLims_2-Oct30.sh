@@ -5,8 +5,7 @@
 
 chan=$1
 #start="Jun 23 00:00:00 PDT 2023"
-#start="Oct 30 00:00:00 PDT 2023"
-start="Nov 2 15:20:00 PDT 2023"
+start="Oct 30 00:00:00 PDT 2023"
 dur="1d"
 #echo $chan
 
