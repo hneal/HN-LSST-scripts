@@ -4,8 +4,9 @@
 # --------------------------------------------------------
 
 chan=$1
-start="Jun 23 00:00:00 PDT 2023"
-dur="2d"
+#start="Jun 23 00:00:00 PDT 2023"
+start="Oct 30 00:00:00 PDT 2023"
+dur="1d"
 #echo $chan
 
 python ~/mutils/trendutils/trender.py --stats --start "$start" --duration $dur  -- $chan | awk '!/#/{print $(NF-1),$5,$6,$2,-1,$1,$4}'
