@@ -34,7 +34,7 @@ for ln in fp:
     subpath = fld[0][fld[0].find("/")+1:]
     print(subpath+"/limitHi = {:>8.6g} ".format(float(fld[2])+2.0*float(stddev)))
     print(subpath+"/warnHi = {:>8.6g} ".format(float(fld[2])+float(stddev)))
-    print(subpath+"/warnLo = {:>8.6g} ".format(float(fld[2])-float(stddev)))
-    print(subpath+"/limitLo = {:>8.6g} ".format(float(fld[2])-2.0*float(stddev)))
+    print(subpath+"/warnLo = {:>8.6g} ".format(float(fld[1])-float(stddev)))
+    print(subpath+"/limitLo = {:>8.6g} ".format(float(fld[1])-2.0*float(stddev)))
  
 
