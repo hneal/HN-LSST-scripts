@@ -1,0 +1,25 @@
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step2e,step3" 
+
+project: DM-42988
+campaign: DM-42988
+
+includeConfigs:
+  - ${DRP_PIPE_DIR}/bps/clustering/DRP-recalibrated.yaml
+  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam-imSim/DRP-test-med-1.yaml
+
+payload:
+  payloadName: u/homer/htc-test1
+  output: u/homer/htc-test1
+  butlerConfig: /repo/ops-rehearsal-3-prep
+  inCollection: u/jchiang/bfk_70240217_w_2024_07,refcats,skymaps
+  dataQuery: "instrument='LSSTComCamSim' and exposure in (7024040100916..7024040400918)"
+
+#computeSite:
+site:
+  s3df:
+    profile:
+      condor:
+        +Walltime: 7200
+
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

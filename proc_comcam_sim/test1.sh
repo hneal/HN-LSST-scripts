@@ -1,0 +1,1 @@
+pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_70240217_w_2024_07,refcats,skymaps -o u/homer/7024040400031_test_1  -p drp_pipe/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step1  -d "exposure=7024040400031  AND skymap='DC2'" --register-dataset-types -j 12 &> log-7024040400031-step1-test-1.log

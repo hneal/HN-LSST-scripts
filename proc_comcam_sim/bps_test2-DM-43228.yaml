@@ -1,0 +1,40 @@
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step1" 
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step2a,step2b,step2c,step2d,step2e" 
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step3" 
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step4,step7" 
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step5,step6"
+
+project: DM-43228
+campaign: DM-43228
+
+includeConfigs:
+  - ${DRP_PIPE_DIR}/bps/clustering/DRP-recalibrated.yaml
+  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam-imSim/DRP-test-med-1.yaml
+
+payload:
+  payloadName: u/homer/w_2024_10/DM-43228
+  output: u/homer/w_2024_10/DM-43228
+  butlerConfig: /repo/ops-rehearsal-3-prep
+  inCollection: u/jchiang/TBD,refcats,skymaps
+  dataQuery: "instrument='LSSTComCamSim' and exposure in (?..?) skymap='ops_rehersal_prep_2k_v1'"
+
+#computeSite:
+site:
+  s3df:
+    profile:
+      condor:
+        +Walltime: 7200
+
+memoryMultiplier: 2.0
+numberOfRetries: 5
+
+pipetask:
+  makeVisitTable:
+    requestMemory: 32000
+  makeCcdVisitTable:
+    requestMemory: 32000
+  healSparsePropertyMaps:
+    requestMemory: 32000
+		  
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

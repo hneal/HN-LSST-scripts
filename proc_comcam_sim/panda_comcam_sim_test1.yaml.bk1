@@ -1,0 +1,27 @@
+includeConfigs:
+- ${CTRL_BPS_PANDA_DIR}/config/bps_usdf.yaml
+
+pipelineYaml: "${PWD}/pipelines/sfp.yaml"
+instrument: LsstComCamSim
+project: dev
+campaign: quick
+
+payload:
+  runInit: true
+  weekly: ${WEEKLY}
+  inCollection: u/jchiang/flat_50240117_w_2024_04,refcats
+  computeSite: SLAC
+  payloadName: multivisit_sfp_test
+  butlerConfig: /repo/ops-rehearsal-3-prep
+  dataQuery: "instrument='LSSTComCamSim' and exposure in (5024032100240..5024032100299)"
+  output: u/{operator}/panda_comcam_sim_rubin_flat_50240117_w_2024_04
+  s3EndpointUrl: "https://storage.googleapis.com"
+  payloadFolder: payload
+  fileDistributionEndPoint: "file:///sdf/group/rubin/panda_jobs/{operator}/panda_cache_box/{payloadFolder}/{uniqProcName}/"
+
+sw_image: "lsstsqre/centos:7-stack-lsst_distrib-w_2024_04"
+
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LATISS/DRP.yaml#processCcd,sourceTable"
+#templateDataId: "{tract}_{patch}_{band}_{visit}_{exposure}_{detector}"
+submitPath: ${PWD}/submit/{outCollection}
+
