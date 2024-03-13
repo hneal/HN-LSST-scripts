@@ -1,6 +1,7 @@
-pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step1" 
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step1" 
+#"step2a,step2b,step2c,step2d,step2e" 
 #pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step2a,step2b,step2c,step2d,step2e" 
-#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step3" 
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step3" 
 #pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step4,step7" 
 #pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step5,step6"
 
@@ -25,7 +26,7 @@ site:
       condor:
         +Walltime: 7200
 
-memoryMultiplier: 2.0
+#memoryMultiplier: 2.0
 numberOfRetries: 5
 memoryLimit: 65536
 
