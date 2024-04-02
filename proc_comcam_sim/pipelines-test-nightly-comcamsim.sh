@@ -1,0 +1,10 @@
+#good/24
+#pipetask run -b /repo/embargo -i LSSTComCamSim/quickLook/24,LSSTComCamSim/defaults,LSSTComCamSim/templates -o LSSTComCamSim/runs/nightlyvalidation/20240401/d_2024_03_29/DM-43612-test2  -p ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step2b  -d "instrument='LSSTComCamSim' AND detector=0 AND skymap='ops_rehersal_prep_2k_v1'" --register-dataset-types -j 12 >& lsstcomcamsim-step2b-test2-nightly.log
+
+#good step1
+pipetask run -b /repo/embargo -i LSSTComCamSim/defaults,LSSTComCamSim/templates -o LSSTComCamSim/runs/nightlyvalidation/20240401/d_2024_03_29/DM-43612-test3  -p ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step1  -d "exposure.day_obs=20240401 AND instrument='LSSTComCamSim' AND detector=0 AND skymap='ops_rehersal_prep_2k_v1'" --register-dataset-types -j 12 >& lsstcomcamsim-step1-test1-nightly.log
+
+#BAD ... pipetask run -b /repo/embargo -i LSSTComCamSim/quickLook/24,refcats,skymaps -o LSSTComCamSim/runs/nightlyvalidation/20240401/d_2024_03_29/DM-43612-test  -p ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step2b  -d "instrument='LSSTComCamSim' AND detector=0 AND skymap='ops_rehersal_prep_2k_v1'" --register-dataset-types -j 12 >& lsstcomcamsim-step2b-test-nightly.log
+
+#pipetask run -b /repo/embargo -i LSSTComCamSim/quickLook/24 -o LSSTComCamSim/runs/nightlyvalidation/20240401/d_2024_03_29/DM-43612-test  -p ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step2b  -d "detector=0 AND skymap='ops_rehersal_prep_2k_v1'" --register-dataset-types -j 12 >& lsstcomcamsim-step2b-test-nightly.log
+#pipetask run -b /repo/embargo -i LSSTComCamSim/defaults -o LSSTComCamSim/runs/nightlyvalidation/20240401/d_2024_03_29/DM-43612-test  -p ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step1  -d "detector=0 AND skymap='ops_rehersal_prep_2k_v1'" --register-dataset-types -j 12 >& lsstcomcamsim-step1-test-nightly.log

@@ -1,0 +1,57 @@
+pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step1,step2a,nightlyRollup,step2b,step2c,step2d,step2e,step3,step4,step5,step6,step7
+
+project: DM-43612
+campaign: DM-43612
+
+includeConfigs:
+  - ${DRP_PIPE_DIR}/bps/clustering/DRP-recalibrated.yaml
+  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam-imSim/DRP-test-med-1.yaml
+
+extraQgraphOptions: "--dataset-query-constraint raw --config detection:detection.skyObjects.nSources=500 --config fgcmBuildFromIsolatedStars:connections.ref_cat='uw_stars_20240228'"
+
+payload:
+  butlerConfig: /repo/embargo
+  payloadName: LSSTComCamSim/runs/nightlyvalidation/20240402/d_2024_03_29/DM-43612
+  output: LSSTComCamSim/runs/nightlyvalidation/20240402/d_2024_03_29/DM-43612
+  inCollection: LSSTComCamSim/defaults,LSSTComCamSim/templates
+  dataQuery: "exposure.day_obs=20240401 AND skymap='ops_rehersal_prep_2k_v1' AND instrument='LSSTComCamSim'"
+
+#computeSite:
+site:
+  s3df:
+    profile:
+      condor:
+        +Walltime: 7200
+
+memoryMultiplier: 2.0
+numberOfRetries: 5
+memoryLimit: 400000
+
+pipetask:
+  makeVisitTable:
+    requestMemory: 10000
+  makeCcdVisitTable:
+    requestMemory: 10000
+  healSparsePropertyMaps:
+    requestMemory: 16000
+  analyzeMatchedVisitCore:
+    requestMemory: 131072
+  assembleCoadd:
+    requestMemory: 8000
+  detectAndMeasureDiaSources:
+    requestMemory: 8000
+  detection:
+    requestMemory: 8000
+  fgcmFitCycle:
+    requestMemory: 8000
+  finalizeCharacterization:
+    requestMemory: 8000
+  getTemplate:
+    requestMemory: 8000
+  subtractImages:
+    requestMemory: 8000
+  transformDiaSourceCat:
+    requestMemory: 8000
+
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService
