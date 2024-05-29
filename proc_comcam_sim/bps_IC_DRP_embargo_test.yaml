@@ -1,0 +1,93 @@
+pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step1
+#pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step2b,step2c,step2d,step2e
+#pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step3
+#pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step4
+#pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step5,step6
+#pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step7
+
+project: DM-44466
+campaign: DM-44466
+
+includeConfigs:
+  - ${DRP_PIPE_DIR}/bps/clustering/DRP-recalibrated.yaml
+  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam-imSim/DRP-test-med-1.yaml
+
+# step2...
+extraQgraphOptions: --dataset-query-constraint off -c parameters:sasquatch_dataset_identifier=intermittentcumulativeDRP -c parameters:sasquatch_timestamp_version=run_timestamp
+
+
+# step2...
+#extraQgraphOptions: --dataset-query-constraint off -c fgcmBuildFromIsolatedStars:connections.ref_cat='uw_stars_20240228' -c parameters:sasquatch_dataset_identifier=intermittentcumulativeDRP -c parameters:sasquatch_timestamp_version=run_timestamp
+
+# step3:
+#extraQgraphOptions: --dataset-query-constraint off -c detection:detection.skyObjects.nSources=500 -c parameters:sasquatch_dataset_identifier=intermittentcumulativeDRP -c parameters:sasquatch_timestamp_version=run_timestamp
+
+# step4:
+#extraQgraphOptions: --dataset-query-constraint off -c parameters:sasquatch_dataset_identifier=intermittentcumulativeDRP -c parameters:sasquatch_timestamp_version=run_timestamp
+
+# steps5,6:
+#extraQgraphOptions: --dataset-query-constraint off -c parameters:sasquatch_dataset_identifier=intermittentcumulativeDRP -c parameters:sasquatch_timestamp_version=run_timestamp
+
+# step7
+#extraQgraphOptions: --dataset-query-constraint off -c parameters:sasquatch_dataset_identifier=intermittentcumulativeDRP -c parameters:sasquatch_timestamp_version=run_timestamp
+
+# others:
+#extraQgraphOptions: --dataset-query-constraint off -c detection:detection.skyObjects.nSources=500 -c fgcmBuildFromIsolatedStars:connections.ref_cat='uw_stars_20240228' -c parameters:sasquatch_dataset_identifier=intermittentcumulativeDRP -c parameters:sasquatch_timestamp_version=run_timestamp
+
+payload:
+#  butlerConfig: /repo/embargo+sasquatch_dev
+  butlerConfig: /sdf/home/h/homer/u/repo_main_new/butler+sasquatch_dev.yaml
+  payloadName: u/homer/LSSTComCamSim/htc-embargo-test/d_2024_04_01/DM-44466
+  output: u/homer/LSSTComCamSim/htc-embargo-test/d_2024_04_01/DM-44466
+ 
+  inCollection: LSSTComCamSim/quickLook/24,LSSTComCamSim/defaults,LSSTComCamSim/templates
+
+  dataQuery: "visit IN (7024040200000..7024040500000) AND skymap='ops_rehersal_prep_2k_v1' AND instrument='LSSTComCamSim'"
+# step7:
+#  dataQuery: "skymap='ops_rehersal_prep_2k_v1' AND instrument='LSSTComCamSim'"
+
+#computeSite:
+site:
+  s3df:
+    profile:
+      condor:
+        +Walltime: 7200
+
+memoryMultiplier: 2.0
+numberOfRetries: 5
+memoryLimit: 400000
+
+pipetask:
+  makeVisitTable:
+    requestMemory: 10000
+  makeCcdVisitTable:
+    requestMemory: 10000
+  healSparsePropertyMaps:
+    requestMemory: 16000
+  analyzeMatchedVisitCore:
+    requestMemory: 131072
+  assembleCoadd:
+    requestMemory: 8000
+  detectAndMeasureDiaSources:
+    requestMemory: 8000
+  detection:
+    requestMemory: 8000
+  fgcmFitCycle:
+    requestMemory: 8000
+  finalizeCharacterization:
+    requestMemory: 8000
+  getTemplate:
+    requestMemory: 8000
+  subtractImages:
+    requestMemory: 8000
+  transformDiaSourceCat:
+    requestMemory: 8000
+
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService
+
+
+# pipe test
+
+
+#pipetask run -b '/sdf/home/h/homer/u/repo_main_new/butler+sasquatch_dev.yaml' -i LSSTComCamSim/defaults -o u/homer/LSSTComCamSim/htc-embargo-test/d_2024_04_01/DM-44466/pipeline_test1 -p ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step1  -d "visit in (7024040200000..7024040500000) AND  detector=0 AND skymap='ops_rehersal_prep_2k_v1' AND instrument='LSSTComCamSim'" --register-dataset-types
