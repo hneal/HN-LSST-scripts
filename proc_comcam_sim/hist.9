@@ -1,0 +1,100 @@
+  923  exit
+  924  cd proc_comcam_sim/
+  925  ls -lrt
+  926  more panda_comcam_sim_DRP.yaml 
+  927  ls -lrt
+  928  cat test1.sh
+  929  pwd
+  930  cp -p panda_comcam_sim_DRP.yaml ~/misc_scripts/proc_comcam_sim/
+  931  cd ~/misc_scripts/
+  932  git status
+  933  git commit -a
+  934  git push --all -u
+  935   cd
+  936  cd proc_comcam_sim/
+  937  ls -lrt
+  938  ps -fe | grep pipeline
+  939  exit
+  940  ls -lrt .lsst/
+  941  emacs -nw ~/.lsst/condor-info.py
+  942  cd proc_comcam_sim/
+  943  cat > htallocate.sh
+  944  condor_q
+  945  cd
+  946  . setupUSDF.sh
+  947  more setupUSDF.sh
+  948  cd proc_comcam_sim/
+  949  grep lsst_distrib *
+  950  cd -
+  951  condor_q
+  952  cd proc_comcam_sim/
+  953  history | grep setup
+  954  source setup_panda.sh w_2024_08
+  955  ls -lrt setup*
+  956  pwd
+  957  source setup_panda.sh w_2024_08
+  958  more setup_panda.sh
+  959  source setup_panda.sh w_2024_07
+  960  source setup_panda.sh w_2024_04
+  961  exit
+  962  ssh -AY rubin-devl
+  963  ssh -AY sdfroom002
+  964  ssh -AY sdfrome002
+  965  ps -fe | grep pipeline
+  966  exit
+  967  . setupUSDF.sh
+  968  cd proc_comcam_sim/
+  969  history | grep setup
+  970  source setup_panda.sh w_2024_08
+  971  . setup-comcamsim.sh
+  972  ls -lrt
+  973  more test1.sh 
+  974  ls -lrt *.yaml
+  975  mpre bps_sfp.yaml
+  976  more bps_sfp.yaml
+  977  cp -p bps_sfp.yaml bps_test1.yaml
+  978  more panda_comcam_sim_DRP.yaml 
+  979  emacs -nw bps_test1.yaml 
+  980  ls -lrt drp_pipe/
+  981  ls -lrt
+  982  more panda_comcam_sim_DRP.yaml 
+  983  emacs -nw panda_comcam_sim_DRP.yaml 
+  984  emacs -nw bps_test1.yaml 
+  985  emacs -nw panda_comcam_sim_DRP.yaml 
+  986  emacs -nw bps_test1.yaml 
+  987  emacs -nw panda_comcam_sim_DRP.yaml 
+  988  emacs -nw bps_test1.yaml 
+  989  emacs -nw panda_comcam_sim_DRP.yaml 
+  990  emacs -nw bps_test1.yaml 
+  991  emacs -nw panda_comcam_sim_DRP.yaml 
+  992  emacs -nw bps_test1.yaml 
+  993  eups list -s lsst_distrib
+  994  setup lsst_distrib -t w_2024_08
+  995  head -10 ~/setupUSDF.sh
+  996  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/
+  997  head -10 ~/setupUSDF.sh
+  998  exit
+  999  source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_08/loadLSST.bash
+ 1000  emacs -nw setupUSDF.sh
+ 1001  eups list -s lsst_distrib
+ 1002  setup lsst_distrib
+ 1003  eups list lsst_distrib
+ 1004  cd proc_comcam_sim/
+ 1005  ls -lrt | tail -5
+ 1006  bps submit bps_test1.yaml
+ 1007  emacs -nw bps_test1.yaml
+ 1008  bps submit bps_test1.yaml
+ 1009  man cat
+ 1010  cat -A bps_test1.yaml
+ 1011  emacs -nw bps_test1.yaml
+ 1012  bps submit bps_test1.yaml
+ 1013  emacs -nw bps_test1.yaml
+ 1014  bps submit bps_test1.yaml
+ 1015  condor_q
+ 1016  bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240222T225900Z
+ 1017  emacs -nw alloc_setup.sh
+ 1018  allocateNodes.py --auto --account rubin:developers -n 50 -m 4-00:00:00 -q milano -g 240 s3df
+ 1019  sbatch --cpus-per-task 16 --mem 65536 -J glide_homer /sdf/scratch/users/h/homer/condor_scratch/homer_2024_0222_151703/configs/alloc_homer_2024_0222_151703.slurm
+ 1020  allocateNodes.py --auto --account rubin:default -n 50 -m 4-00:00:00 -q milano -g 240 s3df
+ 1021  bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240222T225900Z
+ 1022  history | tail -100 > hist.9

@@ -1,0 +1,58 @@
+pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTComCamSim/nightly-validation-ops-rehearsal-3.yaml#step2b,step2c,step2d,step2e,step3,step4,step5,step6,step7
+
+project: DM-43612
+campaign: DM-43612
+
+includeConfigs:
+  - ${DRP_PIPE_DIR}/bps/clustering/DRP-recalibrated.yaml
+  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam-imSim/DRP-test-med-1.yaml
+
+extraQgraphOptions: --dataset-query-constraint off -c detection:detection.skyObjects.nSources=500 -c fgcmBuildFromIsolatedStars:connections.ref_cat='uw_stars_20240228' -c parameters:sasquatch_dataset_identifier=nightlyvalidation -c parameters:sasquatch_timestamp_version=run_timestamp --skip-existing-in LSSTComCamSim/runs/nightlyvalidation/20240403/d_2024_03_29/DM-43612
+
+payload:
+  butlerConfig: /repo/embargo+sasquatch_dev
+  payloadName: LSSTComCamSim/runs/nightlyvalidation/20240403/d_2024_03_29/DM-43612
+  output: LSSTComCamSim/runs/nightlyvalidation/20240403/d_2024_03_29/DM-43612
+  inCollection: LSSTComCamSim/quickLook/24,LSSTComCamSim/defaults,LSSTComCamSim/templates
+
+  dataQuery: "visit IN (7024040300000..7024040400000) AND skymap='ops_rehersal_prep_2k_v1' AND instrument='LSSTComCamSim'"
+
+#computeSite:
+site:
+  s3df:
+    profile:
+      condor:
+        +Walltime: 7200
+
+memoryMultiplier: 2.0
+numberOfRetries: 5
+memoryLimit: 400000
+
+pipetask:
+  makeVisitTable:
+    requestMemory: 10000
+  makeCcdVisitTable:
+    requestMemory: 10000
+  healSparsePropertyMaps:
+    requestMemory: 16000
+  analyzeMatchedVisitCore:
+    requestMemory: 131072
+  assembleCoadd:
+    requestMemory: 8000
+  detectAndMeasureDiaSources:
+    requestMemory: 8000
+  detection:
+    requestMemory: 8000
+  fgcmFitCycle:
+    requestMemory: 8000
+  finalizeCharacterization:
+    requestMemory: 8000
+  getTemplate:
+    requestMemory: 8000
+  subtractImages:
+    requestMemory: 8000
+  transformDiaSourceCat:
+    requestMemory: 8000
+
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

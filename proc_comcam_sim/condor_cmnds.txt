@@ -1,0 +1,10 @@
+Examples:
+
+bps submit bps_test1.yaml
+
+condor_q -all -hold
+condor_q -better-analyze 10840659.0
+condor_qedit -constraint 'Owner=="homer"&&JobStatus==5' RequestMemory 32768
+condor_release homer
+	 
+watch -n 30 bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240223T180745Z

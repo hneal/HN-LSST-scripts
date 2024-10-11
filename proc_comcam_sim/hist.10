@@ -1,0 +1,1000 @@
+   36  ls -lrt /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/
+   37  ls -lrt /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/20230215T220345Z/
+   38  ls -lrt /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/20230215T220345Z/calibrate_metadata/
+   39  ls -lrt /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/20230215T220345Z/calibrate_metadata/20220630/
+   40  ls -lrt /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/20230215T220345Z/calibrate_metadata/20220630/r/
+   41  ls -lrt /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/20230215T220345Z/calibrate_metadata/20220630/r/SDSSr~empty/
+   42  ls -lrt /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/20230215T220345Z/calibrate_metadata/20220630/r/SDSSr~empty/2022063000199/
+   43  more /sdf/group/rubin/repo/main/u/homer/auxtel_test2_rsp_one_ccd_w48/20230215T220345Z/calibrate_metadata/20220630/r/SDSSr~empty/2022063000199/calibrate_metadata_LATISS_r_SDSSr~empty_2022063000199_RXX_S00_u_homer_auxtel_test2_rsp_one_ccd_w48_20230215T220345Z.yaml 
+   44  ls -d /sdf/group/rubin/repo/*/u/homer
+   45  ls -ld /sdf/group/rubin/repo/*/u/homer
+   46  ls -lrt /sdf/group/rubin/repo/prompt/u/homer
+   47  ls -ld /sdf/group/rubin/*/*/u/homer
+   48  ls -ld /sdf/group/rubin/*/homer
+   49  ls -lrt /sdf/group/rubin/u/homer/
+   50  ls -lrt /sdf/group/rubin/u/homer/repo/
+   51  ls -lrt /sdf/group/rubin/u/homer/panda/
+   52  cd
+   53  more setupUSDF.sh
+   54  cd
+   55  cd work
+   56  ls -lrt
+   57  more /sdf/group/rubin/u/homer
+   58  more panda_aux_test1.yaml
+   59  ls -lrt /sdf/group/rubin/panda_jobs/
+   60  ls -lrt /sdf/group/rubin/
+   61  ls -lrt /sdf/group/rubin/sw/
+   62  ls -lrt /sdf/group/rubin/datasets/
+   63  find -name homer /sdf/group/rubin/
+   64  find /sdf/group/rubin/ -name homer
+   65  history | grep butler
+   66  butler query-datasets /sdf/group/rubin/repo/main/ raw
+   67  more panda_aux_test1.yaml
+   68  grep LATISS setup_panda.sh 
+   69  ls -lrt
+   70  grep LATISS *yaml
+   71  grep output *
+   72  ls -lrt /sdf/group/rubin/u/
+   73  ls -lrt /sdf/group/rubin/u/homer/
+   74  ls -lrt /sdf/group/rubin/u/homer/repo/
+   75  ls -lrt /sdf/group/rubin/u/homer/panda/
+   76  ls -lrtd /sdf/group/rubin/repo/ops-rehearsal-3-prep/
+   77  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/
+   78  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/
+   79  cd
+   80  cd proc_comcam_sim/
+   81  grep rehearsal *
+   82  grep panda *
+   83  mkdir /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer
+   84  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/
+   85  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/jchiang/
+   86  ls -lrt /tmp/
+   87  ls -lrt /tmp/*/homer/
+   88  df /tmp
+   89  date
+   90  bps submit bps_sfp.yaml
+   91  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/
+   92  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer/
+   93  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/jchiang/
+   94  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/
+   95  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer/
+   96  ln -s /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer/ ops_out
+   97  ls -lrt
+   98  ls -lrt ops_out/
+   99  more run_sfp.sh 
+  100  more bps_sfp.yaml
+  101  emacs -nw run_sfp.sh 
+  102  . run_sfp.sh
+  103  ls -lrt 
+  104  ls -lrt ops_out/
+  105  ls -lrt ops_out/sfp_checks_w_2024_04/
+  106  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/
+  107  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/srcMatch
+  108  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/srcMatch/20240321/
+  109  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/srcMatch/20240321/r/
+  110  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/srcMatch/20240321/r/r_03/
+  111  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/srcMatch/20240321/r/r_03/5024032100240/
+  112  pwd
+  113  ls -lrt ops_out/
+  114  ls -lrt ops_out/sfp_checks_w_2024_04/
+  115  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/
+  116  ls -lrt ops_out/sfp_checks_w_2024_04/20240131T195413Z/isr_metadata/
+  117  more ops_out/sfp_checks_w_2024_04/20240131T195413Z/isr_metadata/20240321/IM_P_20240321_000240/isr_metadata_LSSTComCamSim_r_03_IM_P_20240321_000240_R22_S01_u_homer_sfp_checks_w_2024_04_20240131T195413Z.json 
+  118  du -sH ops_out/sfp_checks_w_2024_04/
+  119  du -sh ops_out/sfp_checks_w_2024_04/
+  120  ls -lrt
+  121  pwd
+  122  cd ops_out/
+  123  cd sfp_checks_w_2024_04/
+  124  ls -lrt
+  125  find -name \*json
+  126  tar -vzcf ~/20240131T195413Z_json.tgz \*json
+  127  tar -vzcf ~/20240131T195413Z_json.tgz *json
+  128  man tar
+  129  pwd
+  130  cd -
+  131  cd
+  132  cd proc_comcam_sim/
+  133  ls -lrt
+  134  more run_sfp.sh
+  135  find -name \*json | tar -vzcf sfp_checks_w_2024_04_json.tgz -T -
+  136  ls -lrt
+  137  mv sfp_checks_w_2024_04_json.tgz old-sfp_checks_w_2024_04_json.tgz
+  138  cd ops_out/
+  139  find -name sfp_checks_w_2024_04/\*json | tar -vzcf ~/sfp_checks_w_2024_04_json.tgz -T -
+  140  find -name \*json | tar -vzcf ~/sfp_checks_w_2024_04_json.tgz -T -
+  141  ls -lrt
+  142  cd -
+  143  cat > example-tar-selection.txt
+  144  cd -
+  145  find -name \*fits | tar -vzcf ~/sfp_checks_w_2024_04_fits.tgz -T -
+  146  ls -lrt ~/
+  147  ls -h sfp_checks_w_2024_04_fits.tgz
+  148  cd
+  149  ls -h sfp_checks_w_2024_04_fits.tgz
+  150  ls -hl sfp_checks_w_2024_04_fits.tgz
+  151  rm sfp_checks_w_2024_04_fits.tgz
+  152  cd -
+  153  find -name \*fits
+  154  find -name \*fits | grep -i isr
+  155  cat -w 80 ./sfp_checks_w_2024_04/20240131T195413Z/postISRCCD/20240321/IM_P_20240321_000240/postISRCCD_LSSTComCamSim_r_03_IM_P_20240321_000240_R22_S21_u_homer_sfp_checks_w_2024_04_20240131T195413Z.fits | more
+  156  man cat
+  157  fold -w 80 ./sfp_checks_w_2024_04/20240131T195413Z/postISRCCD/20240321/IM_P_20240321_000240/postISRCCD_LSSTComCamSim_r_03_IM_P_20240321_000240_R22_S21_u_homer_sfp_checks_w_2024_04_20240131T195413Z.fits | more
+  158  find | egrep png|jpg
+  159  find | egrep "png|jpg"
+  160  find
+  161  find | egrep -v "json|fits"
+  162  more ./sfp_checks_w_2024_04/20240131T195413Z/isr_config/isr_config_u_homer_sfp_checks_w_2024_04_20240131T195413Z.py
+  163  ls -lrt
+  164  cd
+  165  cd work
+  166  ls -lrt
+  167  more panda_aux_test1.yaml
+  168  cp -p  panda_aux_test1.yaml ~/proc_comcam_sim/panda_comcam_sim_test1.yaml
+  169  cd ~/proc_comcam_sim/
+  170  ls -lrt
+  171  emacs -nw panda_comcam_sim_test1.yaml 
+  172  ls -lrt
+  173  emacs -nw panda_comcam_sim_test1.yaml 
+  174  ls -lrt
+  175  more bps_sfp.yaml
+  176  emacs -nw panda_comcam_sim_test1.yaml 
+  177  cp -p panda_comcam_sim_test1.yaml panda_comcam_sim_test1.yaml.bk1
+  178  history | grep bps
+  179  ls -lrt
+  180  bps submit panda_comcam_sim_test1.yaml
+  181  exit
+  182  ssh -AY rubin-devl
+  183  cd u
+  184  cd lsst-space
+  185  cd backups/
+  186  tar -ztf bck-ts8-1-homes-20190802.tgz home/ts8prod/mr/
+  187  cd ..
+  188  ls -lrt *home*
+  189  tar -ztf bck-ts8-1-homes-20190802.tgz home/ts8prod/mr/
+  190  mkdir mr_recovered
+  191  cd mr_recovered/
+  192  tar -zvxf ../bck-ts8-1-homes-20190802.tgz home/ts8prod/mr/
+  193  ls -lrt
+  194  cd home/ts8prod/mr/
+  195  ls -lrt
+  196  more pd_ratio_201812060334-PD_RATIO-3J019.txt
+  197  pwd
+  198  head -3 pd_ratio_201812060334-PD_RATIO-3J019.txt
+  199  ls -lrt
+  200  more pd_dat_OD142_3J017_3J019.txt
+  201  more get_pd_calib_inputs.sh
+  202  more 3j019.txt
+  203  ssh -AY rubin-devl
+  204  ls -lrt
+  205  history | grep -i space
+  206  cd u
+  207  ls -lrt
+  208  cd lsst-space
+  209  ls -lrt
+  210  cd backupds
+  211  cd backups
+  212  ls -lrt
+  213  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz
+  214  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz | grep pd
+  215  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz | grep ratio
+  216  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz | grep -i ratio
+  217  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz ts8-rafts-src-only/home/ts8prod/calibs/
+  218  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz | grep pd 
+  219  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz ts8-rafts-src-only/home/ts8prod/utilities/BNL2/
+  220  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz ts8-rafts-src-only/home/ts8prod/utilities/BNL2/ | grep -v enviro
+  221  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz | grep -i example
+  222  tar -tzf ts8-rafts1-ts8prod-homer-sources-only.tgz | grep -i example | grep pd
+  223  ssh -AY rubin-devl
+  224  ls -lrt
+  225  cd proc_comcam_sim/
+  226  ls -lrt
+  227  cd submit/
+  228  ls -lrt
+  229  cd u/homer/panda_comcam_sim_rubin_flat_50240117_w_2024_04/
+  230  ls -lrt
+  231  cd 20240202T234357Z
+  232  ls -lrt
+  233  more quantumGraphGeneration.out
+  234   
+  235   batch q
+  236  man batch
+  237  ssh -AY rubin-devl
+  238  echo $PS1
+  239  ssh -AY rubin-devl
+  240  . setupUSDF.sh
+  241  cd proc_comcam_sim/
+  242  . setup.sh
+  243  echo $PANDA_URL
+  244  ls -lrt
+  245  bps submit panda_comcam_sim_test1.yaml
+  246  emacs -nw panda_comcam_sim_test1.yaml
+  247  bps submit panda_comcam_sim_test1.yaml
+  248   history | grep -i comcamsim
+  249  butler query-datasets /sdf/group/rubin/repo/main/ raw --collections LSSTComCamSim/raw/all
+  250  pwd
+  251  ls -lrt
+  252  more bps_sfp.yaml
+  253  more run_sfp.sh
+  254  ls -lrt
+  255  emacs -nw panda_comcam_sim_test1.yaml
+  256  more bps_sfp.yaml
+  257  emacs -nw panda_comcam_sim_test1.yaml
+  258  more bps_sfp.yaml
+  259  emacs -nw panda_comcam_sim_test1.yaml
+  260  history | grep main
+  261  ls -lrt /sdf/group/rubin/repo/
+  262  ls -lrt /sdf/group/rubin/repo/prompt/
+  263  ls -lrt /sdf/group/rubin/repo/prompt/u/
+  264  ls -lrt /sdf/group/rubin/repo/prompt/u/homer/
+  265  ls -lrt /sdf/group/rubin/repo/prompt/u/jchiang/
+  266  ls -lrt /sdf/group/rubin/repo/
+  267  ls -lrt /sdf/group/rubin/
+  268  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/
+  269  history | grep butler
+  270  butler query-datasets /sdf/group/rubin/repo/ops-rehearsal-3-prep/ raw --collections LSSTComCamSim/raw/all
+  271  butler query-datasets /sdf/group/rubin/repo/ops-rehearsal-3-prep/ raw --collections LSSTComCamSim/raw/all | tail -10
+  272  butler query-datasets /sdf/group/rubin/repo/ops-rehearsal-3-prep/ raw --collections LSSTComCamSim/raw/all | tail -4
+  273  pwd
+  274  ls -lrt ~/work/
+  275  ls -lrt ~/work/sdfrome002 w_2024_04 proc_comcam_sim] butler query-datasets /sdf/group/rubin/repo/ops-rehearsal-3-prep/ raw --collections LSSTComCamSim/raw/all | tail -4
+  276   raw LSSTComCamSim/raw/all bdc7da82-b232-5086-953a-592876c0946f LSSTComCamSim        8 5024032100299    i            i_06
+  277   raw LSSTComCamSim/raw/all 50a2251c-2d04-549a-a8ef-bed9b0a1beb2 LSSTComCamSim        4 5024032100720    r            r_03
+  278   raw LSSTComCamSim/raw/all 838c9942-fd97-506e-9eb4-7f2dcb580346 LSSTComCamSim        4 5024032100780    i            i_06
+  279  ls -lrt ~/work/panda_aux_test1.yaml
+  280  more ~/work/panda_aux_test1.yaml
+  281  ls -lrt
+  282  emacs -nw panda_comcam_sim_test1.yaml
+  283  more ~/work/panda_aux_test1.yaml
+  284  grep -i collection ~/work/panda_aux_test1.yaml
+  285  emacs -nw panda_comcam_sim_test1.yaml
+  286  history | grep bps
+  287  bps submit panda_comcam_sim_test1.yaml
+  288  more /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/panda_comcam_sim_rubin_flat_50240117_w_2024_04/20240201T205825Z/quantumGraphGeneration.out
+  289     ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/
+  290  lsd -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exac
+  291  lsd -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact-ext/share/eups/Linux64/drp_pipe/g02b5a80f42+58bc5fa8ba/pipelines/
+  292  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact-ext/share/eups/Linux64/drp_pipe/g02b5a80f42+58bc5fa8ba/pipelines/
+  293  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact-ext/share/eups/Linux64/drp_pipe/g02b5a80f42+58bc5fa8ba/pipelines/LATISS/
+  294  ls -lrtt
+  295  grep sfp *.yaml
+  296  emacs -nw panda_comcam_sim_test1.yaml
+  297  ls -lrt pipelines/
+  298  more pipelines/sfp.yaml 
+  299      ls -lrt
+  300  bps submit panda_comcam_sim_test1.yaml
+  301  more /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/panda_comcam_sim_rubin_flat_50240117_w_2024_04/20240201T210654Z/quantumGraphGeneration.out
+  302     grep -i incollection *yaml
+  303  emacs -nw panda_comcam_sim_test1.yaml
+  304  bps submit panda_comcam_sim_test1.yaml
+  305  emacs -nw panda_comcam_sim_test1.yaml
+  306  bps submit panda_comcam_sim_test1.yaml
+  307   ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/
+  308  history | grep setup | grep w
+  309  cd
+  310  cd work
+  311  ls -lrt
+  312  more sub5.txt
+  313  ls -lrt
+  314  ls -lrt | grep -i ex
+  315  cd ..
+  316  ls -lrt
+  317  cd u
+  318  ls -lrt
+  319  ls -lrt panda
+  320  cd ..
+  321  ls -lrt
+  322  more lssteo_setup.notes 
+  323  more one-ts8.sh
+  324  ls -lrt
+  325  cd work
+  326  ls -lrt | grep -v yam;
+  327  ls -lrt | grep -v yaml
+  328  ls -lrt | egrep -v "yaml|log"
+  329  more setup_panda.sh 
+  330  grep setup_panda ~/*
+  331  source setup_panda.sh w_2024_04
+  332  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/panda_env/v
+  333  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/panda_env/
+  334  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/panda_env/v1.0.11/
+  335  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/panda_env/v1.0.11/setup_panda_s3df.sh
+  336  more setup_panda.sh 
+  337  cp -p setup_panda.sh ~/proc_comcam_sim/
+  338  cd ~/proc_comcam_sim/
+  339  emacs -nw setup_panda.sh 
+  340  . setup_panda.sh w_2024_04
+  341  bps submit panda_comcam_sim_test1.yaml
+  342  ls -lrt submit/
+  343  ls -lrt submit/u/homer/
+  344  ls -lrt submit/u/homer/panda_comcam_sim_rubin_flat_50240117_w_2024_04/
+  345  ls -lrt submit/u/homer/panda_comcam_sim_rubin_flat_50240117_w_2024_04/20240202T211031Z/
+  346  ls -lrt
+  347  ls -lrt ops_out/
+  348  ls -lrt ops_out/sfp_checks_w_2024_04/
+  349  cat > wf.loc
+  350  ls -lrt /sdf/group/rubin/repo/
+  351  ls -lrt /sdf/group/rubin/repo/oga/
+  352  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/
+  353  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/LSSTComCamSim/
+  354  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/LSSTComCamSim/calib/
+  355  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/
+  356  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer/
+  357  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer/sfp_checks_w_2024_04/
+  358  bps submit panda_comcam_sim_test1.yaml
+  359  echo $LSST_VERSION
+  360  source setupUSDF.sh
+  361  cd work/
+  362  cd
+  363  cd proc_comcam_sim/
+  364  source setup_panda.sh
+  365  source setup.sh
+  366  history | grep echo
+  367  echo $LSST_VERSION
+  368  ls -lrt
+  369  more setup_panda.sh
+  370  . setup_panda.sh w_2024_04
+  371  source setup.sh
+  372  ls -lrt *.yaml
+  373  bsub submit panda_comcam_sim_test1.yaml
+  374  exit
+  375  ssh -AY rubin-devl
+  376  source setupUSDF.sh
+  377  cd work
+  378  source setup_panda.sh w_2024_04
+  379  cd ../proc_comcam_sim/
+  380  source setup_panda.sh w_2024_04
+  381  source setup.sh
+  382  bps submit panda_comcam_sim_test1.yaml
+  383  ls -lrt
+  384  ls -lrt
+  385  . setupUSDF.sh
+  386  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/
+  387  source setupUSDF.sh
+  388  cd proc_comcam_sim/
+  389  ls -lrt
+  390  source setup_panda.sh
+  391  . setup.sh
+  392  emacs -nw bps_sfp.yaml
+  393  bps submit bps_sfp.yaml
+  394  ls -lrt final_job.bash 
+  395  more final_job.bash 
+  396  mv final_job.bash final_job.bash.old1
+  397  bps submit bps_sfp.yaml
+  398  bps query
+  399  bps -h
+  400  bps report
+  401  bps report 7088
+  402  bps report --id 7088
+  403  exit
+  404  ssh -AY rubin-devl
+  405  cd proc_comcam_sim/
+  406  ls -lrt
+  407  mv final_job.bash final_job.bash.old2
+  408  . setup.sh
+  409  bsub submit bps_sfp.yaml
+  410  bps submit bps_sfp.yaml
+  411  bps report --id 3132687.0
+  412  ls -lrt
+  413  . setup_panda.sh
+  414  history | grep echo
+  415  echo $LSST_VERSION
+  416  cd
+  417  . setupUSDF.sh
+  418  echo $LSST_VERSION
+  419  cd -
+  420  bps submit panda_comcam_sim_test1.yaml
+  421  . setup.sh
+  422  echo $LSST_VERSION
+  423  bps submit panda_comcam_sim_test1.yaml
+  424  bps report --id 6118
+  425  more panda_comcam_sim_test1.yaml
+  426  cat ~/setupUSDF.sh
+  427  ls -lrt setup*
+  428  cat setup_panda.sh
+  429  ls -lrt
+  430  more setup.sh
+  431   echo $LSST_VERSION
+  432  history | grep -i setup
+  433  source setup_panda.sh w_2024_04
+  434  . setup.sh
+  435  ssh -AY rubin-devl
+  436  bps report --id 7088
+  437  . setupUSDF.sh
+  438  bps report --id 7088
+  439  bps cancel --id 7088
+  440  bps cancel --global --id 7088
+  441  cd proc_comcam_sim/
+  442  cd submit
+  443  ls -lrt
+  444  cd u/homer/
+  445  ls -lrt
+  446  cd multivisit_sfp_test
+  447  ls -lrt
+  448  cd ..
+  449  ls -lrt
+  450  cd multivisit_sfp_test2
+  451  ls -lrt
+  452  cd ..
+  453  find | grep 7088
+  454  pwd
+  455  ls -lrt
+  456  ls -lrt multivisit_sfp_test2/
+  457  bps report --id multivisit_sfp_test2/20240205T184101Z
+  458  bps report --id 6118
+  459  cd ~/proc_comcam_sim/
+  460  . setup_panda.sh
+  461  bps report --id 6118
+  462  bps report --id 7088
+  463  more ~/setupUSDF.sh
+  464  set setup.sh
+  465  cat setup.sh
+  466  emacs -nw ~/setupUSDF.sh
+  467  bps cancel --id 7088
+  468   echo $PANDA_URL
+  469  eups list -s lsst_distrib
+  470  bps report --id 7088
+  471  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/
+  472  /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/ctrl_bps/
+  473  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/ctrl_bps/
+  474  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/ctrl_bps_panda/
+  475  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/ctrl_bps_panda/gfa9b1debb9+9809b5820b/
+  476  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/ctrl_bps_panda/gfa9b1debb9+9809b5820b/bin/
+  477  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/ctrl_bps_panda/gfa9b1debb9+9809b5820b/python/
+  478  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/conda/envs/lsst-scipipe-8.0.0-exact/share/eups/Linux64/ctrl_bps_panda/gfa9b1debb9+9809b5820b/python/lsst/ctrl/bps/panda/
+  479  ssh -AY rubin-devl
+  480  ls -lrt
+  481  cvd proc_comcam_sim/
+  482  ls -lrt
+  483  cd proc_comcam_sim/
+  484  ls -lrt
+  485  more setup.sh
+  486  cp -p setup.sh setup-minimal.sh
+  487  emacs -nw setup-minimal.sh
+  488  ls -lrt
+  489  mv setup-minimal.sh setup-comcamsim.sh
+  490  ls -lrt
+  491  mkdir old
+  492  cd ..
+  493  cd -
+  494  grep -i pipeline *
+  495  ls -lrt
+  496  history | grep eup[s
+  497  history | grep eups
+  498  eups list -s lsst_distrib
+  499  bps report --id 7088
+  500  cd
+  501  . setupUSDF.sh
+  502  cd -
+  503  bps report --id 7088
+  504  ls -lrt
+  505  . setupUSDF.sh
+  506  cd proc
+  507  cd proc_comcam_sim/
+  508  ls -lrt
+  509  . setup_panda.sh
+  510  . setup-comcamsim.sh
+  511  ls -lrt
+  512  echo $LSST_VERSION
+  513  bps submit panda_comcam_sim_test1.yaml
+  514  ls -lrt | tail -2
+  515  bps submit panda_comcam_sim_test1.yaml
+  516  y
+  517   
+  518  echo $LSST_VERSION
+  519  history | grep submit
+  520  history | grep setup
+  521  exit
+  522  ssh -AY rubin-devl
+  523  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/
+  524  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer/panda_comcam_sim_rubin_flat_50240117_w_2024_04
+  525  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer
+  526  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/jchiang/
+  527  chmod 777 /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer
+  528  . setup
+  529  . setupUSDF.sh
+  530  cd proc_comcam_sim/
+  531  ls -lrt
+  532  . setup_panda.sh
+  533  history | grep panda
+  534  exit
+  535  screen
+  536  top
+  537  ps -fe | grep pytest
+  538   ps
+  539  ps -f -u homer | grep pytest
+  540  ps -f -u homer
+  541  kill 1511664
+  542  kill -9 1511664
+  543  kill -9 1511664 1505817 1848425 1848425 7773 7778 1491266 1499306
+  544  ps -f -u homer
+  545  kill -9 1491266 1499306 1505817 1511664
+  546  cd proc_comcam_sim/
+  547  cd obs_lsst
+  548  scons
+  549  cd
+  550  . setupUSDF.sh
+  551  pwd
+  552  cd proc_comcam_sim/
+  553  cd obs_lsst
+  554  scons
+  555  cd ../drp_pipe
+  556  scons
+  557  screen -r
+  558  screen -dr
+  559  screen -ls
+  560  screen -l
+  561  screen --help
+  562  exit
+  563  ssh -AY rubin-devl
+  564  screen -r
+  565  screen -ls
+  566  screen
+  567  top
+  568  top -u homer
+  569  ls -lrt
+  570  cd proc_comcam_sim/
+  571  ls -lrt
+  572  ps -f -u homer
+  573  exit
+  574  screen -r
+  575  screen -dr
+  576  ssh -AY rubin-devl
+  577  screen -r
+  578  screen -dr
+  579  screen -r
+  580  screen -dr
+  581  screen -r
+  582  screen -ls
+  583  exit
+  584  screen -ls
+  585  screen -r
+  586  . setupUSDF.sh
+  587  cd proc_comcam_sim/
+  588  source setup_panda.sh w_2024_04
+  589  . setup-comcamsim.sh 
+  590  grep -i version *.sh
+  591  echo $LSST_veRSION
+  592  echo $LSST_VERSION
+  593  echo $LSST_DISTRIB
+  594  cat setup.sh
+  595  grep /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/ *
+  596  emacs -nw setup.sh
+  597  more /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/loadLSST-ext.sh
+  598  more /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/loadLSST.sh
+  599  more /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/loadLSST-ext.sh
+  600  more /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_04/loadLSST.sh
+  601  history | tail -10
+  602  history | tail -20
+  603  bps submit panda_comcam_sim_test1.yaml
+  604  ls -lrt
+  605  more setup-comcamsim.sh 
+  606  ls -lrt *.yaml
+  607  emacs -nw panda_comcam_sim_test1.yaml
+  608  bps submit panda_comcam_sim_test1.yaml
+  609  bps query
+  610  history | grep bps
+  611  bps report --id 7152
+  612   
+  613  ls -lrt
+  614  more panda_comcam_sim_test1.yaml
+  615    grep -i request *yaml
+  616  grep -i request ~/*.yaml
+  617  grep -H -i request ~/*.yaml
+  618  more /sdf/home/h/homer/bps_usdf.yaml
+  619  ls -lrt
+  620  emacs -nw panda_comcam_sim_test1.yaml
+  621  bps submit panda_comcam_sim_test1.yaml
+  622  bps report --id 7193
+  623  find --name rawFormatter
+  624  find -name rawFormatter
+  625  grep -i rawformatter *
+  626  ls -lrt
+  627  ls -lrt | grep -i obs
+  628  ls -lrt obs_lsst/
+  629  find -name \*Formatter\*
+  630  grep obs_lsst *
+  631  cd obs_lsst
+  632  git status
+  633  cd ..
+  634  grep DM *yaml
+  635  grep DM ~/*.yaml
+  636  ls -lrt
+  637  emacs -nw panda_comcam_sim_test1.yaml
+  638  history | grep clone
+  639  emacs -nw panda_comcam_sim_test1.yaml
+  640  cd obs_lsst
+  641  git status
+  642  cd ..
+  643  emacs -nw panda_comcam_sim_test1.yaml
+  644  cp -p panda_comcam_sim_test1.yaml panda_comcam_sim_test2.yaml
+  645  bps submit panda_comcam_sim_test2.yaml
+  646  bps report --id 7194
+  647  cd ..
+  648  tar -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim
+  649  ls -lrt
+  650  du -sh hn-pcc-sim-bck1.tgz
+  651  rm hn-pcc-sim-bck1.tgz
+  652  pwd
+  653  tar --exclude=\*.fits -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim
+  654  rm hn-pcc-sim-bck1.tgz
+  655  tar --exclude=\*.fits --exclude=\*.fits.gz -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim
+  656  ls -lrt
+  657  du -sh hn-pcc-sim-bck1.tgz
+  658  rm hn-pcc-sim-bck1.tgz
+  659  tar --exclude=\*.fits --exclude=\*.fits.gz -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim\*.* proc_comcam_sim/LSSTComCamSim
+  660  tar --exclude=\*.fits --exclude=\*.fits.gz -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim\*.*
+  661  tar --exclude=\*.fits --exclude=\*.fits.gz -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim/\*.*
+  662  tar --exclude=\*.fits --exclude=\*.fits.gz -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim/*.*
+  663  rm hn-pcc-sim-bck1.tgz
+  664  tar --exclude=\*.fits --exclude=\*.fits.gz -vzcf hn-pcc-sim-bck1.tgz proc_comcam_sim/*.* setup* LSST*
+  665  ls -lrt
+  666  scp -p hn-pcc-sim-bck1.tgz homer@centos7:
+  667  cd LSSTComCamSim/
+  668  ls -lrt
+  669  cd calib/
+  670  ls -lrt
+  671  cd unbounded/camera/
+  672  ls -lrt
+  673  cd /sdf/group/rubin/repo/ops-rehearsal-3-prep/
+  674  ls -lrt
+  675  cd u/homer/
+  676  ls -lrt
+  677  cd panda_comcam_sim_rubin_flat_50240117_w_2024_04/20240212T013733Z/
+  678  ls -lrt
+  679  find -name \*fits
+  680  pwd
+  681  cd
+  682  cd proc_comcam_sim/
+  683  ls -lrt
+  684  ln -s /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/homer/panda_comcam_sim_rubin_flat_50240117_w_2024_04/20240212T013733Z outputpandajob1
+  685  ls -lrt
+  686  more setup-comcamsim.sh
+  687  ls -lrt
+  688  more panda_comcam_sim_test2.yaml 
+  689  ls -lrt
+  690  ls -lrt | grep -i drp
+  691  git clone git@github.com:lsst/drp_pipe.git
+  692  ls -lrt
+  693  cd drp_pipe
+  694  ls -lrt
+  695  git status
+  696  git checkout tickets/DM-42862
+  697  ls -lrt
+  698  cd pipelines/
+  699  ls -lrt
+  700  cd LSSTComCamSim
+  701  ls -lrt
+  702  pwd
+  703  cp -p DRP.yaml ~/proc_comcam_sim/
+  704  cd ~/proc_comcam_sim/
+  705  ls -lrt
+  706  more panda_comcam_sim_test2.yaml
+  707  mv DRP.yaml DRP-hn1.yaml
+  708  ls -lrt
+  709  cp -p panda_comcam_sim_test2.yaml panda_comcam_sim_DRP.yaml
+  710  emacs -nw panda_comcam_sim_DRP.yaml
+  711  more panda_comcam_sim_test2.yaml
+  712  head -10 panda_comcam_sim_test2.yaml
+  713  grep PWD *
+  714  ls -lrt
+  715  ls -lrt set*
+  716  more setup-comcamsim.sh 
+  717  ls -lrt *set*
+  718  more setup_panda.sh
+  719  ls -lrt pipe*
+  720  ls -lrtd pipe*
+  721  ls -lrt pipelines/
+  722  mv DRP-hn1.yaml pipelines/
+  723  more pipelines/sfp.yaml 
+  724  emacs -nw pipelines/DRP-hn1.yaml 
+  725  cd ..
+  726  cd -
+  727  ls -lrt
+  728  emacs -nw panda_comcam_sim_DRP.yaml
+  729  emacs -nw pipelines/DRP-hn1.yaml
+  730  cd ..
+  731  cd -
+  732  ls -lrt
+  733  emacs -nw panda_comcam_sim_DRP.yaml
+  734  ls -lrt
+  735  bps submit panda_comcam_sim_DRP.yaml
+  736  emacs -nw panda_comcam_sim_DRP.yaml
+  737  bps submit panda_comcam_sim_DRP.yaml
+  738  emacs -nw panda_comcam_sim_DRP.yaml
+  739  bps submit panda_comcam_sim_DRP.yaml
+  740   
+  741  ls -lrt
+  742  emacs -nw pipelines/DRP-hn1.yaml
+  743  bps submit panda_comcam_sim_DRP.yaml
+  744  emacs -nw pipelines/DRP-hn1.yaml
+  745  bps submit panda_comcam_sim_DRP.yaml
+  746  emacs -nw pipelines/DRP-hn1.yaml
+  747   ls -lrt
+  748  cd drp_pipe/
+  749  ls -lrt
+  750  cd pipelines/LSSTComCamSim/
+  751  ls -lrt
+  752  cp -p DRP.yaml DRP.yaml.o1
+  753  git pull
+  754  cd ..
+  755  ls -lrt
+  756  cd ../..
+  757  ls -lrt
+  758  mv drp_pipe drp_pipe.1
+  759  git clone git@github.com:lsst/drp_pipe.git
+  760  ls -lrt
+  761  cd drp_pipe.1/
+  762  git status
+  763  cd ../drp_pipe
+  764  git checkout tickets/DM-42862
+  765  cd ..
+  766  diff drp_pipe/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml  drp_pipe.1/pipelines/LSSTComCamSim/DRP.yaml
+  767       cd ..
+  768  ls -lrt
+  769  cd -
+  770  cp -p drp_pipe/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml pipelines/
+  771  ls -lrt
+  772  emacs -nw panda_comcam_sim_DRP.yaml
+  773  ls -lrt pipelines/
+  774  emacs -nw panda_comcam_sim_DRP.yaml
+  775  bps submit panda_comcam_sim_DRP.yaml
+  776  cd
+  777  ls -lrt
+  778  du -sh *
+  779  du -s *  | sort -n
+  780  cd proc_comcam_sim/
+  781  du -s *  | sort -n
+  782  cd ..
+  783  git clone git@github.com:hneal/misc_scripts.git
+  784  cd misc_scripts/
+  785  ls -lrt ../
+  786  mkdir proc_comcam_sim
+  787  cd proc_comcam_sim/
+  788  cp -p ../../setupUSDF.sh
+  789  cp -p ../../setupUSDF.sh .
+  790  ls -lrt  ~/proc_comcam_sim/
+  791  ls -lrt  ~/proc_comcam_sim/ | more
+  792  cp -p  ~/proc_comcam_sim/*.* .
+  793  ls -lrt
+  794  pwd
+  795  cp -rp  ~/proc_comcam_sim/pipelines .
+  796  ls -lrt
+  797  rm -v *.*~
+  798  ls -lrt
+  799  more u_homer_multivisit_sfp_test2_20240205T171537Z.qgraph
+  800  rm *.qgraph
+  801  ls -lrt
+  802  rm final_*
+  803  ls -lrt
+  804  cd pipelines/
+  805  ls -lrt
+  806  rm -v *.*~
+  807  cd ..
+  808  ls -lrt
+  809  cd ..
+  810  cd -
+  811  rm old-sfp_checks_w_2024_04_json.tgz 
+  812  cd -
+  813  git add proc_comcam_sim/
+  814  git commit -a
+  815  git push --all -u
+  816  cd ~/proc_comcam_sim/
+  817  ls -lrt
+  818  more panda_comcam_sim_DRP.yaml
+  819  ls -lrt /sdf/group/rubin/repo/ops-rehearsal-3-prep/u/jchiang/flat_50240117_w_2024_04*
+  820  more panda_comcam_sim_DRP.yaml
+  821  cd pipelines/
+  822  ls -lrt
+  823  more DRP-ops-rehearsal-3.yaml
+  824  cd ..
+  825  ls -lrt
+  826  cd drp_pipe
+  827  find -name \*yaml
+  828  find -name \*yaml | xargs -n -1 grep -i talk
+  829  find -name \*yaml | xargs -n 1 grep -i talk
+  830  find -name \*yaml | xargs -n 1 grep -h -i talk
+  831  find -name \*yaml | xargs -n 1 grep -H -i talk
+  832  emacs -nw DRP-ops-rehearsal-3.yaml
+  833  emacs -nw ./pipelines/_ingredients/DECam/DRP.yaml:
+  834  emacs -nw ./pipelines/_ingredients/DECam/DRP.yaml
+  835  cd
+  836  cd proc_comcam_sim/
+  837  cd pipelines/
+  838  ls -lrt
+  839  cp -p DRP-ops-rehearsal-3.yaml DRP-ops-rehearsal-3-hn1.yaml
+  840  emacs -nw DRP-ops-rehearsal-3-hn1.yaml 
+  841  cd
+  842  cd proc_comcam_sim/
+  843  ls -lrt
+  844  emacs -nw panda_comcam_sim_DRP.yaml
+  845  history | grep -i butler
+  846  butler query-datasets /sdf/group/rubin/repo/ops-rehearsal-3-prep/ raw --collections LSSTComCamSim/raw/all | tail -4
+  847  emacs -nw panda_comcam_sim_DRP.yaml
+  848  bps submit panda_comcam_sim_DRP.yaml
+  849  pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_50240117_w_2024_04,refcats,skymaps -o u/yusra/DM-42862/pipeline_test2 -p $DRP_PIPE_DIR/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step1,step2a,step2b,step2d,step2e,step3,step4,step5,step6,step7  -d "exposure=5024032100061 AND  detector=0 AND skymap='DC2'" --register-dataset-type
+  850  grep register *
+  851  more sfp.ya
+  852  more sfp.sh
+  853  ls -lrt *.sh
+  854  more run_sfp.sh
+  855  pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_50240117_w_2024_04,refcats,skymaps -o u/yusra/DM-42862/pipeline_test2 -p $DRP_PIPE_DIR/pipelines/LSSTComCamSim/DRP-ops-rehearsal-3.yaml#step1,step2a,step2b,step2d,step2e,step3,step4,step5,step6,step7  -d "exposure=5024032100061 AND  detector=0 AND skymap='DC2'" --register-dataset-types
+  856  pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_50240117_w_2024_04,refcats,skymaps -o u/yusra/DM-42862/pipeline_test2 -p pipelines/DRP-ops-rehearsal-3-hn1.yaml#step1,step2a,step2b,step2d,step2e,step3,step4,step5,step6,step7  -d "exposure=5024032100061 AND  detector=0 AND skymap='DC2'" --register-dataset-types
+  857  pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_50240117_w_2024_04,refcats,skymaps -o u/homer/DM-42862/pipeline_test2 -p pipelines/DRP-ops-rehearsal-3-hn1.yaml#step1,step2a,step2b,step2d,step2e,step3,step4,step5,step6,step7  -d "exposure=5024032100061 AND  detector=0 AND skymap='DC2'" --register-dataset-types
+  858   cat > pipe-cmnd.sh
+  859  pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_50240117_w_2024_04,refcats,skymaps -o u/homer/DM-42862/pipeline_test2 -p pipelines/DRP-ops-rehearsal-3-hn1.yaml#step1  -d "exposure=5024032100061 AND  detector=0 AND skymap='DC2'" --register-dataset-types
+  860   cat > pipe-cmnd-step1.sh
+  861  emacs -nw pipelines/DRP-ops-rehearsal-3-hn1.yaml
+  862  pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_50240117_w_2024_04,refcats,skymaps -o u/homer/DM-42862/pipeline_test2 -p pipelines/DRP-ops-rehearsal-3-hn1.yaml#step1  -d "exposure=5024032100061 AND  detector=0 AND skymap='DC2'" --register-dataset-types
+  863  emacs -nw pipelines/DRP-ops-rehearsal-3-hn1.yaml
+  864  pipetask run -b /repo/ops-rehearsal-3-prep -i u/jchiang/bfk_50240117_w_2024_04,refcats,skymaps -o u/homer/DM-42862/pipeline_test2 -p pipelines/DRP-ops-rehearsal-3-hn1.yaml#step1  -d "exposure=5024032100061 AND  detector=0 AND skymap='DC2'" --register-dataset-types
+  865  pwd
+  866  . pipe-cmnd.sh
+  867  cat pipe-cmnd.sh
+  868  ls -lrt
+  869  more panda_comcam_sim_DRP.yaml
+  870  emacs -nw panda_comcam_sim_DRP.yaml
+  871  bps submit panda_comcam_sim_DRP.yaml
+  872  cd obs_lsst
+  873  git pull
+  874  ls -lrt
+  875  git status
+  876  git pull
+  877  pwd
+  878  cd ..
+  879  ls -lrt
+  880  more setup-comcamsim.sh 
+  881  grep -i obs setup-comcamsim.sh 
+  882  grep -i dev setup-comcamsim.sh 
+  883  man setup
+  884  which setup
+  885  exit
+  886  ls -lrt
+  887  ssh -AY rubin-devl
+  888  pwd
+  889  ls -lrt /sdf/home/y/yusra/v*
+  890  ls -lrt
+  891  cd proc_comcam_sim/
+  892  ls -lrt
+  893  diff ~/proc_comcam_sim/panda_comcam_sim_DRP.yaml .
+  894  pwd
+  895  cd ../misc_scripts/proc_comcam_sim/
+  896  diff ~/proc_comcam_sim/panda_comcam_sim_DRP.yaml .
+  897  cp -p ~/proc_comcam_sim/panda_comcam_sim_DRP.yaml .
+  898  git status
+  899  git add panda_comcam_sim_DRP.yaml 
+  900  git status
+  901  git commit -a
+  902  more panda_comcam_sim_DRP.yaml 
+  903  man scons
+  904  git push --all -u
+  905  ls -lrt
+  906  . setupUSDF.sh
+  907  cd proc_comcam_sim/
+  908  history | grep setup
+  909  source setup_panda.sh w_2024_04
+  910  bps submit panda_comcam_sim_DRP.yaml
+  911   
+  912  ls -lrt
+  913  emacs -nw panda_comcam_sim_DRP.yaml
+  914  bps submit panda_comcam_sim_DRP.yaml
+  915  emacs -nw panda_comcam_sim_DRP.yaml
+  916  bps submit panda_comcam_sim_DRP.yaml
+  917  ls -lrt setup*
+  918  . setup-comcamsim.sh 
+  919  bps submit panda_comcam_sim_DRP.yaml
+  920  ls -lrt
+  921  emacs -nw panda_comcam_sim_DRP.yaml
+  922  emacs -nw setup-comcamsim.sh 
+  923  exit
+  924  cd proc_comcam_sim/
+  925  ls -lrt
+  926  more panda_comcam_sim_DRP.yaml 
+  927  ls -lrt
+  928  cat test1.sh
+  929  pwd
+  930  cp -p panda_comcam_sim_DRP.yaml ~/misc_scripts/proc_comcam_sim/
+  931  cd ~/misc_scripts/
+  932  git status
+  933  git commit -a
+  934  git push --all -u
+  935   cd
+  936  cd proc_comcam_sim/
+  937  ls -lrt
+  938  ps -fe | grep pipeline
+  939  exit
+  940  ls -lrt .lsst/
+  941  emacs -nw ~/.lsst/condor-info.py
+  942  cd proc_comcam_sim/
+  943  cat > htallocate.sh
+  944  condor_q
+  945  cd
+  946  . setupUSDF.sh
+  947  more setupUSDF.sh
+  948  cd proc_comcam_sim/
+  949  grep lsst_distrib *
+  950  cd -
+  951  condor_q
+  952  cd proc_comcam_sim/
+  953  history | grep setup
+  954  source setup_panda.sh w_2024_08
+  955  ls -lrt setup*
+  956  pwd
+  957  source setup_panda.sh w_2024_08
+  958  more setup_panda.sh
+  959  source setup_panda.sh w_2024_07
+  960  source setup_panda.sh w_2024_04
+  961  exit
+  962  ssh -AY rubin-devl
+  963  ssh -AY sdfroom002
+  964  ssh -AY sdfrome002
+  965  ps -fe | grep pipeline
+  966  exit
+  967  . setupUSDF.sh
+  968  cd proc_comcam_sim/
+  969  history | grep setup
+  970  source setup_panda.sh w_2024_08
+  971  . setup-comcamsim.sh
+  972  ls -lrt
+  973  more test1.sh 
+  974  ls -lrt *.yaml
+  975  mpre bps_sfp.yaml
+  976  more bps_sfp.yaml
+  977  cp -p bps_sfp.yaml bps_test1.yaml
+  978  more panda_comcam_sim_DRP.yaml 
+  979  emacs -nw bps_test1.yaml 
+  980  ls -lrt drp_pipe/
+  981  ls -lrt
+  982  more panda_comcam_sim_DRP.yaml 
+  983  emacs -nw panda_comcam_sim_DRP.yaml 
+  984  emacs -nw bps_test1.yaml 
+  985  emacs -nw panda_comcam_sim_DRP.yaml 
+  986  emacs -nw bps_test1.yaml 
+  987  emacs -nw panda_comcam_sim_DRP.yaml 
+  988  emacs -nw bps_test1.yaml 
+  989  emacs -nw panda_comcam_sim_DRP.yaml 
+  990  emacs -nw bps_test1.yaml 
+  991  emacs -nw panda_comcam_sim_DRP.yaml 
+  992  emacs -nw bps_test1.yaml 
+  993  eups list -s lsst_distrib
+  994  setup lsst_distrib -t w_2024_08
+  995  head -10 ~/setupUSDF.sh
+  996  ls -lrt /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/
+  997  head -10 ~/setupUSDF.sh
+  998  exit
+  999  source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/w_2024_08/loadLSST.bash
+ 1000  emacs -nw setupUSDF.sh
+ 1001  eups list -s lsst_distrib
+ 1002  setup lsst_distrib
+ 1003  eups list lsst_distrib
+ 1004  cd proc_comcam_sim/
+ 1005  ls -lrt | tail -5
+ 1006  bps submit bps_test1.yaml
+ 1007  emacs -nw bps_test1.yaml
+ 1008  bps submit bps_test1.yaml
+ 1009  man cat
+ 1010  cat -A bps_test1.yaml
+ 1011  emacs -nw bps_test1.yaml
+ 1012  bps submit bps_test1.yaml
+ 1013  emacs -nw bps_test1.yaml
+ 1014  bps submit bps_test1.yaml
+ 1015  condor_q
+ 1016  bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240222T225900Z
+ 1017  emacs -nw alloc_setup.sh
+ 1018  allocateNodes.py --auto --account rubin:developers -n 50 -m 4-00:00:00 -q milano -g 240 s3df
+ 1019  sbatch --cpus-per-task 16 --mem 65536 -J glide_homer /sdf/scratch/users/h/homer/condor_scratch/homer_2024_0222_151703/configs/alloc_homer_2024_0222_151703.slurm
+ 1020  allocateNodes.py --auto --account rubin:default -n 50 -m 4-00:00:00 -q milano -g 240 s3df
+ 1021  bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240222T225900Z
+ 1022  history | tail -100 > hist.9
+ 1023  bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240222T225900Z
+ 1024  condor_q
+ 1025  squeue 
+ 1026  squeue  | grep -i homer
+ 1027  squeue  | head
+ 1028  squeue  | head -100
+ 1029  ls -lrt *.sh
+ 1030  emacs -nw alloc_setup.sh 
+ 1031  bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240222T225900Z
+ 1032  man watch
+ 1033  watch -n 30 bps report --id  /sdf/home/h/homer/proc_comcam_sim/submit/u/homer/htc-test1/20240222T225900Z
+ 1034  more hist.9
+ 1035  history > hist.10

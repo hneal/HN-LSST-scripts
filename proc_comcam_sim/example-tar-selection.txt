@@ -1,0 +1,1 @@
+[sdfrome002 w_2024_04 ops_out] find -name \*json | tar -vzcf ~/sfp_checks_w_2024_04_json.tgz -T -
