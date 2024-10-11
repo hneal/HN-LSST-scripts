@@ -16,4 +16,5 @@ subsys=$1
 category=$2
 props=$3
 #ssh lsstcam-mcm
-cfs cat config/$category/Limits/$props.properties | grep -v "^#" | sed 's/=/ /' | awk '{print $1}' | sed 's/\/limit..//' | sed 's/\/warn..//' | uniq | xargs -n 1 --replace=CHAN ./chanLims_3.sh \^$1/CHAN\$ | tee $category.dat
+cfs cat config/$category/Limits/$props.properties > oldprops.temp
+grep -v "^#" oldprops.temp | sed 's/=/ /' | awk '{print $1}' | sed 's/\/limit..//' | sed 's/\/warn..//' | uniq | xargs -n 1 --replace=CHAN ./chanLims_3.sh \^$1/CHAN\$ | tee $category.dat
