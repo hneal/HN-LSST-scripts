@@ -72,11 +72,11 @@ for chan in keys:
 
     stddev = fld[3]
     print("stddev = ",stddev)
-    if (float(fld[4])!=float(fld[4])) :
+    if (float(fld[4])!=float(fld[5])) :
         stddev = fld[3]
     else :
-        if (float(fld[3])!=0) :
-            stddev = 0.1*float(fld[3])
+        if (float(fld[4])!=0.00) :
+            stddev = 0.1*float(fld[4])
         else :
             stddev = 0.1
 
@@ -84,18 +84,18 @@ for chan in keys:
 
 
     # output the results
-    print(subpath+"/limitHi = {:0.2f} ".format(float(fld[2])+3.0*float(stddev)))
-    print(subpath+"/warnHi = {:0.2f} ".format(float(fld[2])+2.0*float(stddev)))
-    print(subpath+"/warnLo = {:0.2f} ".format(float(fld[1])-2.0*float(stddev)))
-    print(subpath+"/limitLo = {:0.2f} ".format(float(fld[1])-3.0*float(stddev)))
+    print(subpath+"/limitHi = {:0.2f} ".format(float(fld[5])+3.0*float(stddev)))
+    print(subpath+"/warnHi = {:0.2f} ".format(float(fld[5])+2.0*float(stddev)))
+    print(subpath+"/warnLo = {:0.2f} ".format(float(fld[4])-2.0*float(stddev)))
+    print(subpath+"/limitLo = {:0.2f} ".format(float(fld[4])-3.0*float(stddev)))
 
     if subpath+"/limitHi" in allchan:
-        fpout.write(subpath+"/limitHi = {:0.2f} ".format(float(fld[2])+3.0*float(stddev))+"\n")
+        fpout.write(subpath+"/limitHi = {:0.2f} ".format(float(fld[5])+3.0*float(stddev))+"\n")
     if subpath+"/warnHi" in allchan:
-        fpout.write(subpath+"/warnHi = {:0.2f} ".format(float(fld[2])+2.0*float(stddev))+"\n")
+        fpout.write(subpath+"/warnHi = {:0.2f} ".format(float(fld[5])+2.0*float(stddev))+"\n")
     if subpath+"/warnLo" in allchan:
-        fpout.write(subpath+"/warnLo = {:0.2f} ".format(float(fld[1])-2.0*float(stddev))+"\n")
+        fpout.write(subpath+"/warnLo = {:0.2f} ".format(float(fld[4])-2.0*float(stddev))+"\n")
     if subpath+"/limitLo" in allchan:
-        fpout.write(subpath+"/limitLo = {:0.2f} ".format(float(fld[1])-3.0*float(stddev))+"\n")
+        fpout.write(subpath+"/limitLo = {:0.2f} ".format(float(fld[4])-3.0*float(stddev))+"\n")
 
 fpout.close()
