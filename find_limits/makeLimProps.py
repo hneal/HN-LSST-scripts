@@ -26,7 +26,32 @@ subsys=sys.argv[1]
 category=sys.argv[2]
 props=sys.argv[3]
 
+
+tm = None
+if len(sys.argv) > 4 :
+    tm=sys.argv[4]
+
+# ---- current source run parameters ----
+# https://rubinobs.atlassian.net/projects/BLOCK?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.kanoah.test-manager__main-project-page#!/v2/testCase/BLOCK-T132
+# Estimated 4h 54m
+# 07/Oct/24 4:58 am
+# ----------------------------------------
+start="Oct 2 03:00:00 AM UTC 2024"
+dur="1d"
+# -- old --
+start="Oct 7 04:58:00 AM UTC 2024"
+dur="3h"
+
+
+print("subsystem = ",subsys)
+print("category = ",category)
+print("properties name = ",props)
+print("(optional) previous ns time of dat file to use = ",tm)
+
+
 strns = str(time.time_ns())
+if tm != None:
+    strns = str(tm)
 tmp_file = "oldprops_"+strns+".temp"
 out_file = props+"-operational_"+strns+".properties"
 
@@ -47,8 +72,7 @@ for ln in fp:
 
 print("keys = \n",keys)
 
-start="Oct 2 03:00:00 AM UTC 2024"
-dur="1d"
+# --------- start processing and recording results --------------
 
 fpout=open(out_file,"a")
 
@@ -84,18 +108,18 @@ for chan in keys:
 
 
     # output the results
-    print(subpath+"/limitHi = {:0.2f} ".format(float(fld[5])+3.0*float(stddev)))
-    print(subpath+"/warnHi = {:0.2f} ".format(float(fld[5])+2.0*float(stddev)))
-    print(subpath+"/warnLo = {:0.2f} ".format(float(fld[4])-2.0*float(stddev)))
-    print(subpath+"/limitLo = {:0.2f} ".format(float(fld[4])-3.0*float(stddev)))
+    print(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev)))
+    print(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev)))
+    print(subpath+"/warnLo = {:0.3g} ".format(float(fld[4])-2.0*float(stddev)))
+    print(subpath+"/limitLo = {:0.3g} ".format(float(fld[4])-3.0*float(stddev)))
 
     if subpath+"/limitHi" in allchan:
-        fpout.write(subpath+"/limitHi = {:0.2f} ".format(float(fld[5])+3.0*float(stddev))+"\n")
+        fpout.write(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev))+"\n")
     if subpath+"/warnHi" in allchan:
-        fpout.write(subpath+"/warnHi = {:0.2f} ".format(float(fld[5])+2.0*float(stddev))+"\n")
+        fpout.write(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev))+"\n")
     if subpath+"/warnLo" in allchan:
-        fpout.write(subpath+"/warnLo = {:0.2f} ".format(float(fld[4])-2.0*float(stddev))+"\n")
+        fpout.write(subpath+"/warnLo = {:0.3g} ".format(float(fld[4])-2.0*float(stddev))+"\n")
     if subpath+"/limitLo" in allchan:
-        fpout.write(subpath+"/limitLo = {:0.2f} ".format(float(fld[4])-3.0*float(stddev))+"\n")
+        fpout.write(subpath+"/limitLo = {:0.3g} ".format(float(fld[4])-3.0*float(stddev))+"\n")
 
 fpout.close()
