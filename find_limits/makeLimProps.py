@@ -60,10 +60,22 @@ subprocess.call("cfs cat config/"+category+"/Limits/"+props+".properties > "+tmp
 
 # make lists of all channels and unique keys
 fp=open(tmp_file)
+
 keys = []
 allchan = []
+states = []
+idx = 0
+
 for ln in fp:
-    if ("/" in ln):
+    idx = idx + 1
+
+    # this is for a quick test ... otherwise comment out
+    #    if idx%200 != 0 :
+    #        continue
+    
+    if "State" in ln and "/" in ln :
+        states.append(ln)
+    elif ("/" in ln):
         allchan.append((ln.split())[0])
         ch = "/".join(((ln.split())[0]).split("/")[:-1])
         if ("/" in ch):
@@ -80,46 +92,53 @@ fpout=open(out_file,"a")
 # use trender to get the stats
 for chan in keys:
     print("getting stats for "+chan)
-    cmnd = "python ~/mutils/trendutils/trender.py --stats --start \""+start+"\" --duration \""+dur+"\"  -- "+subsys+"/"+chan
-    print("command = ",cmnd)
-    rtrnstr = str(subprocess.check_output(cmnd,shell=True))
-    result = rtrnstr.split("\\n")[8]
-    print("result = ",result)
+    if not "State" in chan:     # no longer needed because the keys are now for non State channels
+        cmnd = "python ~/mutils/trendutils/trender.py --stats --start \""+start+"\" --duration \""+dur+"\"  -- "+subsys+"/"+chan
+        print("command = ",cmnd)
+        rtrnstr = str(subprocess.check_output(cmnd,shell=True))
+        result = rtrnstr.split("\\n")[8]
+        print("result = ",result)
 
-    fld = result.split()
+        fld = result.split()
 
-    print("\n# --- "+chan+" ---")
-    fpout.write("\n# --- "+chan+" ---"+"\n")
+        print("\n# --- "+chan+" ---")
+        fpout.write("\n# --- "+chan+" ---"+"\n")
 
     #  cnt      mean   median   stddev      min       max    d/dt 1/m  path                                      units
     #  8567     36.07    36.08 7.105e-15      36.1     36.1   -3.25e-15  rebpower/R00/RebG/OD/VbefLDO              Volts
 
-    stddev = fld[3]
-    print("stddev = ",stddev)
-    if (float(fld[4])!=float(fld[5])) :
         stddev = fld[3]
-    else :
-        if (float(fld[4])!=0.00) :
-            stddev = 0.1*float(fld[4])
+        print("stddev = ",stddev)
+        if (float(fld[4])!=float(fld[5])) :
+            stddev = fld[3]
         else :
-            stddev = 0.1
+            if (float(fld[4])!=0.00) :
+                stddev = 0.1*float(fld[4])
+            else :
+                stddev = 0.1
+                
+        subpath = chan
 
-    subpath = chan
 
+        # output the results
+        print(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev)))
+        print(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev)))
+        print(subpath+"/warnLo = {:0.3g} ".format(float(fld[4])-2.0*float(stddev)))
+        print(subpath+"/limitLo = {:0.3g} ".format(float(fld[4])-3.0*float(stddev)))
+        
+        if subpath+"/limitHi" in allchan:
+            fpout.write(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev))+"\n")
+        if subpath+"/warnHi" in allchan:
+            fpout.write(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev))+"\n")
+        if subpath+"/warnLo" in allchan:
+            fpout.write(subpath+"/warnLo = {:0.3g} ".format(float(fld[4])-2.0*float(stddev))+"\n")
+        if subpath+"/limitLo" in allchan:
+            fpout.write(subpath+"/limitLo = {:0.3g} ".format(float(fld[4])-3.0*float(stddev))+"\n")
 
-    # output the results
-    print(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev)))
-    print(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev)))
-    print(subpath+"/warnLo = {:0.3g} ".format(float(fld[4])-2.0*float(stddev)))
-    print(subpath+"/limitLo = {:0.3g} ".format(float(fld[4])-3.0*float(stddev)))
-
-    if subpath+"/limitHi" in allchan:
-        fpout.write(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev))+"\n")
-    if subpath+"/warnHi" in allchan:
-        fpout.write(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev))+"\n")
-    if subpath+"/warnLo" in allchan:
-        fpout.write(subpath+"/warnLo = {:0.3g} ".format(float(fld[4])-2.0*float(stddev))+"\n")
-    if subpath+"/limitLo" in allchan:
-        fpout.write(subpath+"/limitLo = {:0.3g} ".format(float(fld[4])-3.0*float(stddev))+"\n")
-
+# output the original entries for the states
+for ln in states :
+    print(ln);
+    fpout.write(ln+"\n")
+        
+            
 fpout.close()
