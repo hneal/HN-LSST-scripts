@@ -69,6 +69,11 @@ idx = 0
 for ln in fp:
     idx = idx + 1
 
+    # ignore comment lines
+    if ln[0]=='#' :
+        print("Skipping comment line - ",ln) 
+        continue
+    
     # this is for a quick test ... otherwise comment out
     #    if idx%200 != 0 :
     #        continue
@@ -121,13 +126,19 @@ for chan in keys:
 
 
         # output the results
-        print(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev)))
+        if not (("focal" in subsys.lower() or "fp" in subsys.lower()) and "Reb" in subpath and "Temp" in subpath) :
+            print(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev)))
+        else :
+            print(subpath+"/limitHi = {:0.3g} ".format(25.0))
         print(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev)))
         print(subpath+"/warnLo = {:0.3g} ".format(float(fld[4])-2.0*float(stddev)))
         print(subpath+"/limitLo = {:0.3g} ".format(float(fld[4])-3.0*float(stddev)))
         
         if subpath+"/limitHi" in allchan:
-            fpout.write(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev))+"\n")
+            if not (("focal" in subsys.lower() or "fp" in subsys.lower()) and "Reb" in subpath and "Temp" in subpath) :
+                fpout.write(subpath+"/limitHi = {:0.3g} ".format(float(fld[5])+3.0*float(stddev))+"\n")
+            else :
+                fpout.write(subpath+"/limitHi = {:0.3g} ".format(25.0)+"\n")
         if subpath+"/warnHi" in allchan:
             fpout.write(subpath+"/warnHi = {:0.3g} ".format(float(fld[5])+2.0*float(stddev))+"\n")
         if subpath+"/warnLo" in allchan:
