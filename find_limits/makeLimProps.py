@@ -53,7 +53,7 @@ strns = str(time.time_ns())
 if tm != None:
     strns = str(tm)
 tmp_file = "oldprops_"+strns+".temp"
-out_file = props+"-operational_"+strns+".properties"
+out_file = category+"-operational_"+strns+".properties"
 
 # get an old categories properties file to be used for the channel list
 subprocess.call("cfs cat config/"+category+"/Limits/"+props+".properties > "+tmp_file,shell=True)
@@ -100,7 +100,13 @@ for chan in keys:
     if not "State" in chan:     # no longer needed because the keys are now for non State channels
         cmnd = "python ~/mutils/trendutils/trender.py --stats --start \""+start+"\" --duration \""+dur+"\"  -- "+subsys+"/"+chan
         print("command = ",cmnd)
-        rtrnstr = str(subprocess.check_output(cmnd,shell=True))
+
+        try:
+            rtrnstr = str(subprocess.check_output(cmnd,shell=True))
+        except:
+            print("Unable to get stats for chan - ",chan)
+            continue
+        
         result = rtrnstr.split("\\n")[8]
         print("result = ",result)
 
@@ -108,6 +114,10 @@ for chan in keys:
 
         print("\n# --- "+chan+" ---")
         fpout.write("\n# --- "+chan+" ---"+"\n")
+
+        if len(fld)<7 :
+            print("Unable to get stats for chan - ",chan," Incomplete results")
+            continue
 
     #  cnt      mean   median   stddev      min       max    d/dt 1/m  path                                      units
     #  8567     36.07    36.08 7.105e-15      36.1     36.1   -3.25e-15  rebpower/R00/RebG/OD/VbefLDO              Volts
