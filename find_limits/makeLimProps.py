@@ -105,8 +105,8 @@ def main() :
             continue
         
         # this is for a quick test ... otherwise comment out
-        if idx%200 != 0 :
-            continue
+        # if idx%200 != 0 :
+        #     continue
         
         if "State" in ln and "/" in ln :
             states.append(ln)
