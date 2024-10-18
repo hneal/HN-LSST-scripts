@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------------------
-11;rgb:2020/2121/2424# makeLimsProps.py
+# makeLimsProps.py
 # - Make limit properties 
 #  Example:
 #     python makeLimProps.py rebpower RebPowerSupply rebpower
@@ -21,6 +21,7 @@ import numpy as np
 import time
 import subprocess
 import re
+import math
 
 subsys=sys.argv[1]
 category=sys.argv[2]
@@ -152,16 +153,27 @@ def main() :
         #  cnt      mean   median   stddev      min       max    d/dt 1/m  path                                      units
         #  8567     36.07    36.08 7.105e-15      36.1     36.1   -3.25e-15  rebpower/R00/RebG/OD/VbefLDO              Volts
     
-            stddev = fld[3]
+            stddev = float(fld[3])
             print("stddev = ",stddev)
-            if (float(fld[4])!=float(fld[5])) :
-                stddev = fld[3]
-            else :
-                if (float(fld[4])!=0.00) :
-                    stddev = 0.1*float(fld[4])
-                else :
-                    stddev = 0.1
-                    
+            
+#            if (float(fld[4])!=float(fld[5])) :
+#                stddev = fld[3]
+#            else :
+#                if (float(fld[4])!=0.00) :
+#                    stddev = 0.1*float(fld[4])
+#                else :
+#                    stddev = 0.1
+
+            # This is to handle situations where stddev is too small for the formatted output
+            absmean = abs(float(fld[4])+float(fld[5]))/2.0
+            if absmean>0.0 :
+                if (stddev/absmean) < 1.0e-2 :
+                    x = 1.0e-2 * absmean
+                    sigfigs = 2
+                    stddev = round(x, -int(math.floor(math.log10(abs(x)))) + (sigfigs - 1)) # from Google AI
+                    print("using alternate stddev = ",stddev)
+
+                        
             subpath = chan
     
     
