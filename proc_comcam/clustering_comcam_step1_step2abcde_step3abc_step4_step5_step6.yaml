@@ -1,0 +1,43 @@
+clusterAlgorithm: lsst.ctrl.bps.quantum_clustering_funcs.dimension_clustering
+cluster:
+    visit_step1:
+#        pipetasks: isr,characterizeImage,calibrate,writeSourceTable,transformSourceTable
+        pipetasks: isr,characterizeImage,calibrate, writePreSourceTable,transformPreSourceTable
+#        dimensions: visit,detector
+        dimensions: visit
+        equalDimensions: visit:exposure
+#    visit_step2:
+#        pipetasks: consolidateVisitSummary,finalizeCharacterization,updateVisitSummary
+#        dimensions: visit
+    visit_step2a:
+        pipetasks: consolidatePreSourceTable,consolidateVisitSummary
+        dimensions: visit
+    patch_coaddition:
+        pipetasks: assembleCoadd,detection
+        dimensions: tract,patch,band
+    patch_detect_deblend:
+        pipetasks: mergeDetections,deblend
+        dimensions: tract,patch
+    patch_postprocess:
+        pipetasks: writeObjectTable,transformObjectTable
+        dimensions: tract,patch
+    property_maps:
+        pipetasks: healSparsePropertyMaps
+        dimensions: tract,band
+    selectGoodSeeingVisits_templateGen:
+        pipetasks: selectGoodSeeingVisits,templateGen
+        dimensions: tract,patch,band
+    source_tables:
+        pipetasks: writeRecalibratedSourceTable,transformSourceTable,consolidateSourceTable
+        dimensions: visit
+    diffim_forced_phot:
+        pipetasks: getTemplate,subtractImages,detectAndMeasureDiaSources,transformDiaSourceCat,forcedPhotDiffim,writeForcedSourceTable
+        dimensions: visit,detector
+        request_memory: 7000
+    association:
+        pipetasks: drpAssociation,drpDiaCalculation
+        dimensions: tract,patch
+    forced_phot_step5:
+        pipetasks: forcedPhotDiffOnDiaObjects,forcedPhotCcdOnDiaObjects,writeForcedSourceOnDiaObjectTable
+        dimensions: visit,detector
+#        dimensions: tract,visit,detector

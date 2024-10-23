@@ -1,0 +1,25 @@
+# butler query-datasets embargo_or4 raw --collections LATISS/raw/all | tail -20
+# pipetask run -b /repo/embargo -i LATISS/defaults  -o u/homer/DM-45691/pipeline_test3 -p ${DRP_PIPE_DIR}/pipelines/LATISS/DRP.yaml#step1 -d "instrument='LATISS' AND (exposure.day_obs>=20230509 and exposure.day_obs<=20240807) AND (exposure.observation_type='science') AND (exposure.science_program='AUXTEL_PHOTO_IMAGING' or exposure.science_program='AUXTEL_DRP_IMAGING')" --register-dataset-types -j 1
+
+includeConfigs:
+- ${CTRL_BPS_PANDA_DIR}/config/bps_usdf.yaml
+- clustering_auxtel_step1_step2abcde_step3abc_step4_step5_step6.yaml
+- requestMemory_LATISS_DRP.yaml
+
+LSST_VERSION: w_2024_33
+ 
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LATISS/DRP.yaml#step1"
+
+payload:
+  runInit: true
+  payloadName: auxtel_drp_imaging
+  butlerConfig: embargo_or4
+  inCollection: LATISS/defaults
+#  output: LATISS/runs/AUXTEL_DRP_IMAGING_20230509_20240807/w_2024_33/PREOPS-5352
+   output: u/homer/DM-45691/pipeline_step1_test4 
+   dataQuery: "instrument='LATISS' AND (exposure.day_obs>=20230509 and exposure.day_obs<=20240807) AND (exposure.observation_type='science') AND (exposure.science_program='AUXTEL_PHOTO_IMAGING' or exposure.science_program='AUXTEL_DRP_IMAGING')"
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+  payloadFolder: payload
+  
+numberOfRetries: 3
+

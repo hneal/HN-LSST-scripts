@@ -1,0 +1,21 @@
+includeConfigs:
+- ${CTRL_BPS_PANDA_DIR}/config/bps_usdf.yaml
+- clustering_auxtel_step1_step2abcde_step3abc_step4_step5_step6.yaml
+- requestMemory_LATISS_DRP.yaml
+
+LSST_VERSION: w_2024_33
+ 
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LATISS/DRP.yaml#step1"
+
+payload:
+  runInit: true
+  payloadName: auxtel_drp_imaging
+#  butlerConfig: /repo/embargo
+  butlerConfig: embargo_or4
+  inCollection: LATISS/defaults
+  output: LATISS/runs/AUXTEL_DRP_IMAGING_20230509_20240807/w_2024_33/PREOPS-5352
+  dataQuery: "instrument='LATISS' AND (exposure.day_obs>=20230509 and exposure.day_obs<=20240807) AND (exposure.observation_type='science') AND (exposure.science_program='AUXTEL_PHOTO_IMAGING' or exposure.science_program='AUXTEL_DRP_IMAGING')"
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+  payloadFolder: payload
+  
+numberOfRetries: 3
