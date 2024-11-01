@@ -27,7 +27,7 @@ fi
 #echo "performing bps submission"
 #bps submit ${subdir}/hn_cc_nightly-step1.yaml 2>&1 | tee /sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-step1-log
 
-for stepname in step1 step2a step2b step2d step2e
+for stepname in step1 step2a step2b step2d step2e step3 step7
 do
     # if step1 submit it now
     if [[ ${stepname} == "step1" ]]; then
@@ -49,10 +49,11 @@ do
 		if [[ ${pf} != "0" ]]; then
 		    echo "Collections exist for step2. Proceeding to submit next step."
 		    bps submit ${subdir}/hn_cc_nightly-${stepname}.yaml 2>&1 | tee /sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-${stepname}-log
+		    break
 		else
 		    echo "Ending. Nothing for the next step to process :-("
+		    exit
 		fi
-		exit
 	    fi
 	done
     fi
