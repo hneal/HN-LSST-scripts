@@ -38,6 +38,7 @@ campaign: DM-47059
 
 #extraQgraphOptions: --dataset-query-constraint preSourceTable
 #extraQgraphOptions: --dataset-query-constraint preSourceTable --config detection:detection.skyObjects.nSources=500 -c parameters:sasquatch_dataset_identifier=nightlyvalidation
+extraQgraphOptions: "--dataset-query-constraint src"
 
 payload:
   runInit: true

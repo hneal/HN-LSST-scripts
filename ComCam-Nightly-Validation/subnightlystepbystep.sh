@@ -1,6 +1,16 @@
 #!/bin/sh
 # script for launching nightly
-
+# -----------------------------------------
+# subnightlystepbystep
+# author: Homer for DM CM
+# circa: Nov. 2024
+#
+#  Submit Nightly Validation pipeline processing step by step.
+#
+# optional arguments:
+#   alternative obs_date: Ex. 20241028
+#   alternative list of steps: "step2d step3 step7"
+# ------------------------------------------
 subdir=/sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation
 
 echo "setting up environment"
@@ -9,7 +19,7 @@ source ${subdir}/setup_cc.sh
 echo "setting date range"
 export otherdate="$1"
 
-if [${otherdate} == ""]; then
+if [[ ${otherdate} == "" ]]; then
   export NIGHTLY_START=`date -d '-1 day' '+%Y%m%d'`
   export NIGHTLY_END=`date -d '-1 day' '+%Y%m%d'`
 #  export NIGHTLY_END=`date +%Y%m%d`
@@ -24,17 +34,24 @@ else
   echo "TEST: OVERRIDING NIGHTLY_END = ${NIGHTLY_END}"
 fi
 
+echo "setting steps to process"
+export steplist="step1 step2a step2b step2d step2e step3 step7"
+
+export usersteps="$2"
+if [[ ${usersteps} != "" ]]; then
+    export steplist="${usersteps}"
+fi
+echo "steps to process are: ${steplist}"
+
 export DISTRIB=`eups list -s lsst_distrib | awk '{print $3}'`
 echo "Using distribution: ${DISTRIB}"
 
-#echo "performing bps submission"
-#bps submit ${subdir}/hn_cc_nightly-step1.yaml 2>&1 | tee /sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-step1-log
 
-for stepname in step1 step2a step2b step2d step2e step3 step7
+for stepname in ${steplist}
 do
     # if step1 submit it now
     if [[ ${stepname} == "step1" ]]; then
-       echo "performing bps submission"
+       echo "performing bps submission for step ${stepname}"
        export curlog=/sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-${stepname}-log 
        bps submit ${subdir}/hn_cc_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
     else
