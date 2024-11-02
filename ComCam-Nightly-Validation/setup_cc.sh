@@ -6,7 +6,8 @@ echo "Running setup_cc.sh"
 #source /sdf/group/rubin/sw/tag/${LSST_VERSION}/loadLSST.bash
 
 #export LSST_VERSION=w_2024_31
-export LSST_VERSION=d_2024_10_28
+#export LSST_VERSION=d_2024_10_28
+export LSST_VERSION=d_2024_11_01
 #source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/${LSST_VERSION}/loadLSST.sh
 
 echo "Executing loadLSST.sh"

@@ -24,6 +24,9 @@ else
   echo "TEST: OVERRIDING NIGHTLY_END = ${NIGHTLY_END}"
 fi
 
+export DISTRIB=`eups list -s lsst_distrib | awk '{print $3}'`
+echo "Using distribution: ${DISTRIB}"
+
 #echo "performing bps submission"
 #bps submit ${subdir}/hn_cc_nightly-step1.yaml 2>&1 | tee /sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-step1-log
 
@@ -47,8 +50,9 @@ do
 		export pf=`bps report --id=${sd} | grep -B 1 "^finalJob" | head -1  | awk '{print $10}'`
 		# check the number of jobs successfully run before finalJob to know whether the next step should be submitted
 		if [[ ${pf} != "0" ]]; then
-		    echo "Collections exist for step2. Proceeding to submit next step."
-		    bps submit ${subdir}/hn_cc_nightly-${stepname}.yaml 2>&1 | tee /sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-${stepname}-log
+		    echo "Collections exist for ${stepname}. Proceeding to submit next step."
+		    export curlog=/sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-${stepname}-log 
+		    bps submit ${subdir}/hn_cc_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
 		    break
 		else
 		    echo "Ending. Nothing for the next step to process :-("

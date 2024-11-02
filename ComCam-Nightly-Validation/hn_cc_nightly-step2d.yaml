@@ -23,7 +23,7 @@ includeConfigs:
   - requestMemory_CC_NIGHTLY.yaml
 
 
-LSST_VERSION: d_2024_10_28
+LSST_VERSION: ${DISTRIB}
 
 #pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCam/nightly-validation.yaml#step1"
 #pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCam/nightly-validation.yaml#step2a"
@@ -45,10 +45,11 @@ payload:
   butlerConfig: embargo
   inCollection: LSSTComCam/nightlyValidation,LSSTComCam/defaults
 
-  output: u/homer/DM-47059/d_2024_10_25/pipeline_test4_${NIGHTLY_START}
-# output: LSSTComCam/runs/nightlyValidation_${NIGHTLY_START}/d_2024_10_28/DM-47059
+  output: u/homer/DM-47059/${DISTRIB}/pipeline_test4_${NIGHTLY_START}
+# output: LSSTComCam/runs/nightlyValidation_${NIGHTLY_START}/${DISTRIB}/DM-47059
 
-  dataQuery: "instrument='LSSTComCam' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND skymap='lsst_cells_v1'"
+#  dataQuery: "instrument='LSSTComCam' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND skymap='lsst_cells_v1'"
+  dataQuery: "instrument='LSSTComCam' AND skymap='lsst_cells_v1'"
 
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
 #  payloadFolder: payload
