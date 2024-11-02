@@ -47,10 +47,13 @@ export DISTRIB=`eups list -s lsst_distrib | awk '{print $3}'`
 echo "Using distribution: ${DISTRIB}"
 
 
+export firststep=`echo ${steplist} | cut -d ' ' -f1,1`
+echo "First step = ${firststep}"
+
 for stepname in ${steplist}
 do
     # if step1 submit it now
-    if [[ ${stepname} == "step1" ]]; then
+    if [[ ${stepname} == ${firststep} ]]; then
        echo "performing bps submission for step ${stepname}"
        export curlog=/sdf/home/l/lsstsvc1/sub-cc-nightly${NIGHTLY_START}-${stepname}-log 
        bps submit ${subdir}/hn_cc_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
