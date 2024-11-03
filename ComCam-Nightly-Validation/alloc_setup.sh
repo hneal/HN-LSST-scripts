@@ -5,7 +5,7 @@
 #setup -v lsst_distrib -t ${LSST_TAG}
 
 # Loop for a long time, executing "allocateNodes auto" every 10 minutes.
-for i in {1..1000}
+for i in {1..10000}
 do
     allocateNodes.py --auto --account rubin:production -n 15 -c 16 -m 4-00:00:00 -q milano -g 60 s3df
 # -maxjobs 1500
