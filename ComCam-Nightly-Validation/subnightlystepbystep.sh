@@ -45,7 +45,7 @@ if [[ ${usersteps} != "" ]]; then
 fi
 echo "steps to process are: ${steplist}"
 
-export DISTRIB=`eups list -s lsst_distrib | awk '{print $3}'`
+export DISTRIB=`eups list -s lsst_distrib | awk '{print $2}'`
 echo "Using distribution: ${DISTRIB}"
 
 
