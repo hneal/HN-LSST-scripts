@@ -27,6 +27,7 @@ if [[ ${otherdate} == "" ]]; then
 #  export NIGHTLY_END=`date +%Y%m%d`
   echo "NIGHTLY_START = ${NIGHTLY_START}"
   echo "NIGHTLY_END = ${NIGHTLY_END}"
+  export SASQ_TIMESTAMP=`date +%Y%m%d`
 else
 # --- test ---
   export NIGHTLY_START=${otherdate}
@@ -34,6 +35,7 @@ else
 #  export NIGHTLY_END=`date -d${otherdate}+1day '+%Y%m%d'`
   echo "TEST: OVERRIDING NIGHTLY_START = ${NIGHTLY_START}"
   echo "TEST: OVERRIDING NIGHTLY_END = ${NIGHTLY_END}"
+  export SASQ_TIMESTAMP=`date -d${otherdate}+1day '+%Y%m%d'`
 fi
 
 echo "setting steps to process"

@@ -30,7 +30,7 @@ pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCam/nightly-validation.yaml#step
 project: DM-47059
 campaign: DM-47059
 
-extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTComCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:20241107T000000Z --config calibrate:astrometry.matcher.maxOffsetPix=1500 --config calibrate:astromRefObjLoader.pixelMargin=1500
+extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTComCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z --config calibrate:astrometry.matcher.maxOffsetPix=1500 --config calibrate:astromRefObjLoader.pixelMargin=1500
 
 payload:
   runInit: true
