@@ -1,0 +1,123 @@
+Final bps reports for ComCam Nightly Validation for 20241101
+ X  STATE   %S     ID     OPERATOR PROJECT  CAMPAIGN  PAYLOAD                                 RUN                              
+--- ------ --- ---------- -------- -------- -------- ---------- ---------------------------------------------------------------
+    FAILED  30 23741579.0 lsstsvc1 DM-47059 DM-47059 cc_nightly u_homer_DM-47059_setup_pipeline_test4_20241101_20241103T044021Z
+
+
+Path: /sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation/submit/u/homer/DM-47059/setup/pipeline_test4_20241101/20241103T044021Z
+Global job id: sdfrome001.sdf.slac.stanford.edu#23741579.0#1730608905
+
+
+                         UNKNOWN MISFIT UNREADY READY PENDING RUNNING DELETED HELD SUCCEEDED FAILED PRUNED EXPECTED
+------------------------ ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+TOTAL                          0      0       0     0       0       0       0    0       870    371   1596     2837
+------------------------ ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+pipetaskInit                   0      0       0     0       0       0       0    0         1      0      0        1
+isr                            0      0       0     0       0       0       0    0       405      0      0      405
+characterizeImage              0      0       0     0       0       0       0    0       293    112      0      405
+calibrate                      0      0       0     0       0       0       0    0        34    259    112      405
+writePreSourceTable            0      0       0     0       0       0       0    0        34      0    371      405
+analyzeCalibrateMetadata       0      0       0     0       0       0       0    0        34      0    371      405
+calexpSummary                  0      0       0     0       0       0       0    0        34      0    371      405
+transformPreSourceTable        0      0       0     0       0       0       0    0        34      0    371      405
+finalJob                       0      0       0     0       0       0       0    0         1      0      0        1
+ X    STATE    %S     ID     OPERATOR PROJECT  CAMPAIGN  PAYLOAD                                 RUN                              
+--- --------- --- ---------- -------- -------- -------- ---------- ---------------------------------------------------------------
+    SUCCEEDED 100 23742821.0 lsstsvc1 DM-47059 DM-47059 cc_nightly u_homer_DM-47059_setup_pipeline_test4_20241101_20241103T045459Z
+
+
+Path: /sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation/submit/u/homer/DM-47059/setup/pipeline_test4_20241101/20241103T045459Z
+Global job id: sdfrome001.sdf.slac.stanford.edu#23742821.0#1730609834
+
+
+                                UNKNOWN MISFIT UNREADY READY PENDING RUNNING DELETED HELD SUCCEEDED FAILED PRUNED EXPECTED
+------------------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+TOTAL                                 0      0       0     0       0       0       0    0       732      0      0      732
+------------------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+pipetaskInit                          0      0       0     0       0       0       0    0         1      0      0        1
+consolidatePreSourceTable             0      0       0     0       0       0       0    0       146      0      0      146
+consolidateVisitSummary               0      0       0     0       0       0       0    0       146      0      0      146
+analyzePreSourceTableCore             0      0       0     0       0       0       0    0       146      0      0      146
+catalogMatchPreVisit                  0      0       0     0       0       0       0    0       146      0      0      146
+astrometricRefCatPreSourceVisit       0      0       0     0       0       0       0    0       146      0      0      146
+finalJob                              0      0       0     0       0       0       0    0         1      0      0        1
+ X    STATE    %S     ID     OPERATOR PROJECT  CAMPAIGN  PAYLOAD                                 RUN                              
+--- --------- --- ---------- -------- -------- -------- ---------- ---------------------------------------------------------------
+    SUCCEEDED 100 23743554.0 lsstsvc1 DM-47059 DM-47059 cc_nightly u_homer_DM-47059_setup_pipeline_test4_20241101_20241103T050456Z
+
+
+Path: /sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation/submit/u/homer/DM-47059/setup/pipeline_test4_20241101/20241103T050456Z
+Global job id: sdfrome001.sdf.slac.stanford.edu#23743554.0#1730610357
+
+
+                        UNKNOWN MISFIT UNREADY READY PENDING RUNNING DELETED HELD SUCCEEDED FAILED PRUNED EXPECTED
+----------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+TOTAL                         0      0       0     0       0       0       0    0        77      0      0       77
+----------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+pipetaskInit                  0      0       0     0       0       0       0    0         1      0      0        1
+isolatedStarAssociation       0      0       0     0       0       0       0    0        75      0      0       75
+finalJob                      0      0       0     0       0       0       0    0         1      0      0        1
+ X  STATE   %S     ID     OPERATOR PROJECT  CAMPAIGN  PAYLOAD                                 RUN                              
+--- ------ --- ---------- -------- -------- -------- ---------- ---------------------------------------------------------------
+    FAILED  99 23743632.0 lsstsvc1 DM-47059 DM-47059 cc_nightly u_homer_DM-47059_setup_pipeline_test4_20241101_20241103T050736Z
+
+
+Path: /sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation/submit/u/homer/DM-47059/setup/pipeline_test4_20241101/20241103T050736Z
+Global job id: sdfrome001.sdf.slac.stanford.edu#23743632.0#1730610546
+
+
+                             UNKNOWN MISFIT UNREADY READY PENDING RUNNING DELETED HELD SUCCEEDED FAILED PRUNED EXPECTED
+---------------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+TOTAL                              0      0       0     0       0       0       0    0      3942      2      0     3944
+---------------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+pipetaskInit                       0      0       0     0       0       0       0    0         1      0      0        1
+finalizeCharacterization           0      0       0     0       0       0       0    0       146      0      0      146
+updateVisitSummary                 0      0       0     0       0       0       0    0       146      0      0      146
+reprocessVisitImage                0      0       0     0       0       0       0    0      1166      2      0     1168
+writeRecalibratedSourceTable       0      0       0     0       0       0       0    0      1168      0      0     1168
+transformSourceTable               0      0       0     0       0       0       0    0      1168      0      0     1168
+consolidateSourceTable             0      0       0     0       0       0       0    0       146      0      0      146
+finalJob                           0      0       0     0       0       0       0    0         1      0      0        1
+ X    STATE    %S     ID     OPERATOR PROJECT  CAMPAIGN  PAYLOAD                                 RUN                              
+--- --------- --- ---------- -------- -------- -------- ---------- ---------------------------------------------------------------
+    SUCCEEDED 100 23747577.0 lsstsvc1 DM-47059 DM-47059 cc_nightly u_homer_DM-47059_setup_pipeline_test4_20241101_20241103T074022Z
+
+
+Path: /sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation/submit/u/homer/DM-47059/setup/pipeline_test4_20241101/20241103T074022Z
+Global job id: sdfrome001.sdf.slac.stanford.edu#23747577.0#1730619694
+
+
+                  UNKNOWN MISFIT UNREADY READY PENDING RUNNING DELETED HELD SUCCEEDED FAILED PRUNED EXPECTED
+----------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+TOTAL                   0      0       0     0       0       0       0    0         4      0      0        4
+----------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+pipetaskInit            0      0       0     0       0       0       0    0         1      0      0        1
+makeVisitTable          0      0       0     0       0       0       0    0         1      0      0        1
+makeCcdVisitTable       0      0       0     0       0       0       0    0         1      0      0        1
+finalJob                0      0       0     0       0       0       0    0         1      0      0        1
+ X   STATE   %S     ID     OPERATOR PROJECT  CAMPAIGN  PAYLOAD                                 RUN                              
+--- ------- --- ---------- -------- -------- -------- ---------- ---------------------------------------------------------------
+    RUNNING  55 23747582.0 lsstsvc1 DM-47059 DM-47059 cc_nightly u_homer_DM-47059_setup_pipeline_test4_20241101_20241103T074316Z
+
+
+Path: /sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation/submit/u/homer/DM-47059/setup/pipeline_test4_20241101/20241103T074316Z
+Global job id: sdfrome001.sdf.slac.stanford.edu#23747582.0#1730623806
+
+
+                      UNKNOWN MISFIT UNREADY READY PENDING RUNNING DELETED HELD SUCCEEDED FAILED PRUNED EXPECTED
+--------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+TOTAL                       0      0    7901   494    1068       0       0    0     12033      0      0    21496
+--------------------- ------- ------ ------- ----- ------- ------- ------- ---- --------- ------ ------ --------
+pipetaskInit                0      0       0     0       0       0       0    0         1      0      0        1
+selectDeepCoaddVisits       0      0       0     0       0       0       0    0      1562      0      0     1562
+makeWarp                    0      0       0     0       0       0       0    0      5874      0      0     5874
+assembleCoadd               0      0       0     0       0       0       0    0      1562      0      0     1562
+detection                   0      0       0     0       0       0       0    0      1562      0      0     1562
+mergeDetections             0      0       0    90       0       0       0    0      1472      0      0     1562
+deblend                     0      0      90   404    1068       0       0    0         0      0      0     1562
+measure                     0      0    1562     0       0       0       0    0         0      0      0     1562
+mergeMeasurements           0      0    1562     0       0       0       0    0         0      0      0     1562
+forcedPhotCoadd             0      0    1562     0       0       0       0    0         0      0      0     1562
+writeObjectTable            0      0    1562     0       0       0       0    0         0      0      0     1562
+transformObjectTable        0      0    1562     0       0       0       0    0         0      0      0     1562
+finalJob                    0      0       1     0       0       0       0    0         0      0      0        1

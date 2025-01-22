@@ -1,0 +1,52 @@
+# https://rubinobs.atlassian.net/browse/DM-47059
+# Nightly Validation Pipeline on on-sky ComCam data
+# Dataset query example:
+#  butler query-datasets embargo raw --collections LSSTComCam/raw/all | tail -20
+#  raw LSSTComCam/raw/all a159f440-2c88-5e70-bc87-723efd03b8d3 LSSTComCam        8 2024102100519       r 20241021 2024-10-21T22:26:03.650            r_03
+#
+# Nominal required setup:
+# Pipeline:
+# https://github.com/lsst/drp_pipe/blob/main/pipelines/LSSTComCam/nightly-validation.yaml
+#
+# Collection Names:
+# repo: embargo
+#
+# collections:
+# intra-night: LSSTComCam/nightlyValidation
+# 10am: LSSTComCam/runs/nightlyValidation/{day_obs}/<lsst_distrib_tag>/DM-XXXXX
+# skymap='lsst_cells_v1'?
+#
+# pipeline command line example:
+# pipetask run -b embargo -i LSSTComCam/defaults -o u/yusra/testPipelines -p $DRP_PIPE_DIR/pipelines/LSSTComCam/nightly-validation.yaml#isr -d "exposure.day_obs = 20241022 AND exposure.seq_num=47 AND instrument='LSSTComCam'"
+# --------------------------------------------------------------------------------------
+includeConfigs:
+  - requestMemory_CC_NIGHTLY.yaml
+
+
+LSST_VERSION: ${DISTRIB}
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTComCam/nightly-validation.yaml#step7"
+
+project: DM-47059
+campaign: DM-47059
+
+extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTComCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+
+payload:
+  runInit: true
+  payloadName: cc_nightly
+  butlerConfig: embargo_new+sasquatch_dev
+  inCollection: LSSTComCam/defaults
+
+#  output: u/homer/DM-47059/${DISTRIB}/pipeline_test4_${NIGHTLY_START}
+  output: LSSTComCam/runs/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-47059
+
+  dataQuery: "instrument='LSSTComCam' AND skymap='lsst_cells_v1'"
+
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+#  payloadFolder: payload
+  
+numberOfRetries: 3
+
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService
