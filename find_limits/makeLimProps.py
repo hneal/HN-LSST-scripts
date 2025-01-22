@@ -32,17 +32,40 @@ tm = None
 if len(sys.argv) > 4 :
     tm=sys.argv[4]
 
-# ---- current source run parameters ----
+# ---- previous source run parameters ----
 # https://rubinobs.atlassian.net/projects/BLOCK?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.kanoah.test-manager__main-project-page#!/v2/testCase/BLOCK-T132
 # Estimated 4h 54m
 # 07/Oct/24 4:58 am
 # ----------------------------------------
-start="Oct 2 03:00:00 AM UTC 2024"
-dur="1d"
-# -- old --
-start="Oct 7 04:58:00 AM UTC 2024"
-dur="3h"
+#start="Oct 7 04:58:00 AM UTC 2024"
+#dur="3h"
 
+# ---- current source run parameters ----
+# https://rubinobs.atlassian.net/projects/BLOCK?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.kanoah.test-manager__main-project-page#!/v2/testCase/BLOCK-T261/execution
+# BLOCK-E2016 Pass 11/Nov/24 10:12 AM 11h 13m
+# https://rubin-obs.slack.com/archives/C07QJMPETUJ/p1730818452136109?thread_ts=1730645839.198089&cid=C07QJMPETUJ
+#  Nov 5th at 6:54 AM (SLAC)
+# E2016 is done (with 4031 images taken for the run!). As a heads up as this run goes into processing, we had two times that the CCOB hung and had to restart, we filled up the storage during the run and so some images might be missing (and I think some photodiode data), and then we also stopped it for the DAQ/CCS upgrade.
+# https://rubin-obs.slack.com/archives/C07QJMPETUJ/p1730645839198089
+# Nov 3rd!
+# [homer@lsstcam-dc01 ~]$ ls -1d /data/ccs-ipa-data/202411?? | xargs -n 1 du -s
+#12804   /data/ccs-ipa-data/20241101
+#15916   /data/ccs-ipa-data/20241102
+#56540   /data/ccs-ipa-data/20241103
+#27932   /data/ccs-ipa-data/20241104
+#13704   /data/ccs-ipa-data/20241105
+#29040   /data/ccs-ipa-data/20241106
+#12000   /data/ccs-ipa-data/20241107
+#64744   /data/ccs-ipa-data/20241108
+#39960   /data/ccs-ipa-data/20241109
+# ----
+#16      /data/ccs-ipa-data/20241121
+#2184    /data/ccs-ipa-data/20241128
+#3892    /data/ccs-ipa-data/20241129
+#40316   /data/ccs-ipa-data/20241130
+# ----------------------------------------
+start="Nov 5 00:00:00 AM UTC 2024"
+dur="11h"
 
 print("subsystem = ",subsys)
 print("category = ",category)
@@ -180,24 +203,28 @@ def main() :
             # output the results
 
             chanpath= subpath+"/limitHi"
-            value = check_chan_value(chanpath,float(fld[5])+3.0*float(stddev))
-            print(chanpath + " = {:0.3g} ".format(value) )
-            fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
+            if chanpath in allchan:
+                value = check_chan_value(chanpath,float(fld[5])+6.0*float(stddev))
+                print(chanpath + " = {:0.3g} ".format(value) )
+                fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
 
             chanpath= subpath+"/warnHi"
-            value = check_chan_value(chanpath,float(fld[5])+2.0*float(stddev))
-            print(chanpath + " = {:0.3g} ".format(value) )
-            fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
+            if chanpath in allchan:
+                value = check_chan_value(chanpath,float(fld[5])+5.0*float(stddev))
+                print(chanpath + " = {:0.3g} ".format(value) )
+                fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
 
             chanpath= subpath+"/warnLo"
-            value = check_chan_value(chanpath,float(fld[5])-2.0*float(stddev))
-            print(chanpath + " = {:0.3g} ".format(value) )
-            fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
+            if chanpath in allchan:
+                value = check_chan_value(chanpath,float(fld[5])-5.0*float(stddev))
+                print(chanpath + " = {:0.3g} ".format(value) )
+                fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
 
             chanpath= subpath+"/limitLo"
-            value = check_chan_value(chanpath,float(fld[5])-3.0*float(stddev))
-            print(chanpath + " = {:0.3g} ".format(value) )
-            fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
+            if chanpath in allchan:
+                value = check_chan_value(chanpath,float(fld[5])-6.0*float(stddev))
+                print(chanpath + " = {:0.3g} ".format(value) )
+                fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
     
     # output the original entries for the states
     for ln in states :
