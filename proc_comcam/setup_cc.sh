@@ -2,7 +2,7 @@
 #source /sdf/group/rubin/sw/tag/${LSST_VERSION}/loadLSST.bash
 
 #export LSST_VERSION=w_2024_31
-export LSST_VERSION=w_2024_40
+export LSST_VERSION=w_2024_42
 #source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/${LSST_VERSION}/loadLSST.sh
 source /sdf/group/rubin/sw/tag/${LSST_VERSION}/loadLSST.sh
 setup lsst_distrib -t ${LSST_VERSION}
