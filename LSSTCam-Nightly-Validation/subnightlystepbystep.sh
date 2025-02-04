@@ -11,7 +11,7 @@
 #   alternative obs_date: Ex. 20241028
 #   alternative list of steps: "step2d step3a step3b step7"
 # ------------------------------------------
-subdir=/sdf/data/rubin/shared/campaigns/ComCam-Nightly-Validation
+subdir=/sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation
 
 echo "setting up environment"
 source ${subdir}/setup_cc.sh

@@ -1,5 +1,5 @@
 #!/bin/bash
-#export LSST_TAG=w_2024_13
+#export LSST_TAG=w_2025_05
 #lsstsw_root=/sdf/group/rubin/sw
 #source ${lsstsw_root}/loadLSST.bash
 #setup -v lsst_distrib -t ${LSST_TAG}

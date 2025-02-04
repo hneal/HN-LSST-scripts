@@ -1,14 +1,12 @@
 # https://rubinobs.atlassian.net/browse/DM-48550
-# Nightly Validation Pipeline on on-sky ComCam data
+# Nightly Validation Pipeline on OR5 imSim LSSTCam data
 # Dataset query example:
 # butler query-datasets /repo/dc2 --collections 2.2i/defaults/OR5/WFD
-#  raw LSSTCam/raw/all a159f440-2c88-5e70-bc87-723efd03b8d3 LSSTCam        8 2024102100519       r 20241021 2024-10-21T22:26:03.650            r_03
 #
 # Nominal required setup:
 # Pipeline:
 # https://github.com/lsst/drp_pipe/blob/main/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml
 #
-# Collection Names:
 # repo: /repo/dc2
 #
 # input examples:
@@ -18,7 +16,7 @@
 #
 # collections:
 # intra-night: LSSTCam/nightlyValidation
-# 10am: LSSTCam/runs/nightlyValidation/{day_obs}/<lsst_distrib_tag>/DM-XXXXX
+# 10am: LSSTCam-imSim/nightlyValidation/{day_obs}/<lsst_distrib_tag>/DM-XXXXX
 # skymap='ops_rehersal_prep_2k_v1'?
 #
 # pipeline command line example:
@@ -44,9 +42,9 @@ payload:
   inCollection: 2.2i/defaults/OR5/WFD
 
   output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test1_${NIGHTLY_START}
-#  output: LSSTCam/runs/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
+#  output: LSSTCam-imSim/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
 
-  dataQuery: "instrument='LSSTCam' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1'"
+  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1'"
 
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
 #  payloadFolder: payload
