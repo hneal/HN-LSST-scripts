@@ -59,8 +59,8 @@ do
     # if step1 submit it now
     if [[ ${stepname} == ${firststep} ]]; then
        echo "performing bps submission for step ${stepname}"
-       export curlog=/sdf/home/l/lsstsvc1/sub-lsstcam-nightly${NIGHTLY_START}-${stepname}-log 
-       bps submit ${subdir}/hn_lsstcam_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
+       export curlog=/sdf/home/l/lsstsvc1/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log 
+       bps submit ${subdir}/hn_lsstcam_or5_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
     else
 	# periodically check bps submission progression and wait for finalJob to have run
 	for iloop in $(seq 1 480);
@@ -75,8 +75,8 @@ do
 		# check the number of jobs successfully run before finalJob to know whether the next step should be submitted
 		if [[ ${pf} != "0" ]]; then
 		    echo "Collections exist for ${stepname}. Proceeding to submit next step."
-		    export curlog=/sdf/home/l/lsstsvc1/sub-lsstcam-nightly${NIGHTLY_START}-${stepname}-log 
-		    bps submit ${subdir}/hn_lsstcam_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
+		    export curlog=/sdf/home/l/lsstsvc1/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log 
+		    bps submit ${subdir}/hn_lsstcam_or5_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
 		    echo "submit directory :"
 		    grep "Submit dir" ${curlog}
 		    break

@@ -6,7 +6,7 @@
 #
 # Nominal required setup:
 # Pipeline:
-# https://github.com/lsst/drp_pipe/blob/main/pipelines/LSSTCam/nightly-validation.yaml
+# https://github.com/lsst/drp_pipe/blob/main/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml
 #
 # Collection Names:
 # repo: embargo
@@ -17,7 +17,7 @@
 # skymap='lsst_cells_v1'?
 #
 # pipeline command line example:
-# pipetask run -b embargo -i LSSTCam/defaults -o u/yusra/testPipelines -p $DRP_PIPE_DIR/pipelines/LSSTCam/nightly-validation.yaml#isr -d "exposure.day_obs = 20241022 AND exposure.seq_num=47 AND instrument='LSSTCam'"
+# pipetask run -b embargo -i LSSTCam/defaults -o u/yusra/testPipelines -p $DRP_PIPE_DIR/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#isr -d "exposure.day_obs = 20241022 AND exposure.seq_num=47 AND instrument='LSSTCam'"
 # --------------------------------------------------------------------------------------
 includeConfigs:
   - requestMemory_LSSTCam_NIGHTLY.yaml
@@ -25,7 +25,7 @@ includeConfigs:
 
 LSST_VERSION: ${DISTRIB}
 
-pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/nightly-validation.yaml#step2e"
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step2e"
 
 project: DM-48550
 campaign: DM-48550
@@ -34,12 +34,12 @@ extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyVa
 
 payload:
   runInit: true
-  payloadName: lsstcam_nightly
-  butlerConfig: embargo_new+sasquatch_dev
+  payloadName: lsstcam_or5_nightly
+  butlerConfig: /repo/dc2
   inCollection: LSSTCam/defaults
 
-#  output: u/homer/DM-48550/${DISTRIB}/pipeline_test4_${NIGHTLY_START}
-  output: LSSTCam/runs/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
+#  output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test1_${NIGHTLY_START}
+#  output: LSSTCam/runs/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
 
   dataQuery: "instrument='LSSTCam' AND skymap='lsst_cells_v1'"
 
