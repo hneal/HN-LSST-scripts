@@ -1,0 +1,100 @@
+lsst.pipe.base.quantum_graph_builder INFO: Processing pipeline subgraph 1 of 1 with 1 task(s).
+lsst.pipe.base.quantum_graph_builder INFO: Iterating over query results to associate quanta with datasets.
+lsst.pipe.base.quantum_graph_builder INFO: Initial bipartite graph has 10773 quanta, 43094 dataset nodes, and 43092 edges from 10773 query row(s).
+lsst.pipe.base.quantum_graph_builder INFO: Generated 10773 quanta for task isr.
+lsst.ctrl.mpexec.cmdLineFwk INFO: QuantumGraph contains 10773 quanta for 1 task, graph ID: '1738688836.1803143-1486493'
+Quanta Tasks
+------ -----
+ 10773   isr
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Preparing execution of quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 17, exposure: 976274, band: 'i', day_obs: 20251207, group: '976274', physical_filter: 'i_sim_1.4'}.
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Constructing task and executing quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 17, exposure: 976274, band: 'i', day_obs: 20251207, group: '976274', physical_filter: 'i_sim_1.4'}.
+lsst.isr INFO: Converting exposure to floating point values.
+lsst.isr INFO: Det: R02_S22 - Noise provenance: amp, Gain provenance: amp
+lsst.isr INFO: Assembling CCD from amplifiers.
+lsst.isr INFO: Applying bias correction.
+lsst.isr INFO: Applying crosstalk correction.
+lsst.isr.crosstalk INFO: Applying crosstalk correction.
+lsst.isr INFO: Masking non-finite (NAN, inf) value pixels.
+lsst.isr INFO: Widening saturation trails.
+lsst.isr INFO: Applying brighter-fatter correction using kernel type <class 'numpy.ndarray'> / gains <class 'dict'>.
+lsst.isr INFO: Finished brighter-fatter correction in 2 iterations.
+lsst.isr INFO: Ensuring image edges are masked as EDGE to the brighter-fatter kernel size.
+lsst.isr INFO: Applying dark correction.
+lsst.isr INFO: Applying flat correction.
+lsst.isr INFO: Applying fringe correction after flat.
+lsst.isr.fringe INFO: Filter not found in FringeTaskConfig.filters. Skipping fringe correction.
+lsst.isr INFO: Interpolating masked pixels.
+lsst.isr WARNING: No rough magnitude zero point defined for filter i_sim_1.4.
+lsst.isr INFO: Setting rough magnitude zero point for filter i_sim_1.4: 31.692803
+lsst.isr INFO: Measuring amp offset corrections only, without applying them.
+lsst.isr.ampOffset.detection INFO: Setting factor for negative detections equal to that for positive detections: 1.000000
+lsst.isr.ampOffset.detection INFO: Detected 1870 positive peaks in 1671 footprints to 5 +ve and 5 -ve sigma
+lsst.isr.ampOffset INFO: Raw amp offset quartile summary for all interfaces (min, Q1, Q2, Q3, max): -2.1116, -0.4608, 0.4998, 0.8491, 3.2800
+lsst.isr.ampOffset INFO: Amp pedestal values (not subtracted from exposure): C10: -0.1063, C11: 0.3224, C12: -0.0391, C13: -0.7482, C14: 1.3590, C15: 0.0352, C16: 1.5893, C17: 1.1259, C07: -0.8912, C06: 0.1534, C05: -0.0857, C04: -0.5788, C03: -1.4539, C02: -0.4748, C01: 0.0956, C00: -0.3028
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Execution of task 'isr' on quantum {instrument: 'LSSTCam-imSim', detector: 17, exposure: 976274, band: 'i', day_obs: 20251207, group: '976274', physical_filter: 'i_sim_1.4'} took 34.854 seconds
+lsst.ctrl.mpexec.mpGraphExecutor INFO: Executed 1 quanta successfully, 0 failed and 10772 remain out of total 10773 quanta.
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Preparing execution of quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 149, exposure: 976126, band: 'i', day_obs: 20251207, group: '976126', physical_filter: 'i_sim_1.4'}.
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Constructing task and executing quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 149, exposure: 976126, band: 'i', day_obs: 20251207, group: '976126', physical_filter: 'i_sim_1.4'}.
+lsst.isr INFO: Converting exposure to floating point values.
+lsst.isr INFO: Det: R33_S12 - Noise provenance: amp, Gain provenance: amp
+lsst.isr INFO: Assembling CCD from amplifiers.
+lsst.isr INFO: Applying bias correction.
+lsst.isr INFO: Applying crosstalk correction.
+lsst.isr.crosstalk INFO: Applying crosstalk correction.
+lsst.isr INFO: Masking non-finite (NAN, inf) value pixels.
+lsst.isr INFO: Widening saturation trails.
+lsst.isr INFO: Applying brighter-fatter correction using kernel type <class 'numpy.ndarray'> / gains <class 'dict'>.
+lsst.isr INFO: Finished brighter-fatter correction in 2 iterations.
+lsst.isr INFO: Ensuring image edges are masked as EDGE to the brighter-fatter kernel size.
+lsst.isr INFO: Applying dark correction.
+lsst.isr INFO: Applying flat correction.
+lsst.isr INFO: Applying fringe correction after flat.
+lsst.isr.fringe INFO: Filter not found in FringeTaskConfig.filters. Skipping fringe correction.
+lsst.isr INFO: Interpolating masked pixels.
+lsst.isr WARNING: No rough magnitude zero point defined for filter i_sim_1.4.
+lsst.isr INFO: Setting rough magnitude zero point for filter i_sim_1.4: 31.692803
+lsst.isr INFO: Measuring amp offset corrections only, without applying them.
+lsst.isr.ampOffset.detection INFO: Setting factor for negative detections equal to that for positive detections: 1.000000
+lsst.isr.ampOffset.detection INFO: Detected 2202 positive peaks in 1936 footprints to 5 +ve and 5 -ve sigma
+lsst.isr.ampOffset INFO: Raw amp offset quartile summary for all interfaces (min, Q1, Q2, Q3, max): -2.1811, -0.9221, 0.0131, 0.3318, 0.9438
+lsst.isr.ampOffset INFO: Amp pedestal values (not subtracted from exposure): C10: -1.8392, C11: -1.7727, C12: -0.6346, C13: -1.0814, C14: 0.2274, C15: 0.2760, C16: 1.5871, C17: 0.6982, C07: 0.6622, C06: 1.5417, C05: 1.0262, C04: 0.6938, C03: 0.2315, C02: 0.0678, C01: -0.2880, C00: -1.3961
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Execution of task 'isr' on quantum {instrument: 'LSSTCam-imSim', detector: 149, exposure: 976126, band: 'i', day_obs: 20251207, group: '976126', physical_filter: 'i_sim_1.4'} took 30.079 seconds
+lsst.ctrl.mpexec.mpGraphExecutor INFO: Executed 2 quanta successfully, 0 failed and 10771 remain out of total 10773 quanta.
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Preparing execution of quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 3, exposure: 976246, band: 'i', day_obs: 20251207, group: '976246', physical_filter: 'i_sim_1.4'}.
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Constructing task and executing quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 3, exposure: 976246, band: 'i', day_obs: 20251207, group: '976246', physical_filter: 'i_sim_1.4'}.
+lsst.isr INFO: Converting exposure to floating point values.
+lsst.isr INFO: Det: R01_S10 - Noise provenance: amp, Gain provenance: amp
+lsst.isr INFO: Assembling CCD from amplifiers.
+lsst.isr INFO: Applying bias correction.
+lsst.isr INFO: Applying crosstalk correction.
+lsst.isr.crosstalk INFO: Applying crosstalk correction.
+lsst.isr INFO: Masking non-finite (NAN, inf) value pixels.
+lsst.isr INFO: Widening saturation trails.
+lsst.isr INFO: Applying brighter-fatter correction using kernel type <class 'numpy.ndarray'> / gains <class 'dict'>.
+lsst.isr INFO: Finished brighter-fatter correction in 2 iterations.
+lsst.isr INFO: Ensuring image edges are masked as EDGE to the brighter-fatter kernel size.
+lsst.isr INFO: Applying dark correction.
+lsst.isr INFO: Applying flat correction.
+lsst.isr INFO: Applying fringe correction after flat.
+lsst.isr.fringe INFO: Filter not found in FringeTaskConfig.filters. Skipping fringe correction.
+lsst.isr INFO: Interpolating masked pixels.
+lsst.isr WARNING: No rough magnitude zero point defined for filter i_sim_1.4.
+lsst.isr INFO: Setting rough magnitude zero point for filter i_sim_1.4: 31.692803
+lsst.isr INFO: Measuring amp offset corrections only, without applying them.
+lsst.isr.ampOffset.detection INFO: Setting factor for negative detections equal to that for positive detections: 1.000000
+lsst.isr.ampOffset.detection INFO: Detected 1724 positive peaks in 1566 footprints to 5 +ve and 5 -ve sigma
+lsst.isr.ampOffset INFO: Raw amp offset quartile summary for all interfaces (min, Q1, Q2, Q3, max): -1.1008, -0.2106, 0.0572, 0.7705, 2.3270
+lsst.isr.ampOffset INFO: Amp pedestal values (not subtracted from exposure): C10: 0.7696, C11: 1.2082, C12: 0.8710, C13: -0.3587, C14: 0.4970, C15: 0.0624, C16: 0.2871, C17: -0.6294, C07: -1.7211, C06: -0.7254, C05: -0.7749, C04: -0.6496, C03: -0.4590, C02: 0.5213, C01: 0.4445, C00: 0.6571
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Execution of task 'isr' on quantum {instrument: 'LSSTCam-imSim', detector: 3, exposure: 976246, band: 'i', day_obs: 20251207, group: '976246', physical_filter: 'i_sim_1.4'} took 29.861 seconds
+lsst.ctrl.mpexec.mpGraphExecutor INFO: Executed 3 quanta successfully, 0 failed and 10770 remain out of total 10773 quanta.
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Preparing execution of quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 148, exposure: 975963, band: 'g', day_obs: 20251207, group: '975963', physical_filter: 'g_sim_1.4'}.
+lsst.ctrl.mpexec.singleQuantumExecutor INFO: Constructing task and executing quantum for label=isr dataId={instrument: 'LSSTCam-imSim', detector: 148, exposure: 975963, band: 'g', day_obs: 20251207, group: '975963', physical_filter: 'g_sim_1.4'}.
+lsst.isr INFO: Converting exposure to floating point values.
+lsst.isr INFO: Det: R33_S11 - Noise provenance: amp, Gain provenance: amp
+lsst.isr INFO: Assembling CCD from amplifiers.
+lsst.isr INFO: Applying bias correction.
+lsst.isr INFO: Applying crosstalk correction.
+lsst.isr.crosstalk INFO: Applying crosstalk correction.
+lsst.isr INFO: Masking non-finite (NAN, inf) value pixels.
+lsst.isr INFO: Widening saturation trails.
+lsst.isr INFO: Applying brighter-fatter correction using kernel type <class 'numpy.ndarray'> / gains <class 'dict'>.
