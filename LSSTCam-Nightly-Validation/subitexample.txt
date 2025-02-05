@@ -1,0 +1,1 @@
+. subnightlystepbystep.sh 20251207 "step1" 2>&1 | tee -a subtest1.log

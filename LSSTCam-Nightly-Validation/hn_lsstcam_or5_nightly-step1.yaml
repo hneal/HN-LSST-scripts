@@ -33,7 +33,8 @@ pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step1
 project: DM-48550
 campaign: DM-48550
 
-extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z --config calibrate:astrometry.matcher.maxOffsetPix=1500 --config calibrate:astromRefObjLoader.pixelMargin=1500
+#extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z --config calibrate:astrometry.matcher.maxOffsetPix=1500 --config calibrate:astromRefObjLoader.pixelMargin=1500
+extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam-imSim/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
 
 payload:
   runInit: true
@@ -44,7 +45,8 @@ payload:
   output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test1_${NIGHTLY_START}
 #  output: LSSTCam-imSim/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
 
-  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1'"
+#  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1'"
+  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END})"
 
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
 #  payloadFolder: payload

@@ -11,7 +11,8 @@
 #   alternative obs_date: Ex. 20241028
 #   alternative list of steps: "step2d step3a step3b step7"
 # ------------------------------------------
-subdir=/sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation
+#subdir=/sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation
+subdir=/sdf/home/h/homer/LSSTCam-Nightly-Validation
 
 echo "setting up environment"
 source ${subdir}/setup_cc.sh
@@ -59,7 +60,7 @@ do
     # if step1 submit it now
     if [[ ${stepname} == ${firststep} ]]; then
        echo "performing bps submission for step ${stepname}"
-       export curlog=/sdf/home/l/lsstsvc1/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log 
+       export curlog=/sdf/home/h/homer/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log 
        bps submit ${subdir}/hn_lsstcam_or5_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
     else
 	# periodically check bps submission progression and wait for finalJob to have run
@@ -75,7 +76,7 @@ do
 		# check the number of jobs successfully run before finalJob to know whether the next step should be submitted
 		if [[ ${pf} != "0" ]]; then
 		    echo "Collections exist for ${stepname}. Proceeding to submit next step."
-		    export curlog=/sdf/home/l/lsstsvc1/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log 
+		    export curlog=/sdf/home/h/homer/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log 
 		    bps submit ${subdir}/hn_lsstcam_or5_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
 		    echo "submit directory :"
 		    grep "Submit dir" ${curlog}
