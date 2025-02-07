@@ -1,7 +1,7 @@
 # https://rubinobs.atlassian.net/browse/DM-48550
 # Nightly Validation Pipeline on OR5 imSim LSSTCam data
 # Dataset query example:
-# butler query-datasets /repo/dc2 --collections 2.2i/defaults/OR5/WFD
+# butler query-datasets /repo/dc2 --collections 2.2i/raw/OR5/WFD/day1/DM-48585,2.2i/calib,skymaps,refcats
 #
 # Nominal required setup:
 # Pipeline:
@@ -20,8 +20,13 @@
 # skymap='ops_rehersal_prep_2k_v1'?
 #
 # pipeline command line example:
-# pipetask run -b /repo/dc2 -i 2.2i/defaults/OR5/WFD -o u/homer/DM-48550/${DISTRIB}/pipeline_or5_test -p $DRP_PIPE_DIR/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#isr -d "exposure.day_obs = 20251207 AND instrument='LSSTCam-imSim'"
+# pipetask run -b /repo/dc2 -i 2.2i/raw/OR5/WFD/day1/DM-48585,2.2i/calib,skymaps,refcats -o u/homer/DM-48550/${DISTRIB}/pipeline_or5_test -p $DRP_PIPE_DIR/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#isr -d "exposure.day_obs = 20251207 AND instrument='LSSTCam-imSim'"
 # --------------------------------------------------------------------------------------
+provisionResources: true
+provisioning:
+  provisioningAccountingUser: "rubin:developers"
+  provisioningMaxWallTime: 7200
+
 includeConfigs:
   - requestMemory_LSSTCam_NIGHTLY.yaml
 
@@ -34,13 +39,13 @@ pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step2
 project: DM-48550
 campaign: DM-48550
 
-extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam-imSim/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
 
 payload:
   runInit: true
   payloadName: lsstcam_or5_nightly
   butlerConfig: /repo/dc2
-  inCollection: 2.2i/defaults/OR5/WFD
+  inCollection: 2.2i/raw/OR5/WFD/day1/DM-48585,2.2i/calib,skymaps,refcats
 
   output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test1_${NIGHTLY_START}
 #  output: LSSTCam-imSim/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550

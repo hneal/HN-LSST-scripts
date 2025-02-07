@@ -22,6 +22,11 @@
 # pipeline command line example:
 # pipetask run -b /repo/dc2 -i 2.2i/defaults/OR5/WFD -o u/homer/DM-48550/${DISTRIB}/pipeline_or5_test -p $DRP_PIPE_DIR/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#isr -d "exposure.day_obs = 20251207 AND instrument='LSSTCam-imSim'"
 # --------------------------------------------------------------------------------------
+provisionResources: true
+provisioning:
+  provisioningAccountingUser: "rubin:developers"
+  provisioningMaxWallTime: 7200
+
 includeConfigs:
   - requestMemory_LSSTCam_NIGHTLY.yaml
 
@@ -40,13 +45,15 @@ payload:
   runInit: true
   payloadName: lsstcam_or5_nightly
   butlerConfig: /repo/dc2
-  inCollection: 2.2i/defaults/OR5/WFD
+#  inCollection: 2.2i/defaults/OR5/WFD
+  inCollection: 2.2i/raw/OR5/WFD/day1/DM-48585,2.2i/calib,skymaps,refcats
 
-  output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test1_${NIGHTLY_START}
+  output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test2_${NIGHTLY_START}
 #  output: LSSTCam-imSim/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
 
 #  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1'"
-  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END})"
+#  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END})"
+  dataQuery: "instrument='LSSTCam-imSim'"
 
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
 #  payloadFolder: payload
