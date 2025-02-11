@@ -33,12 +33,20 @@ includeConfigs:
 
 LSST_VERSION: ${DISTRIB}
 
-pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step2d"
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step1"
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step2a"
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step2b"
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step2d"
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step2e"
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step3"
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step4"
+#pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml#step7"
 
 project: DM-48550
 campaign: DM-48550
 
-extraQgraphOptions: --dataset-query-constraint src -c parameters:sasquatch_dataset_identifier=LSSTCam-imSim/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+#extraQgraphOptions: --dataset-query-constraint preSourceTable
+#extraQgraphOptions: --dataset-query-constraint preSourceTable --config detection:detection.skyObjects.nSources=500 -c parameters:sasquatch_dataset_identifier=LSSTCam-imSim/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
 
 payload:
   runInit: true
@@ -46,11 +54,10 @@ payload:
   butlerConfig: /repo/dc2
   inCollection: 2.2i/raw/OR5/WFD/day1/DM-48585,2.2i/calib,skymaps,refcats
 
-  output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test1_${NIGHTLY_START}
-#  output: LSSTCam-imSim/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
+  output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test2_${NIGHTLY_START}
+# output: LSSTCam-imSim/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
 
-#  dataQuery: "instrument='LSSTCam' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND skymap='lsst_cells_v1'"
-  dataQuery: "instrument='LSSTCam-imSim' AND skymap='lsst_cells_v1'"
+  dataQuery: "instrument='LSSTCam-imSim' AND skymap='DC2_cells_v1'"
 
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
 #  payloadFolder: payload

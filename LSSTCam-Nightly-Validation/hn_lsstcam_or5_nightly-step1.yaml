@@ -53,7 +53,7 @@ payload:
 
 #  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1'"
 #  dataQuery: "instrument='LSSTCam-imSim' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END})"
-  dataQuery: "instrument='LSSTCam-imSim'"
+  dataQuery: "instrument='LSSTCam-imSim' AND exposure=2334"
 
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
 #  payloadFolder: payload
