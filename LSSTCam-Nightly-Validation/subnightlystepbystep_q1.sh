@@ -15,28 +15,36 @@
 subdir=/sdf/home/h/homer/LSSTCam-Nightly-Validation
 
 echo "setting up environment"
-source ${subdir}/setup_cc.sh
+source ${subdir}/setup_lsstcam.sh
 
 cd ${subdir}
 
 echo "setting date range"
 export otherdate="$1"
 
-if [[ ${otherdate} == "" ]]; then
-  export NIGHTLY_START=`date -d '-1 day' '+%Y%m%d'`
-  export NIGHTLY_END=`date -d '-1 day' '+%Y%m%d'`
-#  export NIGHTLY_END=`date +%Y%m%d`
-  echo "NIGHTLY_START = ${NIGHTLY_START}"
-  echo "NIGHTLY_END = ${NIGHTLY_END}"
-  export SASQ_TIMESTAMP=`date +%Y%m%d`
+if [[ ${otherdate} == "ALL" ]]; then
+    export NIGHTLY_START="0"
+    export NIGHTLY_END="0"
+    export SASQ_TIMESTAMP="20220101"
+    echo "NIGHTLY_START = ${NIGHTLY_START}"
+    echo "NIGHTLY_END = ${NIGHTLY_END}"
 else
+    if [[ ${otherdate} == "" ]]; then
+	export NIGHTLY_START=`date -d '-1 day' '+%Y%m%d'`
+	export NIGHTLY_END=`date -d '-1 day' '+%Y%m%d'`
+#  export NIGHTLY_END=`date +%Y%m%d`
+	echo "NIGHTLY_START = ${NIGHTLY_START}"
+	echo "NIGHTLY_END = ${NIGHTLY_END}"
+	export SASQ_TIMESTAMP=`date +%Y%m%d`
+    else
 # --- test ---
-  export NIGHTLY_START=${otherdate}
-  export NIGHTLY_END=${otherdate}
+	export NIGHTLY_START=${otherdate}
+	export NIGHTLY_END=${otherdate}
 #  export NIGHTLY_END=`date -d${otherdate}+1day '+%Y%m%d'`
-  echo "TEST: OVERRIDING NIGHTLY_START = ${NIGHTLY_START}"
-  echo "TEST: OVERRIDING NIGHTLY_END = ${NIGHTLY_END}"
-  export SASQ_TIMESTAMP=`date -d${otherdate}+1day '+%Y%m%d'`
+	echo "TEST: OVERRIDING NIGHTLY_START = ${NIGHTLY_START}"
+	echo "TEST: OVERRIDING NIGHTLY_END = ${NIGHTLY_END}"
+	export SASQ_TIMESTAMP=`date -d${otherdate}+1day '+%Y%m%d'`
+    fi
 fi
 
 echo "setting steps to process"
@@ -55,7 +63,7 @@ echo "Using distribution: ${DISTRIB}"
 export firststep=`echo ${steplist} | cut -d ' ' -f1,1`
 echo "First step = ${firststep}"
 
-export fj=""
+export fj="INIT"
 
 for stepname in ${steplist}
 do
@@ -66,7 +74,7 @@ do
        bps submit ${subdir}/hn_lsstcam_or5_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
     else
 	# periodically check bps submission progression and wait for finalJob to have run
-	for iloop in $(seq 1 480);
+	for iloop in $(seq 1 2880);
 	do
 	    sleep 30
 	    export sd=`grep "Submit dir" ${curlog} | cut -d " " -f 3,3`
@@ -95,13 +103,13 @@ do
 		    exit
 		fi
 	    fi
-	    if [[ ${fj} == "2" ]]; then
+	    if [[ ${fj} == "2" || ${fj} == "" ]]; then
 		exit
 	    fi
 	    
 	done
     fi
-    if [[ ${fj} == "2" ]]; then
+    if [[ ${fj} == "2" || ${fj} == "" ]]; then
 	exit
     fi
 done
