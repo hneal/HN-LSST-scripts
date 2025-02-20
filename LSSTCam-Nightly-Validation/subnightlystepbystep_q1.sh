@@ -97,6 +97,7 @@ do
 		    bps submit ${subdir}/hn_lsstcam_or5_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
 		    echo "submit directory :"
 		    grep "Submit dir" ${curlog}
+		    sleep 30
 		    break
 		else
 		    echo "Ending. Nothing for the next step to process :-("

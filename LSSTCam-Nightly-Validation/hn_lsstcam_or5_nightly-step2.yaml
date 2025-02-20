@@ -47,7 +47,7 @@ payload:
   butlerConfig: /repo/dc2
   inCollection: 2.2i/raw/OR5/WFD/day1/DM-48585,2.2i/calib,skymaps,refcats
 
-  output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test3_${NIGHTLY_START}
+  output: u/homer/DM-48550/${DISTRIB}/pipeline_or5_test4_${NIGHTLY_START}
 #  output: LSSTCam-imSim/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-48550
 
   dataQuery: "instrument='LSSTCam-imSim' AND skymap='DC2_cells_v1'"
