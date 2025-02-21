@@ -2,7 +2,7 @@
 
 echo "Running setup_lsstcam.sh"
 
-export LSST_VERSION=w_2025_05
+export LSST_VERSION=w_2025_07
 #source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/${LSST_VERSION}/loadLSST.sh
 
 echo "Executing loadLSST.sh"

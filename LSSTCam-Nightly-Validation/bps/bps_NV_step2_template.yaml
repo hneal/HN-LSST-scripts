@@ -31,8 +31,8 @@ payload:
   runInit: true
   payloadName: OR5_WFD_nightlyValidation
   inCollection: %(tagged_collection)s,2.2i/calib,skymaps,refcats,pretrained_models
-#  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s/%(group)s
-  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
+#  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
+  output: u/homer/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
   butlerConfig: %(repo)s
   dataQuery: "instrument='LSSTCam-imSim' and skymap='DC2_cells_v1'"
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
