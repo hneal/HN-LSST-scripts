@@ -74,26 +74,21 @@ do
   if [[ ${stepname} == ${firststep} ]]; then
     for bpsyaml in ${grplist}
     do		     
-#       export curlog=/sdf/home/h/homer/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log
+
        export bynoext=`echo ${bpsyaml} | cut -d '/' -f 2,2 | cut -d '.' -f 1,1`
        echo "performing bps submission for step ${stepname} - yaml ${bynoext} "
        export curlog=/sdf/home/h/homer/LSSTCam-Nightly-Validation/bps_sub_logs/${stepname}/${bynoext}-log 
-#       bps submit ${subdir}/hn_lsstcam_or5_nightly-${stepname}.yaml 2>&1 | tee ${curlog}
-#       bps submit ${subdir}/bps_configs_test/bps_NV_${stepname}_day1_00.yaml 2>&1 | tee ${curlog}
-       bps submit ${subdir}/${bpsyaml} 2>&1 | tee ${curlog}
-     done
+
+# comment out to recover from first step timeout
+#hn       bps submit ${subdir}/${bpsyaml} 2>&1 | tee ${curlog}
+
+    done
   else
         export grplist=`ls bps_configs_test/bps_NV_${stepname}_day1*.yaml | sed -z "s/\n/ /g"`
 	# periodically check bps submission progression and wait for finalJob to have run
 	for iloop in $(seq 1 2880);
 	do
 	    sleep 30
-#	    echo "Retrieving finalJob status using: bps report --id=${sd}"
-#	    export fj="`bps report --id=${sd} | awk '/finalJob/{print $10}'`"
-
-# Ex:	    NodeStatus = 0; /* "STATUS_NOT_READY" */
-#	    echo "Retrieving finalJob status using final node status in id=${sd}"
-#            export fj=`grep -A 1 -i final ${sd}/*.node_status | awk '{print ( (match($0,"DONE") == 0) ? 0 : 1)}'`
 
 	    export fini=1
 	    for bpsyaml in ${ogrplist}
@@ -103,22 +98,26 @@ do
 		export curlog=/sdf/home/h/homer/LSSTCam-Nightly-Validation/bps_sub_logs/${ostepname}/${bynoext}-log 
 		export sd=`grep "Submit dir" ${curlog} | cut -d " " -f 3,3`
 		export fj=`awk /finalJob/'{getline stat;split(stat,dsc,"\"");print ( (match(dsc[2],"DONE") == 0) ? ( (match(dsc[2],"ERROR") == 0) ? 0 : 2) : 1) }' ${sd}/*.node_status`
-		echo "finalJob status = ${fj}"
+		echo "finalJob status for ${bynoext} = ${fj}"
 		if [[ ${fj} == "0" ]]; then
 		    export fini=0
 		fi
 	    done
 	    
-
+	    if [[ ${fini} == "0" ]]; then
+		echo "still waiting for all jobs to finish"
+	    else
+		echo "all done ... proceeding to next step"
+	    fi
+	    
 	    if [[ ${fini} == "1" ]]; then
-		#export pf=`bps report --id=${sd} | grep -B 1 "^finalJob" | head -1  | awk '{print $10}'`
+
 		# check the number of jobs successfully run before finalJob to know whether the next step should be submitted
 # skipping check for now
-		export pf=0
+		export pf=1
 		if [[ ${pf} != "0" ]]; then
 		    for bpsyaml in ${grplist}
 		    do		     
-#       export curlog=/sdf/home/h/homer/sub-lsstcam-or5-nightly${NIGHTLY_START}-${stepname}-log
 			export bynoext=`echo ${bpsyaml} | cut -d '/' -f 2,2 | cut -d '.' -f 1,1`
 			echo "performing bps submission for step ${stepname} - yaml ${bynoext} "
 			export curlog=/sdf/home/h/homer/LSSTCam-Nightly-Validation/bps_sub_logs/${stepname}/${bynoext}-log 

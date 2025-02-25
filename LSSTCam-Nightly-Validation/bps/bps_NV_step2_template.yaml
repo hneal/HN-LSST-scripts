@@ -1,7 +1,7 @@
 # https://rubinobs.atlassian.net/browse/DM-48550
 # Nightly Validation Pipeline on OR5 imSim LSSTCam data
 # --------------------------------------------------------------------------------------
-provisionResources: true
+provisionResources: false
 provisioning:
   provisioningAccountingUser: "rubin:developers"
   provisioningMaxWallTime: 7200
@@ -34,7 +34,7 @@ payload:
 #  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
   output: u/homer/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
   butlerConfig: %(repo)s
-  dataQuery: "instrument='LSSTCam-imSim' and skymap='DC2_cells_v1'"
+  dataQuery: "instrument='LSSTCam-imSim' and skymap='lsst_cells_v1'"
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
   
 numberOfRetries: 3

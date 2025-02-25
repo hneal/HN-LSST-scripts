@@ -1,7 +1,7 @@
 # https://rubinobs.atlassian.net/browse/DM-48550
 # Nightly Validation Pipeline on OR5 imSim LSSTCam data
 # --------------------------------------------------------------------------------------
-provisionResources: true
+provisionResources: false
 provisioning:
   provisioningAccountingUser: "rubin:developers"
   provisioningMaxWallTime: 7200
@@ -31,13 +31,11 @@ payload:
   runInit: true
   payloadName: OR5_WFD_nightlyValidation
   inCollection: %(tagged_collection)s,2.2i/calib,skymaps,refcats,pretrained_models
-#  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s/%(group)s
-  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
+#  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
+  output: u/homer/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
   butlerConfig: %(repo)s
-  dataQuery: "instrument='LSSTCam-imSim' and skymap='DC2_cells_v1' and tract in (%(tract_list)s)"
+  dataQuery: "instrument='LSSTCam-imSim' and skymap='lsst_cells_v1' and tract in (%(tract_list)s)"
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
   
-numberOfRetries: 3
-
 # Condor backend stuff
 wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

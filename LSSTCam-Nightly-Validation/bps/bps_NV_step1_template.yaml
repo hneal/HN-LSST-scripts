@@ -1,7 +1,7 @@
 # https://rubinobs.atlassian.net/browse/DM-48550
 # Nightly Validation Pipeline on OR5 imSim LSSTCam data
 # --------------------------------------------------------------------------------------
-provisionResources: true
+provisionResources: false
 provisioning:
   provisioningAccountingUser: "rubin:developers"
   provisioningMaxWallTime: 7200
@@ -54,7 +54,5 @@ payload:
 
   s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
   
-numberOfRetries: 3
-
 # Condor backend stuff
 wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService
