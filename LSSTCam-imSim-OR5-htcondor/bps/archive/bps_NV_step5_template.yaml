@@ -1,0 +1,41 @@
+# https://rubinobs.atlassian.net/browse/DM-49179
+# Nightly Validation Pipeline on OR5 imSim LSSTCam data
+# --------------------------------------------------------------------------------------
+#provisionResources: false
+#provisioning:
+#  provisioningAccountingUser: "rubin:developers"
+#  provisioningMaxWallTime: 7200
+
+includeConfigs:
+  - requestMemory_LSSTCam_NIGHTLY.yaml
+
+retryUnlessExit: [2]
+numberOfRetries: 2
+
+environment:
+   DAF_BUTLER_CACHE_DIRECTORY: /lscratch/${USER}
+   DAF_BUTLER_CACHE_EXPIRATION_MODE: size=1_000_000_000_000
+   LSST_S3_USE_THREADS: False
+   AWS_REQUEST_CHECKSUM_CALCULATION: WHEN_REQUIRED
+
+LSST_VERSION: ${DISTRIB}
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/nightly-validation.yaml#step5"
+
+project: DM-49179
+campaign: DM-49179
+
+extraQgraphOptions: --dataset-query-constraint finalVisitSummary -c parameters:sasquatch_dataset_identifier=LSSTCam-imSim/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+
+payload:
+  runInit: true
+  payloadName: OR5_WFD_nightlyValidation
+  inCollection: %(tagged_collection)s,2.2i/calib,skymaps,refcats,pretrained_models
+  output: LSSTCam-imSim/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
+#  output: u/homer/OR5/runs/nightlyValidation_%(day)s/%(version)s/%(ticket)s
+  butlerConfig: %(repo)s
+  dataQuery: "instrument='LSSTCam-imSim' and skymap='lsst_cells_v1' and tract in (%(tract_list)s)"
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+  
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

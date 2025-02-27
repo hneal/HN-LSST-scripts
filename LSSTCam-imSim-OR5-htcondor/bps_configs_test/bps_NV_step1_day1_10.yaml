@@ -1,0 +1,31 @@
+# https://rubinobs.atlassian.net/browse/DM-49179
+# Nightly Validation Pipeline on OR5 imSim LSSTCam data
+# --------------------------------------------------------------------------------------
+includeConfigs:
+  - ${DRP_PIPE_DIR}/bps/clustering/LSSTCam-imSim/DRP-OR5-clustering.yaml
+  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam-imSim/nightly-validation-OR5-WFD.yaml
+
+retryUnlessExit: [2]
+numberOfRetries: 2
+
+LSST_VERSION: ${DISTRIB}
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam-imSim/nightly-validation.yaml#step1"
+
+project: DM-49179
+campaign: DM-49179
+
+extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam-imSim/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+
+payload:
+  runInit: true
+  payloadName: OR5_WFD_nightlyValidation
+  inCollection: 2.2i/raw/OR5/WFD/day1/DM-48585,2.2i/calib,skymaps,refcats,pretrained_models
+  output: LSSTCam-imSim/OR5/runs/nightlyValidation_day1/w_2025_08/DM-49179
+  butlerConfig: embargo_or5
+  dataQuery: "instrument='LSSTCam-imSim' and (exposure in (159584..167860))"
+
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+  
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

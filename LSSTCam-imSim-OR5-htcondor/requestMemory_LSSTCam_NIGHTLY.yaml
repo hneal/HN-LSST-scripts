@@ -1,0 +1,38 @@
+pipetask:
+  assembleCoadd:
+    requestMemory: 14000
+#    requestMemory: 7000
+  patch_coaddition:
+    requestMemory: 7000
+  getTemplate:
+    requestMemory: 7000
+  transformForcedSourceOnDiaObjectTable:
+    requestMemory: 7000
+  consolidateForcedSourceOnDiaObjectTable:
+    requestMemory: 17000
+  fgcmBuildFromIsolatedStars:
+    requestMemory: 7000
+  patch_detect_deblend:
+    requestMemory: 50000
+#    requestMemory: 14000
+#    requestMemory: 7000
+    memoryMultiplier: 2
+  deblend:
+    requestMemory: 50000
+#    requestMemory: 14000
+#    requestMemory: 7000
+    memoryMultiplier: 2
+  measure:
+    requestMemory: 7000
+    memoryMultiplier: 2
+  forcedPhotCoadd:
+    requestMemory: 7000
+    memoryMultiplier: 2
+  healSparsePropertyMaps:
+    requestMemory: 7000
+    memoryMultiplier: 2
+  property_maps:
+    requestMemory: 7000
+    memoryMultiplier: 2
+  consolidateForcedSourceTable:
+    requestMemory: 7000
