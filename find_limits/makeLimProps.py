@@ -78,6 +78,7 @@ print("(optional) previous ns time of dat file to use = ",tm)
 
 manual_chans_regex = {}
 manual_chans_regex["R../Reb./Temp./limitHi"] = [25.0,"FocalPlane"]
+manual_chans_regex["R../Reb./Temp./limitLo"] = [-45.0,"FocalPlane"]
 
 # ------------------------------------------------------------------------------------
 
