@@ -1,0 +1,1 @@
+pipetask run -b embargo -i LSSTCam/defaults -o LSSTCam/homer_test_sample/nightlyvalidation/20250415/d_2025_04_14/DM-50157  -p ${DRP_PIPE_DIR}/pipelines/LSSTCam/nightly-validation.yaml#step1a-single-visit-detectors  -d "instrument='LSSTCam' AND detector=91 AND skymap='lsst_cells_v1'" --register-dataset-types -j 12

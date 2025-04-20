@@ -1,0 +1,55 @@
+# https://rubinobs.atlassian.net/browse/DM-50157
+# Nightly Validation Pipeline on LSSTCam data
+# --------------------------------------------------------------------------------------
+
+includeConfigs:
+  - /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/nightly-validation-LSSTCam-clustering.yaml
+  - /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/nightly-validation-LSSTCam-DDF.yaml
+
+#- ${DRP_PIPE_DIR}/bps/clustering/LSSTCam-imSim/DRP-OR5-clustering.yaml
+#  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam-imSim/nightly-validation-OR5-WFD.yaml
+
+
+environment:
+  DAF_BUTLER_CONFIG_PATH: /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/butler_config/step1:${DAF_BUTLER_CONFIG_PATH}
+  DAF_BUTLER_CACHE_EXPIRATION_MODE: size=1_000_000_000_000
+  DAF_BUTLER_CACHE_DIRECTORY: /lscratch/${USER}/step1_cache
+  LSST_S3_USE_THREADS: False
+
+#subDirTemplate: "{label}/{detector}"
+cluster:
+  step1detector:
+      equalDimensions: exposure:visit
+      partitionDimensions: exposure
+      partitionMaxClusters: 10000
+
+
+retryUnlessExit: [2]
+numberOfRetries: 2
+
+LSST_VERSION: ${DISTRIB}
+
+# step1a-single-visit-detectors, step1b-single-visit-visits,step1c-single-visit-tracts,step1d-single-visit-global,stage3-coadd
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/nightly-validation.yaml#step1"
+
+project: DM-50157
+campaign: DM-50157
+
+extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+
+payload:
+  runInit: true
+  payloadName: lsstcam_nightly
+
+  inCollection: LSSTCam/defaults
+  output: LSSTCam/runs/nightlyValidation/${NIGHTLY_START}/%(version)s/%(ticket)s
+  
+  butlerConfig: %(repo)s
+  dataQuery: "instrument='LSSTCam' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1' AND detector<189  and %(exposure_selection)s"
+# dataQuery: "instrument='LSSTCam' and %(exposure_selection)s"
+
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+  
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

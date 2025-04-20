@@ -10,7 +10,7 @@ do
 #    allocateNodes.py --auto --account rubin:production -n 15 -c 16 -m 4-00:00:00 -q milano -g 60 s3df
 #    allocateNodes.py --auto --account rubin:developers -n 15 -c 16 -m 4-00:00:00 -q milano -g 60 s3df
 #    allocateNodes.py --auto --account rubin:developers -n 15 -m 1-00:00:00 -q milano -g 240 s3df
-    allocateNodes.py --account rubin:developers -n 200 -m 1-00:00:00 -q milano -g 240 s3df
+    allocateNodes.py --account rubin:developers -n 20 -m 1-00:00:00 -q milano -g 240 s3df
     # -maxjobs 1500
 #    allocateNodes.py --auto --account rubin:developers -n 200 -m 4-00:00:00 -q milano -g 240 s3df
 #    allocateNodes.py --auto --account rubin:developers -n 200 -m 4-00:00:00 -q milano,roma -g 240 s3df

@@ -1,0 +1,55 @@
+# https://rubinobs.atlassian.net/browse/DM-50157
+# Nightly Validation Pipeline on LSSTCam data
+# --------------------------------------------------------------------------------------
+
+includeConfigs:
+  - /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/nightly-validation-LSSTCam-clustering.yaml
+  - /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/nightly-validation-LSSTCam-DDF.yaml
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/nightly-validation.yaml#makeAnalysisSingleVisitStarAssociationMetricTable,makeAnalysisSingleVisitStarAssociationWholeSkyPlot"
+
+environment:
+  LSST_S3_USE_THREADS: False
+  DAF_BUTLER_CACHE_EXPIRATION_MODE: disabled
+
+subDirTemplate: "{label}/{detector}"
+
+LSST_VERSION: ${DISTRIB}
+
+cluster:
+  step1detector:
+    equalDimensions: exposure:visit
+    partitionDimensions: exposure
+    partitionMaxClusters: 10000
+    environment:
+      DAF_BUTLER_CONFIG_PATH: /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/butler_config/step1:${DAF_BUTLER_CONFIG_PATH}
+      DAF_BUTLER_CACHE_EXPIRATION_MODE: size=1_000_000_000_000
+      DAF_BUTLER_CACHE_DIRECTORY: /lscratch/${USER}/step1_cache
+  makeWarpTract:
+    environment:
+      DAF_BUTLER_CONFIG_PATH: /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/butler_config/step3:${DAF_BUTLER_CONFIG_PATH}
+      DAF_BUTLER_CACHE_EXPIRATION_MODE: datasets=500
+  coadd:
+    environment:
+      DAF_BUTLER_CONFIG_PATH: /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/butler_config/step3:${DAF_BUTLER_CONFIG_PATH}
+      DAF_BUTLER_CACHE_EXPIRATION_MODE: datasets=500
+
+extraQgraphOptions: --dataset-query-constraint off -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+
+
+extraRunQuantumOptions: "--no-raise-on-partial-outputs"
+
+project: DM-50157
+campaign: DM-50157
+
+payload:
+  payloadName: lsstcam_nightly
+  inCollection: LSSTCam/runs/nightlyValidation
+  output: LSSTCam/runs/nightlyValidation/${NIGHTLY_START}/${DISTRIB}/DM-50157
+  butlerConfig: /repo/embargo+sasquatch_dev
+  dataQuery: "instrument='LSSTCam' AND skymap='lsst_cells_v1'"
+
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

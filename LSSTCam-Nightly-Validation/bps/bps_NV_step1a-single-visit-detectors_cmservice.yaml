@@ -1,0 +1,79 @@
+########################################
+# https://rubinobs.atlassian.net/browse/DM-XXXXX
+# Nightly Validation Pipeline on LSSTCam data
+########################################
+project: DM-XXXXX
+campaign: nightly3
+submitPath: /Users/tobyj/git/cm-service/prod_area/nightly3/step1a/group0/job_000/submit
+
+########################################
+# PIPELINE CONFIGURATION
+########################################
+pipelineYaml: ${DRP_PIPE_DIR}/pipelines/LSSTCam/nightly-validation.yaml#step1a-single-visit-detectors
+includeConfigs:
+- ${CTRL_BPS_PANDA_DIR}/config/bps_usdf.yaml
+- /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/nightly-validation-LSSTCam-clustering.yaml
+- /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/nightly-validation-LSSTCam-DDF.yaml
+
+########################################
+# LSST SETUP
+########################################
+LSST_VERSION: d_2025_04_15
+
+########################################
+# SUBMISSION ENVIRONMENT VARIABLES
+########################################
+environment:
+  LSST_S3_USE_THREADS: "False"
+  DAF_BUTLER_CACHE_EXPIRATION_MODE: "disabled"
+
+########################################
+# BPS PAYLOAD OPTIONS
+########################################
+payload:
+  payloadName: "nightly3"
+  butlerConfig: "/repo/embargo+sasquatch_dev"
+  outputRun: "LSSTCam/runs/nightlyValidation/20240415/d_2025_04_15/DM-XXXXX/step1a/group0/job_000"
+  inCollection: "LSSTCam/runs/nightlyValidation/20240415/d_2025_04_15/DM-XXXXX/step1a/input,LSSTCam/runs/nightlyValidation/20240415/d_2025_04_15/DM-XXXXX/input"
+  dataQuery: "instrument='LSSTCam' AND skymap='lsst_cells_v1' AND (exposure.day_obs>=20240415 and exposure.day_obs<20240416) AND exposure.observation_type IN ('science', 'acq')"
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+extraQgraphOptions: --dataset-query-constraint off --skip-existing-in LSSTCam/runs/nightlyValidation -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:{SASQ_TIMESTAMP}T000000Z
+extraRunQuantumOptions: --no-raise-on-partial-outputs
+
+########################################
+# ADDITIONAL BPS DIRECTIVES
+########################################
+subDirTemplate: "{label}/{detector}"
+SASQ_TIMESTAMP: "20240416"
+OWNER: "lsstsvc1"
+
+########################################
+# ADDITIONAL CLUSTERING CONFIGURATION
+########################################
+clustering:
+  coadd:
+    environment:
+      DAF_BUTLER_CACHE_EXPIRATION_MODE: datasets=500
+      DAF_BUTLER_CONFIG_PATH: /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/butler_config/step3:${DAF_BUTLER_CONFIG_PATH}
+  makeWarpTract:
+    environment:
+      DAF_BUTLER_CACHE_EXPIRATION_MODE: datasets=500
+      DAF_BUTLER_CONFIG_PATH: /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/butler_config/step3:${DAF_BUTLER_CONFIG_PATH}
+  step1detector:
+    environment:
+      DAF_BUTLER_CACHE_DIRECTORY: /lscratch/{OWNER}/step1_cache
+      DAF_BUTLER_CACHE_EXPIRATION_MODE: size=1_000_000_000_000
+      DAF_BUTLER_CONFIG_PATH: /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/butler_config/step1:${DAF_BUTLER_CONFIG_PATH}
+    equalDimensions: exposure:visit
+    partitionDimensions: exposure
+    partitionMaxClusters: 10000
+
+########################################
+# SITE WMS CONFIGURATION
+########################################
+wmsServiceClass: lsst.ctrl.bps.panda.PanDAService
+computeCloud: US
+computeSite: SLAC
+requestMemory: 4000
+memoryMultiplier: 1.2
+

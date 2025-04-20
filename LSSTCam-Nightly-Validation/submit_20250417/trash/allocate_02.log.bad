@@ -1,0 +1,4 @@
+
+[2]+  Stopped                 allocateNodes.py --auto -c 15 --account rubin:production -n ${MAXNODES} -m 1-00:00:00 -q milano -g 240 s3df
+INFO 2025-04-18T14:10:36-0700 lsst.ctrl.execute.slurmPlugin - Auto: Query for htcondor jobs.
+INFO 2025-04-18T14:10:36-0700 lsst.ctrl.execute.slurmPlugin - Auto: No HTCondor Jobs detected.

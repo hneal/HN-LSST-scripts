@@ -1,0 +1,2 @@
+bps submit bps_NV_1a.yaml &> submit-step1a.log &
+bps submit bps_NV_1b-3.yaml &> submit-step1b-3.log &

@@ -1,0 +1,36 @@
+# https://rubinobs.atlassian.net/browse/DM-50157
+# Nightly Validation Pipeline on LSSTCam data
+# --------------------------------------------------------------------------------------
+includeConfigs:
+  - ${DRP_PIPE_DIR}/bps/clustering/LSSTCam/DRP-LSSTCam-clustering.yaml
+  - ${DRP_PIPE_DIR}/bps/resources/LSSTCam/nightly-validation-LSSTCam.yaml
+
+retryUnlessExit: [2]
+numberOfRetries: 2
+
+LSST_VERSION: ${DISTRIB}
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/nightly-validation.yaml#step7"
+
+project: DM-50157
+campaign: DM-50157
+
+extraQgraphOptions: -c parameters:sasquatch_dataset_identifier=LSSTCam/nightlyValidation -c parameters:sasquatch_timestamp_version=explicit_timestamp:${SASQ_TIMESTAMP}T000000Z
+
+payload:
+  runInit: true
+  payloadName: lsstcam_nightly
+
+  inCollection: LSSTCam/defaults
+  output:LSSTCam/runs/nightlyValidation/${NIGHTLY_START}/%(version)s/%(ticket)s
+
+  butlerConfig: %(repo)s
+#  dataQuery: "instrument='LSSTCam' AND (exposure.day_obs>=${NIGHTLY_START} and exposure.day_obs<=${NIGHTLY_END}) AND exposure.observation_type IN ('science', 'acq') AND skymap='lsst_cells_v1' and tract=%(tract)s and patch in (%(patch_list)s)"
+  dataQuery: "instrument='LSSTCam'"
+
+  s3EndpointUrl: "https://s3dfrgw.slac.stanford.edu"
+
+extraRunQuantumOptions: "--no-raise-on-partial-outputs"
+
+# Condor backend stuff
+wmsServiceClass: lsst.ctrl.bps.htcondor.HTCondorService

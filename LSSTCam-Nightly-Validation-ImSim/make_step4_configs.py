@@ -1,12 +1,13 @@
 import os
 import numpy as np
 import lsst.utils as utils
-from or5.or5_tracts import or5_wfd_tracts
+#from or5.or5_tracts import or5_wfd_tracts
+from or5_tracts import or5_wfd_tracts
 
 #PACKAGE_DIR = utils.getPackageDir("or5")
 PACKAGE_DIR = os.getcwd()
 
-step = "step5"
+step = "step4"
 day = "day1"
 version = "w_2025_07"
 ticket = "DM-xxxxx"

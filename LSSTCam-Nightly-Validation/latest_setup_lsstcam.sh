@@ -2,11 +2,13 @@
 
 echo "Running setup_lsstcam.sh"
 
-export LSST_VERSION=d_2025_04_14
+export LSST_VERSION=d_2025_04_19
 
 echo "Executing loadLSST.sh"
 source /sdf/group/rubin/sw/tag/${LSST_VERSION}/loadLSST.sh
 #source /cvmfs/sw.lsst.eu/linux-x86_64/lsst_distrib/${LSST_VERSION}/loadLSST.sh
+
+setup -j -r /sdf/data/rubin/shared/campaigns/LSSTCam-Nightly-Validation/lsst_devel/pipe_base
 
 echo "Setting up distribution (lsst_distrib)"
 setup lsst_distrib -t ${LSST_VERSION}

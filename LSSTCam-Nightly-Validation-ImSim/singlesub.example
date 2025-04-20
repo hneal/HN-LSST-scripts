@@ -1,0 +1,3 @@
+(lsst-scipipe-9.0.0) [homer@sdfiana014 LSSTCam-Nightly-Validation]$     export NIGHTLY_END="0"
+(lsst-scipipe-9.0.0) [homer@sdfiana014 LSSTCam-Nightly-Validation]$     export SASQ_TIMESTAMP="20220101"
+(lsst-scipipe-9.0.0) [homer@sdfiana014 LSSTCam-Nightly-Validation]$ bps submit bps_configs_test/bps_NV_step3_day1_05.yaml 2>&1 | tee bps_sub_logs/step3/bps_NV_step3_day1_05-log
