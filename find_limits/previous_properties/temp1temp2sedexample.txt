@@ -1,0 +1,2 @@
+(lsst-scipipe-cb4e2dc) [homer@lsstcam-vw01 current_properties]$ sed -i '/^R..\/Reb.\/Temp1\/limitHi/ s/./#&/' FocalPlane-operational_1735338463798175757b.properties
+(lsst-scipipe-cb4e2dc) [homer@lsstcam-vw01 current_properties]$ sed -i '/^R..\/Reb.\/Temp2\/limitHi/ s/./#&/' FocalPlane-operational_1735338463798175757b.properties

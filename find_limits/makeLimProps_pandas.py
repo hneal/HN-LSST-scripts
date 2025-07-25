@@ -22,6 +22,7 @@ import time
 import subprocess
 import re
 import math
+import pandas
 
 subsys=sys.argv[1]
 category=sys.argv[2]
@@ -32,12 +33,24 @@ tm = None
 if len(sys.argv) > 4 :
     tm=sys.argv[4]
 
+# -------------------------------------------------------------------
+# define period to use by specifying a start date/tiome and duration
+# -------------------------------------------------------------------
+    
 #start="Nov 5 00:00:00 AM UTC 2024"
 #start="Wed Apr 16 00:00:00 AM UTC 2025"
 #start="Wed May  7 01:00:00 AM UTC 2025"
-#start="Thu Jul  3 01:00:00 UTC 2025"
-start="Thu Jul  4 01:00:00 UTC 2025"
-dur="5h"
+start="Thu Jul  3 01:00:00 UTC 2025"
+#start="Thu Jul  4 01:00:00 UTC 2025"
+#dur="5h"
+dur="48h"
+
+# -------------------------------------------------------------------
+# specify number of stddev's to use for the warning and limit determinations
+# -------------------------------------------------------------------
+nstd_warn = 5
+nstd_limit = 6
+
 
 print("subsystem = ",subsys)
 print("category = ",category)
@@ -78,12 +91,13 @@ def main() :
     strns = str(time.time_ns())
     if tm != None:
         strns = str(tm)
+
+    sstrt = "_".join(start.split()[1:4])
         
     tmp_file = "oldprops_"+strns+".temp"
-    out_file = category+"-operational_"+strns+".properties"
+    out_file = category+"-operational_"+sstrt+"_"+dur+"_"+strns+".properties"
     
     # get an old categories properties file to be used for the channel list
-    #    subprocess.call("cfs cat config/"+category+"/Limits/"+props+".properties > "+tmp_file,shell=True)
     subprocess.call("cfs cat config/"+category+"/Limits/autogen-template.properties > "+tmp_file,shell=True)
     
     # make lists of all channels and unique keys
@@ -126,43 +140,38 @@ def main() :
     for chan in keys:
         print("getting stats for "+chan)
         if not "State" in chan:     # no longer needed because the keys are now for non State channels
-            cmnd = "python ~/mutils/trendutils/trender.py --stats --start \""+start+"\" --duration \""+dur+"\"  -- "+subsys+"/"+chan
+            cmnd = "python ~/mutils/trendutils/trender.py --stats --start \""+start+"\" --duration \""+dur+"\"  -- "+subsys+"/"+chan+" | tail -2 | sed 's/#//' > tr_out.csv"
             print("command = ",cmnd)
     
             try:
                 rtrnstr = str(subprocess.check_output(cmnd,shell=True))
+
+                tr = pandas.read_table('tr_out.csv',sep=' ',skipinitialspace=True)
+                tr.columns
+                tr.values
+
             except:
                 print("Unable to get stats for chan - ",chan)
                 continue
-            
-            result = rtrnstr.split("\\n")[8]
-            print("result = ",result)
-    
-            fld = result.split()
-    
+                        
             print("\n# --- "+chan+" ---")
             fpout.write("\n# --- "+chan+" ---"+"\n")
     
-            if len(fld)<7 :
+            if len(tr.columns)<10 :
                 print("Unable to get stats for chan - ",chan," Incomplete results")
                 continue
     
         #  cnt      mean   median   stddev      min       max    d/dt 1/m  path                                      units
         #  8567     36.07    36.08 7.105e-15      36.1     36.1   -3.25e-15  rebpower/R00/RebG/OD/VbefLDO              Volts
     
-            stddev = float(fld[3])
+            stddev = float(tr['stddev'][0])
             print("stddev = ",stddev)
-            
-#            if (float(fld[4])!=float(fld[5])) :
-#                stddev = fld[3]
-#            else :
-#                if (float(fld[4])!=0.00) :
-#                    stddev = 0.1*float(fld[4])
-#                else :
-#                    stddev = 0.1
 
+            tr_min = float(tr['min'][0])
+            tr_max = float(tr['max'][0])
+            
             # This is to handle situations where stddev is too small for the formatted output
-            absmean = abs(float(fld[4])+float(fld[5]))/2.0
+            absmean = abs(tr_min+tr_max)/2.0
             if absmean>0.0 :
                 if (stddev/absmean) < 1.0e-2 :
                     x = 1.0e-2 * absmean
@@ -178,33 +187,28 @@ def main() :
 
             chanpath= subpath+"/limitHi"
             if chanpath in allchan:
-                value = check_chan_value(chanpath,float(fld[5])+6.0*float(stddev))
+                value = check_chan_value(chanpath,tr_max+nstd_limit*stddev)
                 print(chanpath + " = {:0.3g} ".format(value) )
                 fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
 
             chanpath= subpath+"/warnHi"
             if chanpath in allchan:
-                value = check_chan_value(chanpath,float(fld[5])+5.0*float(stddev))
+                value = check_chan_value(chanpath,tr_max+nstd_warn*stddev)
                 print(chanpath + " = {:0.3g} ".format(value) )
                 fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
 
             chanpath= subpath+"/warnLo"
             if chanpath in allchan:
-                value = check_chan_value(chanpath,float(fld[5])-5.0*float(stddev))
+                value = check_chan_value(chanpath,tr_min-nstd_warn*stddev)
                 print(chanpath + " = {:0.3g} ".format(value) )
                 fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
 
             chanpath= subpath+"/limitLo"
             if chanpath in allchan:
-                value = check_chan_value(chanpath,float(fld[5])-6.0*float(stddev))
+                value = check_chan_value(chanpath,tr_min-nstd_limit*stddev)
                 print(chanpath + " = {:0.3g} ".format(value) )
                 fpout.write(chanpath + " = {:0.3g} ".format(value)+"\n")
     
-    # output the original entries for the states
-#    for ln in states :
-#        print(ln);
-#        fpout.write(ln+"\n")
-        
                 
     fpout.close()
     

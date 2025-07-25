@@ -1,0 +1,12 @@
+#RebPowerSupply-operational.properties
+#RebPowerSupply-operational-pruned.properties
+#cat  | cfs cat -cn config//Limits/generated-camera-normal-state.properties
+
+cat FocalPlane-operational_1735338463798175757.properties | cfs cat -cn config/FocalPlane/Limits/generated-camera-normal-state.properties
+cat RebPowerSupply-operational_1735310260514773353.properties | cfs cat -cn config/RebPowerSupply/Limits/generated-camera-normal-state.properties
+cat Quadbox-operational_1735366962869478485.properties | cfs cat -cn config/Quadbox/Limits/generated-camera-normal-state.properties
+cat Vacuum-operational_1735368311512893668.properties | cfs cat -cn config/Vacuum/Limits/generated-camera-normal-state.properties
+cat Thermal-operational_1735368611730248234.properties | cfs cat -cn config/Thermal/Limits/generated-camera-normal-state.properties
+cat UtilTrunk-operational_1735368708452234691.properties | cfs cat -cn config/UtilTrunk/Limits/generated-camera-normal-state.properties
+cat Refrig-operational_1737567315248774438.properties | cfs cat -cn config/Refrig/Limits/generated-camera-normal-state.properties
+cat Chiller-operational_1738181179508598287-updated.properties | cfs cat -cn config/Chiller/Limits/generated-camera-normal-state.properties

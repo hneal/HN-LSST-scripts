@@ -1,0 +1,632 @@
+
+# --- Cryo1/AfterCoolTmp ---
+Cryo1/AfterCoolTmp/limitHi = 21 
+Cryo1/AfterCoolTmp/warnHi = 20.8 
+Cryo1/AfterCoolTmp/warnLo = 18.8 
+Cryo1/AfterCoolTmp/limitLo = 18.6 
+
+# --- Cryo1/CompCurrent ---
+Cryo1/CompCurrent/limitHi = 0.0954 
+Cryo1/CompCurrent/warnHi = 0.0945 
+Cryo1/CompCurrent/warnLo = 0.0855 
+Cryo1/CompCurrent/limitLo = 0.0846 
+
+# --- Cryo1/CompPower ---
+Cryo1/CompPower/limitHi = 22 
+Cryo1/CompPower/warnHi = 21.8 
+Cryo1/CompPower/warnLo = 19.6 
+Cryo1/CompPower/limitLo = 19.4 
+
+# --- Cryo1/CompVoltage ---
+Cryo1/CompVoltage/limitHi = 244 
+Cryo1/CompVoltage/warnHi = 242 
+Cryo1/CompVoltage/warnLo = 218 
+Cryo1/CompVoltage/limitLo = 216 
+
+# --- Cryo1/DischrgPrs ---
+Cryo1/DischrgPrs/limitHi = 64.7 
+Cryo1/DischrgPrs/warnHi = 64 
+Cryo1/DischrgPrs/warnLo = 58 
+Cryo1/DischrgPrs/limitLo = 57.3 
+
+# --- Cryo1/DischrgTmp_M ---
+Cryo1/DischrgTmp_M/limitHi = 20.2 
+Cryo1/DischrgTmp_M/warnHi = 20.1 
+Cryo1/DischrgTmp_M/warnLo = 18.2 
+Cryo1/DischrgTmp_M/limitLo = 18 
+
+# --- Cryo1/DischrgTmp_P ---
+Cryo1/DischrgTmp_P/limitHi = 19.3 
+Cryo1/DischrgTmp_P/warnHi = 19.1 
+Cryo1/DischrgTmp_P/warnLo = 17.3 
+Cryo1/DischrgTmp_P/limitLo = 17.1 
+
+# --- Cryo1/FanSpeed ---
+Cryo1/FanSpeed/limitHi = 1.26e+03 
+Cryo1/FanSpeed/warnHi = 1.25e+03 
+Cryo1/FanSpeed/warnLo = 1.13e+03 
+Cryo1/FanSpeed/limitLo = 1.12e+03 
+
+# --- Cryo1/OilLevel ---
+Cryo1/OilLevel/limitHi = 12.7 
+Cryo1/OilLevel/warnHi = 12.6 
+Cryo1/OilLevel/warnLo = 11.4 
+Cryo1/OilLevel/limitLo = 11.3 
+
+# --- Cryo1/OilSepTmp ---
+Cryo1/OilSepTmp/limitHi = 20 
+Cryo1/OilSepTmp/warnHi = 19.8 
+Cryo1/OilSepTmp/warnLo = 17.9 
+Cryo1/OilSepTmp/limitLo = 17.8 
+
+# --- Cryo1/PhaseSepTmp ---
+Cryo1/PhaseSepTmp/limitHi = 20.1 
+Cryo1/PhaseSepTmp/warnHi = 19.9 
+Cryo1/PhaseSepTmp/warnLo = 18.1 
+Cryo1/PhaseSepTmp/limitLo = 17.9 
+
+# --- Cryo1/SuctionPrs ---
+Cryo1/SuctionPrs/limitHi = 65.3 
+Cryo1/SuctionPrs/warnHi = 64.7 
+Cryo1/SuctionPrs/warnLo = 58.6 
+Cryo1/SuctionPrs/limitLo = 57.9 
+
+# --- Cryo1/SuctionTmp_M ---
+Cryo1/SuctionTmp_M/limitHi = 20.4 
+Cryo1/SuctionTmp_M/warnHi = 20.2 
+Cryo1/SuctionTmp_M/warnLo = 18.4 
+Cryo1/SuctionTmp_M/limitLo = 18.2 
+
+# --- Cryo1/SuctionTmp_P ---
+Cryo1/SuctionTmp_P/limitHi = 20.2 
+Cryo1/SuctionTmp_P/warnHi = 20.1 
+Cryo1/SuctionTmp_P/warnLo = 18.2 
+Cryo1/SuctionTmp_P/limitLo = 18 
+
+# --- Cryo1/SurgeTankTmp ---
+Cryo1/SurgeTankTmp/limitHi = 41.3 
+Cryo1/SurgeTankTmp/warnHi = 40.7 
+Cryo1/SurgeTankTmp/warnLo = 35.3 
+Cryo1/SurgeTankTmp/limitLo = 34.7 
+
+# --- Cryo1/WaterInTmp ---
+Cryo1/WaterInTmp/limitHi = 21 
+Cryo1/WaterInTmp/warnHi = 20.8 
+Cryo1/WaterInTmp/warnLo = 18.8 
+Cryo1/WaterInTmp/limitLo = 18.6 
+
+# --- Cryo1/WaterOutTmp ---
+Cryo1/WaterOutTmp/limitHi = 20.4 
+Cryo1/WaterOutTmp/warnHi = 20.2 
+Cryo1/WaterOutTmp/warnLo = 18.4 
+Cryo1/WaterOutTmp/limitLo = 18.2 
+
+# --- Cryo2/AfterCoolTmp ---
+Cryo2/AfterCoolTmp/limitHi = 11.5 
+Cryo2/AfterCoolTmp/warnHi = 10.9 
+Cryo2/AfterCoolTmp/warnLo = 4.66 
+Cryo2/AfterCoolTmp/limitLo = 4.04 
+
+# --- Cryo2/CompCurrent ---
+Cryo2/CompCurrent/limitHi = 3.61 
+Cryo2/CompCurrent/warnHi = 3.58 
+Cryo2/CompCurrent/warnLo = 3.24 
+Cryo2/CompCurrent/limitLo = 3.21 
+
+# --- Cryo2/CompPower ---
+Cryo2/CompPower/limitHi = 827 
+Cryo2/CompPower/warnHi = 820 
+Cryo2/CompPower/warnLo = 742 
+Cryo2/CompPower/limitLo = 735 
+
+# --- Cryo2/CompVoltage ---
+Cryo2/CompVoltage/limitHi = 243 
+Cryo2/CompVoltage/warnHi = 240 
+Cryo2/CompVoltage/warnLo = 218 
+Cryo2/CompVoltage/limitLo = 215 
+
+# --- Cryo2/DischrgPrs ---
+Cryo2/DischrgPrs/limitHi = 349 
+Cryo2/DischrgPrs/warnHi = 346 
+Cryo2/DischrgPrs/warnLo = 312 
+Cryo2/DischrgPrs/limitLo = 309 
+
+# --- Cryo2/DischrgTmp_M ---
+Cryo2/DischrgTmp_M/limitHi = 114 
+Cryo2/DischrgTmp_M/warnHi = 112 
+Cryo2/DischrgTmp_M/warnLo = 102 
+Cryo2/DischrgTmp_M/limitLo = 100 
+
+# --- Cryo2/DischrgTmp_P ---
+Cryo2/DischrgTmp_P/limitHi = 114 
+Cryo2/DischrgTmp_P/warnHi = 112 
+Cryo2/DischrgTmp_P/warnLo = 102 
+Cryo2/DischrgTmp_P/limitLo = 100 
+
+# --- Cryo2/FanSpeed ---
+Cryo2/FanSpeed/limitHi = 1.23e+03 
+Cryo2/FanSpeed/warnHi = 1.22e+03 
+Cryo2/FanSpeed/warnLo = 1.1e+03 
+Cryo2/FanSpeed/limitLo = 1.09e+03 
+
+# --- Cryo2/OilLevel ---
+Cryo2/OilLevel/limitHi = -10.1 
+Cryo2/OilLevel/warnHi = -10.3 
+Cryo2/OilLevel/warnLo = -12.5 
+Cryo2/OilLevel/limitLo = -12.7 
+
+# --- Cryo2/OilSepTmp ---
+Cryo2/OilSepTmp/limitHi = 102 
+Cryo2/OilSepTmp/warnHi = 102 
+Cryo2/OilSepTmp/warnLo = 91.9 
+Cryo2/OilSepTmp/limitLo = 90.9 
+
+# --- Cryo2/PhaseSepTmp ---
+Cryo2/PhaseSepTmp/limitHi = 10.9 
+Cryo2/PhaseSepTmp/warnHi = 10.3 
+Cryo2/PhaseSepTmp/warnLo = 4.01 
+Cryo2/PhaseSepTmp/limitLo = 3.38 
+
+# --- Cryo2/SuctionPrs ---
+Cryo2/SuctionPrs/limitHi = 25.1 
+Cryo2/SuctionPrs/warnHi = 24.8 
+Cryo2/SuctionPrs/warnLo = 22.6 
+Cryo2/SuctionPrs/limitLo = 22.3 
+
+# --- Cryo2/SuctionTmp_M ---
+Cryo2/SuctionTmp_M/limitHi = 19.6 
+Cryo2/SuctionTmp_M/warnHi = 19.4 
+Cryo2/SuctionTmp_M/warnLo = 17.6 
+Cryo2/SuctionTmp_M/limitLo = 17.4 
+
+# --- Cryo2/SuctionTmp_P ---
+Cryo2/SuctionTmp_P/limitHi = 19.2 
+Cryo2/SuctionTmp_P/warnHi = 19 
+Cryo2/SuctionTmp_P/warnLo = 17.2 
+Cryo2/SuctionTmp_P/limitLo = 17 
+
+# --- Cryo2/SurgeTankTmp ---
+Cryo2/SurgeTankTmp/limitHi = 38.1 
+Cryo2/SurgeTankTmp/warnHi = 37.8 
+Cryo2/SurgeTankTmp/warnLo = 34.2 
+Cryo2/SurgeTankTmp/limitLo = 33.9 
+
+# --- Cryo2/WaterInTmp ---
+Cryo2/WaterInTmp/limitHi = 11.1 
+Cryo2/WaterInTmp/warnHi = 10.4 
+Cryo2/WaterInTmp/warnLo = 3.95 
+Cryo2/WaterInTmp/limitLo = 3.31 
+
+# --- Cryo2/WaterOutTmp ---
+Cryo2/WaterOutTmp/limitHi = 26.3 
+Cryo2/WaterOutTmp/warnHi = 25.8 
+Cryo2/WaterOutTmp/warnLo = 21.2 
+Cryo2/WaterOutTmp/limitLo = 20.7 
+
+# --- Cryo3/AfterCoolTmp ---
+Cryo3/AfterCoolTmp/limitHi = 12.2 
+Cryo3/AfterCoolTmp/warnHi = 11.5 
+Cryo3/AfterCoolTmp/warnLo = 4.07 
+Cryo3/AfterCoolTmp/limitLo = 3.33 
+
+# --- Cryo3/AmbientTmp ---
+Cryo3/AmbientTmp/limitHi = 20.3 
+Cryo3/AmbientTmp/warnHi = 20.1 
+Cryo3/AmbientTmp/warnLo = 18.2 
+Cryo3/AmbientTmp/limitLo = 18.1 
+
+# --- Cryo3/CabinetTmp ---
+Cryo3/CabinetTmp/limitHi = 23.2 
+Cryo3/CabinetTmp/warnHi = 22.9 
+Cryo3/CabinetTmp/warnLo = 20.8 
+Cryo3/CabinetTmp/limitLo = 20.6 
+
+# --- Cryo3/CompCurrent ---
+Cryo3/CompCurrent/limitHi = 3.46 
+Cryo3/CompCurrent/warnHi = 3.43 
+Cryo3/CompCurrent/warnLo = 3.11 
+Cryo3/CompCurrent/limitLo = 3.08 
+
+# --- Cryo3/CompPower ---
+Cryo3/CompPower/limitHi = 793 
+Cryo3/CompPower/warnHi = 786 
+Cryo3/CompPower/warnLo = 712 
+Cryo3/CompPower/limitLo = 705 
+
+# --- Cryo3/CompVoltage ---
+Cryo3/CompVoltage/limitHi = 243 
+Cryo3/CompVoltage/warnHi = 240 
+Cryo3/CompVoltage/warnLo = 218 
+Cryo3/CompVoltage/limitLo = 215 
+
+# --- Cryo3/DischrgPrs ---
+Cryo3/DischrgPrs/limitHi = 362 
+Cryo3/DischrgPrs/warnHi = 359 
+Cryo3/DischrgPrs/warnLo = 325 
+Cryo3/DischrgPrs/limitLo = 322 
+
+# --- Cryo3/DischrgTmp_M ---
+Cryo3/DischrgTmp_M/limitHi = 114 
+Cryo3/DischrgTmp_M/warnHi = 112 
+Cryo3/DischrgTmp_M/warnLo = 102 
+Cryo3/DischrgTmp_M/limitLo = 100 
+
+# --- Cryo3/DischrgTmp_P ---
+Cryo3/DischrgTmp_P/limitHi = 115 
+Cryo3/DischrgTmp_P/warnHi = 114 
+Cryo3/DischrgTmp_P/warnLo = 102 
+Cryo3/DischrgTmp_P/limitLo = 101 
+
+# --- Cryo3/FanSpeed ---
+Cryo3/FanSpeed/limitHi = 1.26e+03 
+Cryo3/FanSpeed/warnHi = 1.25e+03 
+Cryo3/FanSpeed/warnLo = 1.13e+03 
+Cryo3/FanSpeed/limitLo = 1.12e+03 
+
+# --- Cryo3/OilLevel ---
+Cryo3/OilLevel/limitHi = -7.51 
+Cryo3/OilLevel/warnHi = -7.59 
+Cryo3/OilLevel/warnLo = -8.41 
+Cryo3/OilLevel/limitLo = -8.49 
+
+# --- Cryo3/OilSepTmp ---
+Cryo3/OilSepTmp/limitHi = 105 
+Cryo3/OilSepTmp/warnHi = 104 
+Cryo3/OilSepTmp/warnLo = 94.4 
+Cryo3/OilSepTmp/limitLo = 93.4 
+
+# --- Cryo3/PhaseSepTmp ---
+Cryo3/PhaseSepTmp/limitHi = 12.2 
+Cryo3/PhaseSepTmp/warnHi = 11.5 
+Cryo3/PhaseSepTmp/warnLo = 3.97 
+Cryo3/PhaseSepTmp/limitLo = 3.22 
+
+# --- Cryo3/SuctionPrs ---
+Cryo3/SuctionPrs/limitHi = 23.7 
+Cryo3/SuctionPrs/warnHi = 23.5 
+Cryo3/SuctionPrs/warnLo = 21.3 
+Cryo3/SuctionPrs/limitLo = 21.1 
+
+# --- Cryo3/SuctionTmp_M ---
+Cryo3/SuctionTmp_M/limitHi = 20.3 
+Cryo3/SuctionTmp_M/warnHi = 20.1 
+Cryo3/SuctionTmp_M/warnLo = 18.2 
+Cryo3/SuctionTmp_M/limitLo = 18.1 
+
+# --- Cryo3/SuctionTmp_P ---
+Cryo3/SuctionTmp_P/limitHi = 19.3 
+Cryo3/SuctionTmp_P/warnHi = 19.1 
+Cryo3/SuctionTmp_P/warnLo = 17.3 
+Cryo3/SuctionTmp_P/limitLo = 17.1 
+
+# --- Cryo3/SurgeTankTmp ---
+Cryo3/SurgeTankTmp/limitHi = 41.8 
+Cryo3/SurgeTankTmp/warnHi = 40.6 
+Cryo3/SurgeTankTmp/warnLo = 28.8 
+Cryo3/SurgeTankTmp/limitLo = 27.6 
+
+# --- Cryo3/WaterInTmp ---
+Cryo3/WaterInTmp/limitHi = 11.7 
+Cryo3/WaterInTmp/warnHi = 10.9 
+Cryo3/WaterInTmp/warnLo = 3.1 
+Cryo3/WaterInTmp/limitLo = 2.32 
+
+# --- Cryo3/WaterOutTmp ---
+Cryo3/WaterOutTmp/limitHi = 28.1 
+Cryo3/WaterOutTmp/warnHi = 27.6 
+Cryo3/WaterOutTmp/warnLo = 22.6 
+Cryo3/WaterOutTmp/limitLo = 22.1 
+
+# --- Cryo4/AfterCoolTmp ---
+Cryo4/AfterCoolTmp/limitHi = 11.7 
+Cryo4/AfterCoolTmp/warnHi = 11 
+Cryo4/AfterCoolTmp/warnLo = 3.7 
+Cryo4/AfterCoolTmp/limitLo = 2.97 
+
+# --- Cryo4/CompCurrent ---
+Cryo4/CompCurrent/limitHi = 3.51 
+Cryo4/CompCurrent/warnHi = 3.48 
+Cryo4/CompCurrent/warnLo = 3.15 
+Cryo4/CompCurrent/limitLo = 3.11 
+
+# --- Cryo4/CompPower ---
+Cryo4/CompPower/limitHi = 807 
+Cryo4/CompPower/warnHi = 800 
+Cryo4/CompPower/warnLo = 724 
+Cryo4/CompPower/limitLo = 717 
+
+# --- Cryo4/CompVoltage ---
+Cryo4/CompVoltage/limitHi = 244 
+Cryo4/CompVoltage/warnHi = 242 
+Cryo4/CompVoltage/warnLo = 218 
+Cryo4/CompVoltage/limitLo = 216 
+
+# --- Cryo4/DischrgPrs ---
+Cryo4/DischrgPrs/limitHi = 368 
+Cryo4/DischrgPrs/warnHi = 364 
+Cryo4/DischrgPrs/warnLo = 330 
+Cryo4/DischrgPrs/limitLo = 326 
+
+# --- Cryo4/DischrgTmp_M ---
+Cryo4/DischrgTmp_M/limitHi = 110 
+Cryo4/DischrgTmp_M/warnHi = 109 
+Cryo4/DischrgTmp_M/warnLo = 99 
+Cryo4/DischrgTmp_M/limitLo = 98 
+
+# --- Cryo4/DischrgTmp_P ---
+Cryo4/DischrgTmp_P/limitHi = 110 
+Cryo4/DischrgTmp_P/warnHi = 109 
+Cryo4/DischrgTmp_P/warnLo = 99 
+Cryo4/DischrgTmp_P/limitLo = 98 
+
+# --- Cryo4/FanSpeed ---
+Cryo4/FanSpeed/limitHi = 1.22e+03 
+Cryo4/FanSpeed/warnHi = 1.20e+03 
+Cryo4/FanSpeed/warnLo = 1.1e+03 
+Cryo4/FanSpeed/limitLo = 1.08e+03 
+
+# --- Cryo4/OilLevel ---
+Cryo4/OilLevel/limitHi = -0.619 
+Cryo4/OilLevel/warnHi = -0.655 
+Cryo4/OilLevel/warnLo = -1.02 
+Cryo4/OilLevel/limitLo = -1.05 
+
+# --- Cryo4/OilSepTmp ---
+Cryo4/OilSepTmp/limitHi = 97.6 
+Cryo4/OilSepTmp/warnHi = 96.6 
+Cryo4/OilSepTmp/warnLo = 87.5 
+Cryo4/OilSepTmp/limitLo = 86.6 
+
+# --- Cryo4/PhaseSepTmp ---
+Cryo4/PhaseSepTmp/limitHi = 11.4 
+Cryo4/PhaseSepTmp/warnHi = 10.6 
+Cryo4/PhaseSepTmp/warnLo = 2.86 
+Cryo4/PhaseSepTmp/limitLo = 2.08 
+
+# --- Cryo4/SuctionPrs ---
+Cryo4/SuctionPrs/limitHi = 23.3 
+Cryo4/SuctionPrs/warnHi = 23.1 
+Cryo4/SuctionPrs/warnLo = 20.9 
+Cryo4/SuctionPrs/limitLo = 20.7 
+
+# --- Cryo4/SuctionTmp_M ---
+Cryo4/SuctionTmp_M/limitHi = 18.7 
+Cryo4/SuctionTmp_M/warnHi = 18.6 
+Cryo4/SuctionTmp_M/warnLo = 16.8 
+Cryo4/SuctionTmp_M/limitLo = 16.7 
+
+# --- Cryo4/SuctionTmp_P ---
+Cryo4/SuctionTmp_P/limitHi = 18.6 
+Cryo4/SuctionTmp_P/warnHi = 18.5 
+Cryo4/SuctionTmp_P/warnLo = 16.8 
+Cryo4/SuctionTmp_P/limitLo = 16.6 
+
+# --- Cryo4/SurgeTankTmp ---
+Cryo4/SurgeTankTmp/limitHi = 48.4 
+Cryo4/SurgeTankTmp/warnHi = 46.9 
+Cryo4/SurgeTankTmp/warnLo = 31.5 
+Cryo4/SurgeTankTmp/limitLo = 30 
+
+# --- Cryo4/WaterInTmp ---
+Cryo4/WaterInTmp/limitHi = 11.5 
+Cryo4/WaterInTmp/warnHi = 10.7 
+Cryo4/WaterInTmp/warnLo = 2.77 
+Cryo4/WaterInTmp/limitLo = 1.97 
+
+# --- Cryo4/WaterOutTmp ---
+Cryo4/WaterOutTmp/limitHi = 26.8 
+Cryo4/WaterOutTmp/warnHi = 26.2 
+Cryo4/WaterOutTmp/warnLo = 20.8 
+Cryo4/WaterOutTmp/limitLo = 20.2 
+
+# --- Cryo5/AfterCoolTmp ---
+Cryo5/AfterCoolTmp/limitHi = 10.1 
+Cryo5/AfterCoolTmp/warnHi = 9.27 
+Cryo5/AfterCoolTmp/warnLo = 1.29 
+Cryo5/AfterCoolTmp/limitLo = 0.493 
+
+# --- Cryo5/AmbientTmp ---
+Cryo5/AmbientTmp/limitHi = 19.6 
+Cryo5/AmbientTmp/warnHi = 19.4 
+Cryo5/AmbientTmp/warnLo = 17.6 
+Cryo5/AmbientTmp/limitLo = 17.4 
+
+# --- Cryo5/CabinetTmp ---
+Cryo5/CabinetTmp/limitHi = 22.7 
+Cryo5/CabinetTmp/warnHi = 22.4 
+Cryo5/CabinetTmp/warnLo = 20.3 
+Cryo5/CabinetTmp/limitLo = 20.1 
+
+# --- Cryo5/CompCurrent ---
+Cryo5/CompCurrent/limitHi = 3.63 
+Cryo5/CompCurrent/warnHi = 3.6 
+Cryo5/CompCurrent/warnLo = 3.26 
+Cryo5/CompCurrent/limitLo = 3.23 
+
+# --- Cryo5/CompPower ---
+Cryo5/CompPower/limitHi = 829 
+Cryo5/CompPower/warnHi = 822 
+Cryo5/CompPower/warnLo = 744 
+Cryo5/CompPower/limitLo = 737 
+
+# --- Cryo5/CompVoltage ---
+Cryo5/CompVoltage/limitHi = 243 
+Cryo5/CompVoltage/warnHi = 240 
+Cryo5/CompVoltage/warnLo = 218 
+Cryo5/CompVoltage/limitLo = 215 
+
+# --- Cryo5/DischrgPrs ---
+Cryo5/DischrgPrs/limitHi = 353 
+Cryo5/DischrgPrs/warnHi = 350 
+Cryo5/DischrgPrs/warnLo = 316 
+Cryo5/DischrgPrs/limitLo = 313 
+
+# --- Cryo5/DischrgTmp_M ---
+Cryo5/DischrgTmp_M/limitHi = 81.9 
+Cryo5/DischrgTmp_M/warnHi = 81.1 
+Cryo5/DischrgTmp_M/warnLo = 73.5 
+Cryo5/DischrgTmp_M/limitLo = 72.7 
+
+# --- Cryo5/DischrgTmp_P ---
+Cryo5/DischrgTmp_P/limitHi = 108 
+Cryo5/DischrgTmp_P/warnHi = 107 
+Cryo5/DischrgTmp_P/warnLo = 97 
+Cryo5/DischrgTmp_P/limitLo = 96 
+
+# --- Cryo5/FanSpeed ---
+Cryo5/FanSpeed/limitHi = 1.27e+03 
+Cryo5/FanSpeed/warnHi = 1.26e+03 
+Cryo5/FanSpeed/warnLo = 1.14e+03 
+Cryo5/FanSpeed/limitLo = 1.13e+03 
+
+# --- Cryo5/OilLevel ---
+Cryo5/OilLevel/limitHi = 0.848 
+Cryo5/OilLevel/warnHi = 0.728 
+Cryo5/OilLevel/warnLo = -0.474 
+Cryo5/OilLevel/limitLo = -0.594 
+
+# --- Cryo5/OilSepTmp ---
+Cryo5/OilSepTmp/limitHi = 97.5 
+Cryo5/OilSepTmp/warnHi = 96.5 
+Cryo5/OilSepTmp/warnLo = 87.5 
+Cryo5/OilSepTmp/limitLo = 86.5 
+
+# --- Cryo5/PhaseSepTmp ---
+Cryo5/PhaseSepTmp/limitHi = 12.7 
+Cryo5/PhaseSepTmp/warnHi = 11.9 
+Cryo5/PhaseSepTmp/warnLo = 4.32 
+Cryo5/PhaseSepTmp/limitLo = 3.56 
+
+# --- Cryo5/SuctionPrs ---
+Cryo5/SuctionPrs/limitHi = 24.7 
+Cryo5/SuctionPrs/warnHi = 24.4 
+Cryo5/SuctionPrs/warnLo = 22.2 
+Cryo5/SuctionPrs/limitLo = 21.9 
+
+# --- Cryo5/SuctionTmp_M ---
+Cryo5/SuctionTmp_M/limitHi = 20 
+Cryo5/SuctionTmp_M/warnHi = 19.8 
+Cryo5/SuctionTmp_M/warnLo = 17.9 
+Cryo5/SuctionTmp_M/limitLo = 17.8 
+
+# --- Cryo5/SuctionTmp_P ---
+Cryo5/SuctionTmp_P/limitHi = 17.9 
+Cryo5/SuctionTmp_P/warnHi = 17.8 
+Cryo5/SuctionTmp_P/warnLo = 16 
+Cryo5/SuctionTmp_P/limitLo = 15.9 
+
+# --- Cryo5/SurgeTankTmp ---
+Cryo5/SurgeTankTmp/limitHi = 39 
+Cryo5/SurgeTankTmp/warnHi = 38.5 
+Cryo5/SurgeTankTmp/warnLo = 33.1 
+Cryo5/SurgeTankTmp/limitLo = 32.6 
+
+# --- Cryo5/WaterInTmp ---
+Cryo5/WaterInTmp/limitHi = 11.7 
+Cryo5/WaterInTmp/warnHi = 10.9 
+Cryo5/WaterInTmp/warnLo = 2.93 
+Cryo5/WaterInTmp/limitLo = 2.13 
+
+# --- Cryo5/WaterOutTmp ---
+Cryo5/WaterOutTmp/limitHi = 28.5 
+Cryo5/WaterOutTmp/warnHi = 27.9 
+Cryo5/WaterOutTmp/warnLo = 22.5 
+Cryo5/WaterOutTmp/limitLo = 21.9 
+
+# --- Cryo6/AfterCoolTmp ---
+Cryo6/AfterCoolTmp/limitHi = 11.2 
+Cryo6/AfterCoolTmp/warnHi = 10.4 
+Cryo6/AfterCoolTmp/warnLo = 2.79 
+Cryo6/AfterCoolTmp/limitLo = 2.03 
+
+# --- Cryo6/CompCurrent ---
+Cryo6/CompCurrent/limitHi = 3.38 
+Cryo6/CompCurrent/warnHi = 3.35 
+Cryo6/CompCurrent/warnLo = 3.03 
+Cryo6/CompCurrent/limitLo = 3 
+
+# --- Cryo6/CompPower ---
+Cryo6/CompPower/limitHi = 772 
+Cryo6/CompPower/warnHi = 765 
+Cryo6/CompPower/warnLo = 693 
+Cryo6/CompPower/limitLo = 686 
+
+# --- Cryo6/CompVoltage ---
+Cryo6/CompVoltage/limitHi = 243 
+Cryo6/CompVoltage/warnHi = 240 
+Cryo6/CompVoltage/warnLo = 218 
+Cryo6/CompVoltage/limitLo = 215 
+
+# --- Cryo6/DischrgPrs ---
+Cryo6/DischrgPrs/limitHi = 357 
+Cryo6/DischrgPrs/warnHi = 354 
+Cryo6/DischrgPrs/warnLo = 320 
+Cryo6/DischrgPrs/limitLo = 317 
+
+# --- Cryo6/DischrgTmp_M ---
+Cryo6/DischrgTmp_M/limitHi = 115 
+Cryo6/DischrgTmp_M/warnHi = 114 
+Cryo6/DischrgTmp_M/warnLo = 102 
+Cryo6/DischrgTmp_M/limitLo = 101 
+
+# --- Cryo6/DischrgTmp_P ---
+Cryo6/DischrgTmp_P/limitHi = 115 
+Cryo6/DischrgTmp_P/warnHi = 114 
+Cryo6/DischrgTmp_P/warnLo = 102 
+Cryo6/DischrgTmp_P/limitLo = 101 
+
+# --- Cryo6/FanSpeed ---
+Cryo6/FanSpeed/limitHi = 1.27e+03 
+Cryo6/FanSpeed/warnHi = 1.26e+03 
+Cryo6/FanSpeed/warnLo = 1.14e+03 
+Cryo6/FanSpeed/limitLo = 1.13e+03 
+
+# --- Cryo6/OilLevel ---
+Cryo6/OilLevel/limitHi = -5.28 
+Cryo6/OilLevel/warnHi = -5.36 
+Cryo6/OilLevel/warnLo = -6.2 
+Cryo6/OilLevel/limitLo = -6.28 
+
+# --- Cryo6/OilSepTmp ---
+
+# --- Cryo6/PhaseSepTmp ---
+Cryo6/PhaseSepTmp/limitHi = 12.1 
+Cryo6/PhaseSepTmp/warnHi = 11.4 
+Cryo6/PhaseSepTmp/warnLo = 4.03 
+Cryo6/PhaseSepTmp/limitLo = 3.29 
+
+# --- Cryo6/SuctionPrs ---
+Cryo6/SuctionPrs/limitHi = 23.8 
+Cryo6/SuctionPrs/warnHi = 23.6 
+Cryo6/SuctionPrs/warnLo = 21.4 
+Cryo6/SuctionPrs/limitLo = 21.2 
+
+# --- Cryo6/SuctionTmp_M ---
+Cryo6/SuctionTmp_M/limitHi = 19.2 
+Cryo6/SuctionTmp_M/warnHi = 19 
+Cryo6/SuctionTmp_M/warnLo = 17.2 
+Cryo6/SuctionTmp_M/limitLo = 17 
+
+# --- Cryo6/SuctionTmp_P ---
+Cryo6/SuctionTmp_P/limitHi = 27.5 
+Cryo6/SuctionTmp_P/warnHi = 27.2 
+Cryo6/SuctionTmp_P/warnLo = 24.6 
+Cryo6/SuctionTmp_P/limitLo = 24.3 
+
+# --- Cryo6/SurgeTankTmp ---
+Cryo6/SurgeTankTmp/limitHi = 36.5 
+Cryo6/SurgeTankTmp/warnHi = 36.2 
+Cryo6/SurgeTankTmp/warnLo = 32.8 
+Cryo6/SurgeTankTmp/limitLo = 32.5 
+
+# --- Cryo6/WaterInTmp ---
+Cryo6/WaterInTmp/limitHi = 11.9 
+Cryo6/WaterInTmp/warnHi = 11.1 
+Cryo6/WaterInTmp/warnLo = 3.13 
+Cryo6/WaterInTmp/limitLo = 2.33 
+
+# --- Cryo6/WaterOutTmp ---
+Cryo6/WaterOutTmp/limitHi = 27.8 
+Cryo6/WaterOutTmp/warnHi = 27.2 
+Cryo6/WaterOutTmp/warnLo = 21.6 
+Cryo6/WaterOutTmp/limitLo = 21 
