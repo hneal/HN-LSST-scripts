@@ -22,7 +22,7 @@ df["23July"]=tr3.get(tr3.columns[2])[[value.isalnum() for value in tr0[tr0.colum
 df["mean"] = (df["17July"]+df["19July"]+df["21July"]+df["23July"])/4.0
 df["min"] = df.min(axis=1)
 df["max"] = df.max(axis=1)
-df["diff/mean"] = round(100.0*(df["max"]-df["min"])/df["mean"],2)
+df["100*diff/mean"] = round(100.0*(df["max"]-df["min"])/df["mean"],2)
 #df["min"] = np.min(df["17July"],df["19July"],df["21July"],df["23July"])
 
 print(df)
