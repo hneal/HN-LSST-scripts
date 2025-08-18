@@ -28,22 +28,27 @@ subsys=sys.argv[1]
 category=sys.argv[2]
 props=sys.argv[3]
 
-
-tm = None
-if len(sys.argv) > 4 :
-    tm=sys.argv[4]
-
-# -------------------------------------------------------------------
-# define period to use by specifying a start date/tiome and duration
-# -------------------------------------------------------------------
-    
 #start="Nov 5 00:00:00 AM UTC 2024"
 #start="Wed Apr 16 00:00:00 AM UTC 2025"
 #start="Wed May  7 01:00:00 AM UTC 2025"
 start="Thu Jul  3 01:00:00 UTC 2025"
 #start="Thu Jul  4 01:00:00 UTC 2025"
-#dur="5h"
-dur="48h"
+
+
+#tm = None
+if len(sys.argv) > 4 :
+#    tm=sys.argv[4]
+    start=sys.argv[4]
+
+# -------------------------------------------------------------------
+# define period to use by specifying a start date/tiome and duration
+# -------------------------------------------------------------------
+    
+dur="5h"
+#dur="48h"
+if len(sys.argv) > 5 :
+#    tm=sys.argv[4]
+    dur=sys.argv[5]
 
 # -------------------------------------------------------------------
 # specify number of stddev's to use for the warning and limit determinations
@@ -55,7 +60,8 @@ nstd_limit = 6
 print("subsystem = ",subsys)
 print("category = ",category)
 print("properties name = ",props)
-print("(optional) previous ns time of dat file to use = ",tm)
+print("start = ",start)
+print("duration = ",dur)
 
 # ------------------------------------------------------------------------------------
 
@@ -89,8 +95,8 @@ def check_chan_value(chan : str, auto_val : float) -> float:
 
 def main() :
     strns = str(time.time_ns())
-    if tm != None:
-        strns = str(tm)
+#    if tm != None:
+#        strns = str(tm)
 
     sstrt = "_".join(start.split()[1:4])
         
