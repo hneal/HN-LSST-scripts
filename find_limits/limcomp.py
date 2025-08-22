@@ -14,11 +14,20 @@ pandas.set_option('display.width', 200)
 
 #tr2[[value.isalnum() for value in tr2[tr2.columns[2]]]]
 
-df["chan"]=tr0.get(tr0.columns[0])[[value.isalnum() for value in tr0[tr0.columns[2]]]]
-df["17July"]=tr0.get(tr0.columns[2])[[value.isalnum() for value in tr0[tr0.columns[2]]]].astype('float64')
-df["19July"]=tr1.get(tr1.columns[2])[[value.isalnum() for value in tr0[tr0.columns[2]]]].astype('float64')
-df["21July"]=tr2.get(tr2.columns[2])[[value.isalnum() for value in tr0[tr0.columns[2]]]].astype('float64')
-df["23July"]=tr3.get(tr3.columns[2])[[value.isalnum() for value in tr0[tr0.columns[2]]]].astype('float64')
+def isnum(s):
+    isit = True
+    try:
+        tst_val = float(s)
+    except:
+        isit = False
+#    return s.isalnum()
+    return isit
+
+df["chan"]=tr0.get(tr0.columns[0])[[isnum(value) for value in tr0[tr0.columns[2]]]]
+df["17July"]=tr0.get(tr0.columns[2])[[isnum(value) for value in tr0[tr0.columns[2]]]].astype('float64')
+df["19July"]=tr1.get(tr1.columns[2])[[isnum(value) for value in tr0[tr0.columns[2]]]].astype('float64')
+df["21July"]=tr2.get(tr2.columns[2])[[isnum(value) for value in tr0[tr0.columns[2]]]].astype('float64')
+df["23July"]=tr3.get(tr3.columns[2])[[isnum(value) for value in tr0[tr0.columns[2]]]].astype('float64')
 
 df["mean"] = (df["17July"]+df["19July"]+df["21July"]+df["23July"])/4.0
 #df["mean"] = (df["17July"]+df["19July"]+df["21July"])/3.0
@@ -29,7 +38,10 @@ df["100*diff/mean"] = round(100.0*(df["max"]-df["min"])/df["mean"],2)
 
 def pick_lim(row):
     if 'Lo' in row['chan'][-2:] :
-        return row['min']
+        if "_I" in row['chan'].split('/')[2][-2:]:
+            return max(row['min'],0.0)
+        else:
+            return max(row['min'],0.0)
     else:
         return row['max']
 
