@@ -42,10 +42,53 @@ dd['chan'] = df['chan']
 dd['equal'] = '='
 dd['limit'] = df['new lim']
 
+#print(tabulate(dd, showindex=False, headers=df.columns, numalign="left"))
+
+
+def ljust(s):
+    s = s.astype(str).str.strip()
+    return s.str.ljust(s.str.len().max())
+
+def lljust(s):
+    s = s.astype(str).str.strip()
+    return s.str.lstrip()
+#    return str(s).lstrip()
+
+def make_lalign_formatter(df, cols=None):
+    """
+    Construct formatter dict to left-align columns.
+
+    Parameters
+    ----------
+    df : pandas.core.frame.DataFrame
+        The DataFrame to format
+    cols : None or iterable of strings, optional
+        The columns of df to left-align. The default, cols=None, will
+        left-align all the columns of dtype object
+
+    Returns
+    -------
+    dict
+        Formatter dictionary
+
+    """
+    if cols is None:
+        cols = df.columns[df.dtypes == 'object']
+        
+    return {col: f'{{:<{df[col].str.len().max()}s}}'.format for col in cols}
+                       
+#print(dd.to_string(formatters=make_lalign_formatter(df,cols=['chan']),index=False,justify='left'))
+
+outstr = dd.to_string(formatters=make_lalign_formatter(df,cols=['chan']),index=False,justify='left')
+
 #for ln in outstr.split("\n"):
-skip=True
-for ln in dd.to_string(index=False).split("\n"):
-    if not skip:
-        print(ln.lstrip())
-    else:
-        skip=False
+#    print(ln.lstrip())
+    
+#print(dd.apply(ljust).to_string(index=False,justify='left'))
+#print(dd.apply(ljust).to_string(index=False))
+#print(dd.apply(ljust)
+print(dd.apply(ljust).apply(lljust).to_string(index=False))
+
+# Ref: ..
+#print(df["17July"].astype('float64', raise_on_error = False))
+#print(df["17July"].astype('float64'))
