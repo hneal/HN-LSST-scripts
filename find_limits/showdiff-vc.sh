@@ -1,0 +1,1 @@
+diff current_properties/Vac*.properties previous_properties/Vacuum-operational_1735368311512893668b.properties --side-by-side | awk '/|/{if ((1.0*$3)>0.0 && (1.0*$7)>0.0) {printf("%40s\t%10s\t%10s\t%6.2f%% difference\n",$1,$3,$7,100*($3-$7)/$7)};if ((1.0*$3)==0.0) {printf("%40s\t%10s\t%10s\n",$1,$3,$6)}          }' | tee vc-diff-curr-prev.txt

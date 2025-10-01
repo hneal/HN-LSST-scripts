@@ -31,8 +31,9 @@ props=sys.argv[3]
 #start="Nov 5 00:00:00 AM UTC 2024"
 #start="Wed Apr 16 00:00:00 AM UTC 2025"
 #start="Wed May  7 01:00:00 AM UTC 2025"
-start="Thu Jul  3 01:00:00 UTC 2025"
+#start="Thu Jul  3 01:00:00 UTC 2025"
 #start="Thu Jul  4 01:00:00 UTC 2025"
+start="Thu Sep  19 01:00:00 UTC 2025"
 
 
 #tm = None

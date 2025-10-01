@@ -1,0 +1,1 @@
+diff current_properties/Quadbox*.properties previous_properties/Quadbox*.properties --side-by-side | awk '/|/{if ((1.0*$3)>0.0 && (1.0*$7)>0.0) {printf("%40s\t%10s\t%10s\t%6.2f%% difference\n",$1,$3,$7,100*($3-$7)/$7)};if ((1.0*$3)==0.0) {printf("%40s\t%10s\t%10s\n",$1,$3,$6)}          }' | tee -a rebps-diff-curr-prev.txt | tee qb-diff-curr-prev.txt
